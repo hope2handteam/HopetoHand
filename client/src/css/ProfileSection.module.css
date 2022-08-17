@@ -18,6 +18,9 @@
 }
 .inputFormControl {
   position: relative;
+  background-color: white;
+  border-radius: 12px 12px 12px 12px;
+  height: 55px;
 }
 .frameDiv1 {
   display: flex;

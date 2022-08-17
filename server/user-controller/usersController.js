@@ -1,9 +1,13 @@
 
 import jtw from "jsonwebtoken";
 import userModel from "../models/users.js";
+import contactFormModel from "../models/contactFormModel.js";
 
-
-    
+export const saveContactForm = async (req, res) => {
+ //const {name, email, phone_number, company_name} = req.body; 
+const newContactForm=await contactFormModel.create(req.body);
+ res.json(newContactForm)
+} 
 
 export const getUser = async (req, res) => {
   //code here

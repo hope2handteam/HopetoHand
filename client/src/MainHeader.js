@@ -51,6 +51,10 @@ export const MainHeader = () => {
     setBurgerMenuPopUpOpen(false);
   }, []);
 
+  const registerUserPopUp = useCallback(() => {
+    isSignInPopUp1Open(false);
+  }, []);
+
   return (
     <>
       <div className={styles.mainHeaderDiv}>

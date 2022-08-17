@@ -5,9 +5,10 @@ import styles from "./css/LoginSignInPopUp.module.css";
 
 export const LoginSignInPopUp = ({ onClose }) => {
   const [isSignUpPopUpOpen, setSignUpPopUpOpen] = useState(false);
+  const [isSignInPopUpOpen, setSignInPopUpOpen] = useState(false);
 
-  const openSignUpPopUp = useCallback(() => {
-    setSignUpPopUpOpen(true);
+  const openSignInPopUp = useCallback(() => {
+    setSignInPopUpOpen(true);
   }, []);
 
   const closeSignUpPopUp = useCallback(() => {
@@ -20,7 +21,7 @@ export const LoginSignInPopUp = ({ onClose }) => {
         <article className={styles.loginWholeArticle}>
           <div className={styles.loginSignupLinkDiv} onClick={onClose}>
             <p className={styles.dontHaveAccount}>{`Don’t have account? `}</p>
-            <button className={styles.signUpButton} onClick={openSignUpPopUp}>
+            <button className={styles.signUpButton}onClick={openSignInPopUp} >
               Sign up
             </button>
           </div>
