@@ -17,7 +17,9 @@ const UsersSchema = new mongoose.Schema({
         // minlength: 6
     },
   
-   
+    accomodation: [{type : mongoose.Schema.Types.ObjectId, ref: "Accomodation"}],
+    help: [{type : mongoose.Schema.Types.ObjectId, ref: "Help"}],
+    jobs: [{type : mongoose.Schema.Types.ObjectId, ref: "Jobs"}],
    
 });
 

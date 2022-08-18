@@ -90,9 +90,9 @@ export const MainHeader = () => {
             </button>
           </a>
           <div className={styles.mainCTADiv}>
-            <button className={styles.button} onClick={openSignInPopUp}>
+            {/* <button className={styles.button} onClick={openSignInPopUp}>
               <b className={styles.becomeAVolunteer}>Become a Volunteer</b>
-            </button>
+            </button> */}
             <button className={styles.frameButton} onClick={openSignInPopUp1}>
               <div className={styles.bxbxsUserCircleDiv}>
                 <img className={styles.vectorIcon} alt="" src="vector.svg" />
