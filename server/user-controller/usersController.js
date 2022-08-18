@@ -12,12 +12,16 @@ const newContactForm=await contactFormModel.create(req.body);
 export const getUser = async (req, res) => {
   //code here
   try {
-    const users = await userModel.find();
-    res.status(200).json({ details: users });
-  } catch (error) {
-    console.log(error.message);
-  }
-};
+    console.log(req);
+    const user = await signupModel.findById(req.body.user_id).populate("accomodation", "help" , "jobs" );
+    res.status(200).json({user});
+    // const history = await HistoryModel.find();
+    // res.status(200).json(history);
+} catch (error) {
+    res.status(500).send(error);
+}
+
+}
 
 export const createUser = async (req, res) => {
   //code here

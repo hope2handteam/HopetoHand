@@ -1,16 +1,17 @@
 import express from "express";
 import { createUser } from "../user-controller/signupController.js";
 import { loginUser } from "../user-controller/signinController.js";
-import { postUser, getUser, deleteUser, updateUser, loggedIn, saveContactForm } from "../user-controller/usersController.js";
+import { getUser, deleteUser, updateUser, loggedIn, saveContactForm } from "../user-controller/usersController.js";
 import auth from "../middle/auth.js";
 import { body } from "express-validator";
+import { deleteAccomodation, updateAccomodation, postAccomodation, getAllAccomodation } from "../user-controller/accomodationController.js";
 
 const router = express.Router();
 
-router.post("/contactform", saveContactForm);
 
 
 
+//-------------Users------------
 router.post("/signup", [
   body("name").notEmpty().withMessage("First name is required").trim(),
   body("password", "Password is required and length min 4 chars.")
@@ -28,15 +29,28 @@ router.post("/signup", [
 
 router.post("/login", loginUser);
 router.get("/user", auth, getUser);
-// router.get("/loggedin", authorize, loggedIn)
-
-router.post("/:id", auth, postUser);
-
-// router.get("/history", getHistory)
-
 router.delete("/:id", deleteUser);
-
 router.put("/:id", updateUser);
+
+
+// ------------Accomodation------------
+
+router.post("/accomodationform", auth, postAccomodation);
+router.delete("/deleteAccomodation/:id", auth, deleteAccomodation);
+router.put("/updateAccomodation/:id", auth, updateAccomodation);
+router.get("/getAccomodation", getAllAccomodation);
+
+// ------------ContactForm------------
+
+router.post("/contactform", saveContactForm);
+
+// -------------Help------------
+
+
+// -------------Jobs------------
+
+
+
 
 router.get("/autho", auth, loggedIn);
 
