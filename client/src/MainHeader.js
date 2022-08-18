@@ -1,14 +1,15 @@
 import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { LoginSignInPopUp } from "./LoginSignInPopUp";
+import { LoginSignUpPopUp } from "./LoginSignUpPopUp";
 import { PortalPopup } from "./PortalPopup";
+import { LoginSignInPopUp } from "./LoginSignInPopUp";
 import { BurgerMenuPopUp } from "./BurgerMenuPopUp";
 import styles from "./css/MainHeader.module.css";
 
 export const MainHeader = () => {
   const navigate = useNavigate();
+  const [isSignUpPopUpOpen, setSignUpPopUpOpen] = useState(false);
   const [isSignInPopUpOpen, setSignInPopUpOpen] = useState(false);
-  const [isSignInPopUp1Open, setSignInPopUp1Open] = useState(false);
   const [isBurgerMenuPopUpOpen, setBurgerMenuPopUpOpen] = useState(false);
 
   const onFindSupportButtonClick = useCallback(() => {
@@ -27,20 +28,20 @@ export const MainHeader = () => {
     navigate("/aboutuspage");
   }, [navigate]);
 
+  const openSignUpPopUp = useCallback(() => {
+    setSignUpPopUpOpen(true);
+  }, []);
+
+  const closeSignUpPopUp = useCallback(() => {
+    setSignUpPopUpOpen(false);
+  }, []);
+
   const openSignInPopUp = useCallback(() => {
     setSignInPopUpOpen(true);
   }, []);
 
   const closeSignInPopUp = useCallback(() => {
     setSignInPopUpOpen(false);
-  }, []);
-
-  const openSignInPopUp1 = useCallback(() => {
-    setSignInPopUp1Open(true);
-  }, []);
-
-  const closeSignInPopUp1 = useCallback(() => {
-    setSignInPopUp1Open(false);
   }, []);
 
   const openBurgerMenuPopUp = useCallback(() => {
@@ -51,13 +52,9 @@ export const MainHeader = () => {
     setBurgerMenuPopUpOpen(false);
   }, []);
 
-  const registerUserPopUp = useCallback(() => {
-    isSignInPopUp1Open(false);
-  }, []);
-
   return (
     <>
-      <div className={styles.mainHeaderDiv}>
+      <header className={styles.mainHeader}>
         <div className={styles.logoDiv}>
           <img className={styles.logoMainIcon} alt="" src="logomain.svg" />
           <b className={styles.logoTitleB}>HOPE2HAND</b>
@@ -90,10 +87,10 @@ export const MainHeader = () => {
             </button>
           </a>
           <div className={styles.mainCTADiv}>
-            {/* <button className={styles.button} onClick={openSignInPopUp}>
-              <b className={styles.becomeAVolunteer}>Become a Volunteer</b>
-            </button> */}
-            <button className={styles.frameButton} onClick={openSignInPopUp1}>
+            <button className={styles.button} onClick={openSignUpPopUp}>
+              <b className={styles.becomeAVolunteer}>Become A Volunteer</b>
+            </button>
+            <button className={styles.buttonSignIn} onClick={openSignInPopUp}>
               <div className={styles.bxbxsUserCircleDiv}>
                 <img className={styles.vectorIcon} alt="" src="vector.svg" />
               </div>
@@ -110,7 +107,16 @@ export const MainHeader = () => {
             </div>
           </div>
         </div>
-      </div>
+      </header>
+      {isSignUpPopUpOpen && (
+        <PortalPopup
+          overlayColor="rgba(113, 113, 113, 0.3)"
+          placement="Centered"
+          onOutsideClick={closeSignUpPopUp}
+        >
+          <LoginSignUpPopUp onClose={closeSignUpPopUp} />
+        </PortalPopup>
+      )}
       {isSignInPopUpOpen && (
         <PortalPopup
           overlayColor="rgba(113, 113, 113, 0.3)"
@@ -118,15 +124,6 @@ export const MainHeader = () => {
           onOutsideClick={closeSignInPopUp}
         >
           <LoginSignInPopUp onClose={closeSignInPopUp} />
-        </PortalPopup>
-      )}
-      {isSignInPopUp1Open && (
-        <PortalPopup
-          overlayColor="rgba(113, 113, 113, 0.3)"
-          placement="Centered"
-          onOutsideClick={closeSignInPopUp1}
-        >
-          <LoginSignInPopUp onClose={closeSignInPopUp1} />
         </PortalPopup>
       )}
       {isBurgerMenuPopUpOpen && (

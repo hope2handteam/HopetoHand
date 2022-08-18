@@ -24,8 +24,8 @@ export const LoginSignUpPopUp = ({ onClose }) => {
         <h5 className={styles.signupH5}>{` Signup `}</h5>
         <button className={styles.closeButton} onClick={onClose}>
           <img className={styles.ellipseIcon} alt="" src="ellipse-225.svg" />
-          <img className={styles.lineIcon} alt="" src="line-8.svg" />
-          <img className={styles.lineIcon1} alt="" src="line-9.svg" />
+          <img className={styles.lineIcon} alt="" src="line-81.svg" />
+          <img className={styles.lineIcon1} alt="" src="line-91.svg" />
         </button>
         <div className={styles.signupFrameDiv}>
           <div className={styles.frameDiv}>
@@ -74,7 +74,7 @@ export const LoginSignUpPopUp = ({ onClose }) => {
       </div>
       {isSignInPopUpOpen && (
         <PortalPopup
-          overlayColor="rgba(113, 113, 113, 0.3)"
+          overlayColor="rgba(144, 141, 185, 0.5)"
           placement="Centered"
           onOutsideClick={closeSignInPopUp}
         >

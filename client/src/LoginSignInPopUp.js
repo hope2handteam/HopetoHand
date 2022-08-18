@@ -5,10 +5,9 @@ import styles from "./css/LoginSignInPopUp.module.css";
 
 export const LoginSignInPopUp = ({ onClose }) => {
   const [isSignUpPopUpOpen, setSignUpPopUpOpen] = useState(false);
-  const [isSignInPopUpOpen, setSignInPopUpOpen] = useState(false);
 
-  const openSignInPopUp = useCallback(() => {
-    setSignInPopUpOpen(true);
+  const openSignUpPopUp = useCallback(() => {
+    setSignUpPopUpOpen(true);
   }, []);
 
   const closeSignUpPopUp = useCallback(() => {
@@ -21,7 +20,7 @@ export const LoginSignInPopUp = ({ onClose }) => {
         <article className={styles.loginWholeArticle}>
           <div className={styles.loginSignupLinkDiv} onClick={onClose}>
             <p className={styles.dontHaveAccount}>{`Don’t have account? `}</p>
-            <button className={styles.signUpButton}onClick={openSignInPopUp} >
+            <button className={styles.signUpButton} onClick={openSignUpPopUp}>
               Sign up
             </button>
           </div>
@@ -71,16 +70,16 @@ export const LoginSignInPopUp = ({ onClose }) => {
             </button>
           </div>
           <button className={styles.closeButton} onClick={onClose}>
-            <img className={styles.ellipseIcon} alt="" src="ellipse-2251.svg" />
-            <img className={styles.lineIcon} alt="" src="line-81.svg" />
-            <img className={styles.lineIcon1} alt="" src="line-91.svg" />
+            <img className={styles.ellipseIcon} alt="" src="ellipse-2252.svg" />
+            <img className={styles.lineIcon} alt="" src="line-82.svg" />
+            <img className={styles.lineIcon1} alt="" src="line-92.svg" />
           </button>
           <h4 className={styles.loginOrSignup}>{`Login or Signup `}</h4>
         </article>
       </div>
       {isSignUpPopUpOpen && (
         <PortalPopup
-          overlayColor="rgba(113, 113, 113, 0.3)"
+          overlayColor="rgba(144, 141, 185, 0.6)"
           placement="Centered"
           onOutsideClick={closeSignUpPopUp}
         >

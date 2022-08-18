@@ -27,8 +27,8 @@ export const BurgerMenuPopUp = ({ onClose }) => {
         <h4 className={styles.menuH4}>Menu</h4>
         <button className={styles.closeButton} onClick={onClose}>
           <img className={styles.ellipseIcon} alt="" src="ellipse-225.svg" />
-          <img className={styles.lineIcon} alt="" src="line-82.svg" />
-          <img className={styles.lineIcon1} alt="" src="line-92.svg" />
+          <img className={styles.lineIcon} alt="" src="line-8.svg" />
+          <img className={styles.lineIcon1} alt="" src="line-9.svg" />
         </button>
       </div>
       <a className={styles.headerNavigations}>
