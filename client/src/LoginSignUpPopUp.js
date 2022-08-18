@@ -1,22 +1,22 @@
-import { useState, useCallback } from "react";
-import { LoginSignInPopUp } from "./LoginSignInPopUp";
-import { PortalPopup } from "./PortalPopup";
-import styles from "./css/LoginSignUpPopUp.module.css";
+import { useState, useCallback } from "react"
+import { LoginSignInPopUp } from "./LoginSignInPopUp"
+import { PortalPopup } from "./PortalPopup"
+import styles from "./css/LoginSignUpPopUp.module.css"
 
 export const LoginSignUpPopUp = ({ onClose }) => {
-  const [isSignInPopUpOpen, setSignInPopUpOpen] = useState(false);
+  const [isSignInPopUpOpen, setSignInPopUpOpen] = useState(false)
 
   const onFrameButtonClick = useCallback(() => {
     // Please sync "LoggedInOptionPopUp" to the project
-  }, []);
+  }, [])
 
   const openSignInPopUp = useCallback(() => {
-    setSignInPopUpOpen(true);
-  }, []);
+    setSignInPopUpOpen(true)
+  }, [])
 
   const closeSignInPopUp = useCallback(() => {
-    setSignInPopUpOpen(false);
-  }, []);
+    setSignInPopUpOpen(false)
+  }, [])
 
   return (
     <>
@@ -66,7 +66,7 @@ export const LoginSignUpPopUp = ({ onClose }) => {
           </button>
         </div>
         <div className={styles.haveAccountLinkDiv}>
-          <b className={styles.youHaveAccount}>You have account?</b>
+          <b className={styles.youHaveAccount}>You already have an account?</b>
           <button className={styles.logInButton} onClick={openSignInPopUp}>
             Log in
           </button>
@@ -82,5 +82,5 @@ export const LoginSignUpPopUp = ({ onClose }) => {
         </PortalPopup>
       )}
     </>
-  );
-};
+  )
+}

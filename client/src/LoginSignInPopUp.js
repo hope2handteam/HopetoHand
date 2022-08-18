@@ -1,27 +1,29 @@
-import { useState, useCallback } from "react";
-import { LoginSignUpPopUp } from "./LoginSignUpPopUp";
-import { PortalPopup } from "./PortalPopup";
-import styles from "./css/LoginSignInPopUp.module.css";
+import { useState, useCallback } from "react"
+import { LoginSignUpPopUp } from "./LoginSignUpPopUp"
+import { PortalPopup } from "./PortalPopup"
+import styles from "./css/LoginSignInPopUp.module.css"
 
 export const LoginSignInPopUp = ({ onClose }) => {
-  const [isSignUpPopUpOpen, setSignUpPopUpOpen] = useState(false);
-  const [isSignInPopUpOpen, setSignInPopUpOpen] = useState(false);
+  const [isSignUpPopUpOpen, setSignUpPopUpOpen] = useState(false)
+  const [isSignInPopUpOpen, setSignInPopUpOpen] = useState(false)
 
   const openSignInPopUp = useCallback(() => {
-    setSignInPopUpOpen(true);
-  }, []);
+    setSignInPopUpOpen(true)
+  }, [])
 
   const closeSignUpPopUp = useCallback(() => {
-    setSignUpPopUpOpen(false);
-  }, []);
+    setSignUpPopUpOpen(false)
+  }, [])
 
   return (
     <>
       <div className={styles.signInPopUpDiv}>
         <article className={styles.loginWholeArticle}>
           <div className={styles.loginSignupLinkDiv} onClick={onClose}>
-            <p className={styles.dontHaveAccount}>{`Don’t have account? `}</p>
-            <button className={styles.signUpButton}onClick={openSignInPopUp} >
+            <p
+              className={styles.dontHaveAccount}
+            >{`Don’t have an account yet? `}</p>
+            <button className={styles.signUpButton} onClick={openSignInPopUp}>
               Sign up
             </button>
           </div>
@@ -88,5 +90,5 @@ export const LoginSignInPopUp = ({ onClose }) => {
         </PortalPopup>
       )}
     </>
-  );
-};
+  )
+}
