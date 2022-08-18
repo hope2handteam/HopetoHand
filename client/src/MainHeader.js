@@ -118,7 +118,7 @@ export const MainHeader = () => {
         </PortalPopup>
       )}
       {isSignInPopUpOpen && (
-        <PortalPopup
+        <PortalPopup 
           overlayColor="rgba(113, 113, 113, 0.3)"
           placement="Centered"
           onOutsideClick={closeSignInPopUp}
@@ -127,7 +127,7 @@ export const MainHeader = () => {
         </PortalPopup>
       )}
       {isBurgerMenuPopUpOpen && (
-        <PortalPopup
+        <PortalPopup 
           overlayColor="rgba(113, 113, 113, 0.3)"
           placement="Centered"
           onOutsideClick={closeBurgerMenuPopUp}

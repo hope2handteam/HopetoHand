@@ -8,7 +8,7 @@ export const RegistrationFormSection = () => {
         <p className={styles.youWantToStayWithPrivate}>
           <p className={styles.youWantTo}>
             You want to stay with private volunteers persons in Berlin?
-             Register now and we will try to find a suitable accommodation for
+           Register now and we will try to find a suitable accommodation for
             you quickly.
           </p>
           <p className={styles.youWantTo}>&nbsp;</p>

@@ -95,13 +95,13 @@
   position: relative;
   border-radius: 10px;
   background-color: #ead49c;
-  box-shadow: 0 0 8px rgba(194, 198, 204, 0.6);
+  /* box-shadow: 0 0 8px rgba(194, 198, 204, 0.6); */
   padding: 39px 30px 0;
-  justify-content: flex-end;
+  justify-content: right;
   gap: 20px;
   max-width: 90%;
   max-height: 90%;
-  overflow: auto;
+  overflow: visible;
   text-align: left;
   font-size: 20px;
   color: #484848;
