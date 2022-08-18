@@ -1,4 +1,4 @@
-import styles from "./css/RegistrationFormSection.module.css";
+import styles from "./css/RegistrationFormSection.module.css"
 
 export const RegistrationFormSection = () => {
   return (
@@ -7,20 +7,20 @@ export const RegistrationFormSection = () => {
         <h2 className={styles.findSupportH2}>Find Support</h2>
         <p className={styles.youWantToStayWithPrivate}>
           <p className={styles.youWantTo}>
-            You want to stay with private volunteers persons in Berlin?
-             Register now and we will try to find a suitable accommodation for
-            you quickly.
+            Are you needing accomodation at a private volunteer's place in
+            Berlin? Register now and we will try to find a suitable possibility
+            for you as quick as possible.
           </p>
           <p className={styles.youWantTo}>&nbsp;</p>
           <p className={styles.youWantTo}>
-            We will find an accommodation for you - safe and verified
+            Our accommodations are safe and verified
           </p>
           <p className={styles.afterYouRegister}>
-            After you register, our partner organisations and us start the
+            After registration, we and our partner organisations can start the
             search for a suitable accommodation.
           </p>
         </p>
       </div>
     </section>
-  );
-};
+  )
+}
