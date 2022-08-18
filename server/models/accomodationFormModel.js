@@ -22,7 +22,7 @@ const accomodationFormSchema = new mongoose.Schema({
         // minlength: 6
     },
     numberOfPersons: {
-        type: number,
+        type: Number,
         required: true,
         // minlength: 6
     },
