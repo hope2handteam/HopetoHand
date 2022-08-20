@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 import { validationResult } from "express-validator";
 
 export const createUser = async (req, res) => {
-  const { name,email, password } = req.body;
+  const { userName,email, password } = req.body;
 
 
   try {
@@ -16,14 +16,14 @@ export const createUser = async (req, res) => {
       });
     }
     //Check if user already exisists
-    let existingUser = await userModel.findOne({ name });
+    let existingUser = await userModel.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ msg: "User Already Exists!" });
     }
 
     //Create a new user
     const user = new userModel({
-      name,
+      userName,
       password,
       email,
     });

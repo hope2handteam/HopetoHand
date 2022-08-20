@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 
 
 const UsersSchema = new mongoose.Schema({
-    name: {
+    userName: {
         type: String,
         required: true
 

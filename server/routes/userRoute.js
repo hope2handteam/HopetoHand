@@ -14,7 +14,7 @@ const router = express.Router();
 
 //-------------Users------------
 router.post("/signup", [
-  body("name").notEmpty().withMessage("First name is required").trim(),
+  body("userName").notEmpty().withMessage("First name is required").trim(),
   body("password", "Password is required and length min 4 chars.")
     .isLength({ min: 4 })
     .custom((val, { req }) => {
