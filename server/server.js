@@ -3,9 +3,16 @@ import mongoose from "mongoose";
 import dotenv from "dotenv"  
 import cors from "cors"    
 import userRoute from "./routes/userRoute.js"
+import nodeMailer from "nodemailer"
+import bodyParser from "body-parser"
+
+
+
+
 
 dotenv.config(); // it makes the possibility to connect the .env file data to server.js
 const app = express();
+app.use(bodyParser.json());
 app.use(cors(), express.json());
 app.use(express.urlencoded({ extended: true }));
 const PORT = process.env.PORT;

@@ -4,12 +4,12 @@ import userModel from "../models/users.js";
 import bcrypt from "bcryptjs";
 
 export const loginUser = async (req, res) => {
-    const { name, password } = req.body;
+    const { name, email, password } = req.body;
     
    
 
     try {
-        let user = await userModel.findOne({ name });
+        let user = await userModel.findOne({ name ,email });
        
         
         if (!user) {
