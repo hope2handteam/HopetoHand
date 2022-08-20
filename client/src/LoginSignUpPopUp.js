@@ -41,19 +41,19 @@ export const LoginSignUpPopUp = ({ onClose }) => {
                 <input
                   className={styles.rectangleInput}
                   type="text"
-                  autoFocus
+                  
                 />
                    <p className={styles.usernameP}>Password</p>
                 <input
                   className={styles.rectangleInput}
                   type="text"
-                  autoFocus
+                  
                 />
                    <p className={styles.usernameP}>Confirm Password</p>
                 <input
                   className={styles.rectangleInput}
                   type="text"
-                  autoFocus
+                  
                 />
               </div>
              
