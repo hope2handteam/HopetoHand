@@ -29,14 +29,14 @@ const accomodationFormSchema = new mongoose.Schema({
         // minlength: 6
     },
 
-    availabilityFrom: {
-        type: Number,
-        required: true,
-    } ,
-    availabilityTo: {
-        type: Number,
-        required: true,
-    } ,
+    // availabilityFrom: {
+    //     type: Number,
+    //     required: true,
+    // } ,
+    // availabilityTo: {
+    //     type: Number,
+    //     required: true,
+    // } ,
 
 
  
