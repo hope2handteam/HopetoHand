@@ -35,9 +35,9 @@ router.put("/:id", updateUser);
 
 
 // ------------Accomodation------------
-router.get("/getaccomodation", getAllAccomodation);
+router.get("/getaccomodations", getAllAccomodation);
 router.post("/accomodationform", auth, postAccomodation);
-router.delete("/deleteaccomodation/:id", auth, deleteAccomodation);
+router.delete("/deleteaccomodation/:id",auth, deleteAccomodation);
 router.put("/updateaccomodation/:id", auth, updateAccomodation);
 
 

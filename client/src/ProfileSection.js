@@ -7,7 +7,14 @@ import {
 } from "@mui/material";
 import styles from "./css/ProfileSection.module.css";
 
+import {useNavigate } from "react-router-dom";
 export const ProfileSection = () => {
+
+  const navigate = useNavigate();
+
+  const handleChange = (event) => {
+    navigate("/getaccomodations");
+  };
   return (
     <form className={styles.profileSectionForm} method="post">
       <img
@@ -28,7 +35,7 @@ export const ProfileSection = () => {
             >
               <InputLabel color="secondary">Select Here</InputLabel>
               <Select color="secondary" size="2x" label="Select Here">
-                <MenuItem value="Accommodation">Accommodation</MenuItem>
+                <MenuItem onClick={handleChange} value="Accommodation">Accommodation</MenuItem>
                 <MenuItem value="Jobs">Jobs</MenuItem>
                 <MenuItem value="Helpers">Helpers</MenuItem>
                 <MenuItem value="Translation Service">
