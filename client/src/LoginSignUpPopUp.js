@@ -37,13 +37,27 @@ export const LoginSignUpPopUp = ({ onClose }) => {
                   type="text"
                   autoFocus
                 />
+                   <p className={styles.usernameP}>Email</p>
+                <input
+                  className={styles.rectangleInput}
+                  type="text"
+                  autoFocus
+                />
+                   <p className={styles.usernameP}>Password</p>
+                <input
+                  className={styles.rectangleInput}
+                  type="text"
+                  autoFocus
+                />
+                   <p className={styles.usernameP}>Confirm Password</p>
+                <input
+                  className={styles.rectangleInput}
+                  type="text"
+                  autoFocus
+                />
               </div>
-              <input
-                className={styles.frameInput}
-                type="text"
-                placeholder="Password"
-              />
-              <select className={styles.frameSelect} />
+             
+             
             </div>
             <button className={styles.frameButton} onClick={onFrameButtonClick}>
               <div className={styles.frameDiv3}>

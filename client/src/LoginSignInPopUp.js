@@ -18,7 +18,7 @@ export const LoginSignInPopUp = ({ onClose }) => {
     <>
       <div className={styles.signInPopUpDiv}>
         <article className={styles.loginWholeArticle}>
-          <div className={styles.loginSignupLinkDiv} onClick={onClose}>
+          <div className={styles.loginSignupLinkDiv} >
             <p className={styles.dontHaveAccount}>{`Don’t have account? `}</p>
             <button className={styles.signUpButton} onClick={openSignUpPopUp}>
               Sign up
@@ -28,7 +28,7 @@ export const LoginSignInPopUp = ({ onClose }) => {
             <div className={styles.usernameDiv}>
               <div className={styles.passwordDiv}>
                 <div className={styles.usernameFillDiv}>
-                  <p className={styles.dontHaveAccount}>Username</p>
+                  <p className={styles.dontHaveAccount}>Email</p>
                   <input className={styles.frameInput} type="text" autoFocus />
                 </div>
                 <div className={styles.usernameFillDiv}>

@@ -190,6 +190,7 @@
 .logInButton,
 .youHaveAccount {
   position: relative;
+  top: 45px;
   display: inline-block;
 }
 .logInButton {
