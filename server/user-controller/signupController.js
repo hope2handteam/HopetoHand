@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 import { validationResult } from "express-validator";
 
 export const createUser = async (req, res) => {
-  const { name, password } = req.body;
+  const { name,email, password } = req.body;
 
 
   try {
@@ -25,6 +25,7 @@ export const createUser = async (req, res) => {
     const user = new userModel({
       name,
       password,
+      email,
     });
 
     

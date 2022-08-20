@@ -69,7 +69,7 @@ export const getAllAccomodation = async (req, res) => {
     //code here
     try {
       const accomodation = await accomodationFormModel.find();
-      res.status(200).json({ details: accomodation });
+      res.status(200).json({ data: accomodation });
     } catch (error) {
       console.log(error.message);
     }

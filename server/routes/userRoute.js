@@ -4,7 +4,8 @@ import { loginUser } from "../user-controller/signinController.js";
 import { getUser, deleteUser, updateUser, loggedIn, saveContactForm } from "../user-controller/usersController.js";
 import auth from "../middle/auth.js";
 import { body } from "express-validator";
-import { deleteAccomodation, updateAccomodation, postAccomodation, getAllAccomodation } from "../user-controller/accomodationController.js";
+import { deleteAccomodation, updateAccomodation, postAccomodation, getAllAccomodation, } from "../user-controller/accomodationController.js";
+// import { sendEmail } from "../user-controller/sendEmail.js";
 
 const router = express.Router();
 
@@ -34,11 +35,11 @@ router.put("/:id", updateUser);
 
 
 // ------------Accomodation------------
-
+router.get("/getaccomodation", getAllAccomodation);
 router.post("/accomodationform", auth, postAccomodation);
-router.delete("/deleteAccomodation/:id", auth, deleteAccomodation);
-router.put("/updateAccomodation/:id", auth, updateAccomodation);
-router.get("/getAccomodation", getAllAccomodation);
+router.delete("/deleteaccomodation/:id", auth, deleteAccomodation);
+router.put("/updateaccomodation/:id", auth, updateAccomodation);
+
 
 // ------------ContactForm------------
 
@@ -54,6 +55,10 @@ router.post("/contactform", saveContactForm);
 
 router.get("/autho", auth, loggedIn);
 
+
+ 
+// router.post('/email', sendEmail)
+  
 // router.get("/cache",getCache)
 export default router;
 
