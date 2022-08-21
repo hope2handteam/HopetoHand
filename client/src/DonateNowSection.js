@@ -1,9 +1,9 @@
 import { useState, useCallback } from "react";
-import { DonationPaymentPopUp } from "./DonationPaymentPopUp";
-import { PortalPopup } from "./PortalPopup";
-import styles from "./css/DonateNowSection.module.css";
+import DonationPaymentPopUp from "./DonationPaymentPopUp";
+import {PortalPopup} from "./PortalPopup";
+import styles from "../src/css/DonationPage.module.css";
 
-export const DonateNowSection = () => {
+const DonateNowSection = () => {
   const [isDonationPaymentPopUpOpen, setDonationPaymentPopUpOpen] =
     useState(false);
 
@@ -43,3 +43,5 @@ export const DonateNowSection = () => {
     </>
   );
 };
+
+export default DonateNowSection;

@@ -5,6 +5,7 @@ import { getUser, deleteUser, updateUser, loggedIn, saveContactForm } from "../u
 import auth from "../middle/auth.js";
 import { body } from "express-validator";
 import { deleteAccomodation, updateAccomodation, postAccomodation, getAllAccomodation, } from "../user-controller/accomodationController.js";
+import { getAllStatus, postStatus, deleteStatus } from "../user-controller/statusController.js";
 // import { sendEmail } from "../user-controller/sendEmail.js";
 
 const router = express.Router();
@@ -50,7 +51,9 @@ router.post("/contactform", saveContactForm);
 
 // -------------Jobs------------
 
-
+router.get("/getstatus", getAllStatus);
+router.post("/poststatus", auth,loggedIn, postStatus);
+router.delete("/deletestatus/:id",auth, deleteStatus);
 
 
 router.get("/autho", auth, loggedIn);

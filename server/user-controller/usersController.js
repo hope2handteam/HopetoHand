@@ -2,6 +2,7 @@
 import jtw from "jsonwebtoken";
 import userModel from "../models/users.js";
 import contactFormModel from "../models/contactFormModel.js";
+import StatusFormModel from "../models/statusLikeModel.js";
 
 export const saveContactForm = async (req, res) => {
  //const {name, email, phone_number, company_name} = req.body; 
@@ -13,7 +14,7 @@ export const getUser = async (req, res) => {
   //code here
   try {
     console.log(req);
-    const user = await signupModel.findById(req.body.user_id).populate("accomodation", "help" , "jobs" );
+    const user = await signupModel.findById(req.body.user_id).populate("accomodation", "help" , "jobs", "status" );
     res.status(200).json({user});
     // const history = await HistoryModel.find();
     // res.status(200).json(history);

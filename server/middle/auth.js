@@ -9,9 +9,11 @@ export default   (req, res, next) => {
   
     try {
       const decoded = jwt.verify(token, "randomString");
-      req.user = decoded.user; //{id: '347294787982498', name: "Apple"}
+      req.user = decoded.user; 
+      ;//{id: '347294787982498', name: "Apple"}
       next();
     } catch (error) {
       res.status(500).send("Invalid Token!");
     }
   };
+  

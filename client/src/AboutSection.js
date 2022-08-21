@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { DonationPostcardPopUp } from "./DonationPostcardPopUp";
+import  DonationPostcardPopUp  from "./DonationPostcardPopUp";
 import { PortalPopup } from "./PortalPopup";
 import styles from "./css/AboutSection.module.css";
 

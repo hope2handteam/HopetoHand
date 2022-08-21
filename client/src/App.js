@@ -6,10 +6,10 @@ import {
 } from "react-router-dom";
 import { Home } from "./Home";
 import { GeoLocSearchPage } from "./GeoLocSearchPage";
-import { DonationPage } from "./DonationPage";
-import { JobForm } from "./JobForm";
+import  DonationPage  from "./DonationPage";
+import JobForm  from "./JobForm";
 import { AccomodationForm } from "./AccomodationForm";
-import { VolunteerForms } from "./VolunteerForms";
+import  VolunteerForms  from "./VolunteerForms";
 import { AboutUsPage } from "./AboutUsPage";
 import { FindSupportPage } from "./FindSupportPage";
 import { useEffect } from "react";
@@ -92,7 +92,7 @@ function App() {
 
       <Route path="/accomodationform" element={<AccomodationForm />} />
 
-      <Route path="/volunteerprofilepage" element={<VolunteerForms />} />
+      <Route path="/volunteerformspage" element={<VolunteerForms />} />
 
       <Route path="/aboutuspage" element={<AboutUsPage />} />
 

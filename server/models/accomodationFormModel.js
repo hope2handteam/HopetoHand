@@ -28,6 +28,7 @@ const accomodationFormSchema = new mongoose.Schema({
         required: true,
         // minlength: 6
     },
+    lastActive: { type: Date, default: Date }
 
     // availabilityFrom: {
     //     type: Number,

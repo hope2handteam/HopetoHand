@@ -2,9 +2,9 @@ import { useState } from "react";
 import { TextField, InputAdornment, Icon, Autocomplete } from "@mui/material";
 import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-import styles from "./css/JobForm.module.css";
+import styles from "../src/css/JobForm.module.css";
 
-export const JobForm = () => {
+const JobForm = () => {
   const [datePickerDateTimePickerValue, setDatePickerDateTimePickerValue] =
     useState(null);
   const [datePickerDateTimePicker1Value, setDatePickerDateTimePicker1Value] =
@@ -132,7 +132,7 @@ export const JobForm = () => {
             <img
               className={styles.buttonIconGhostOff}
               alt=""
-              src="buttoniconghostoff.svg"
+              src="../buttoniconghostoff.svg"
             />
             <p className={styles.captionText}>I agree with</p>
             <p className={styles.linkP}>Terms of use</p>
@@ -145,3 +145,5 @@ export const JobForm = () => {
     </LocalizationProvider>
   );
 };
+
+export default JobForm;
