@@ -83,27 +83,27 @@
   left: -0.1%;
   display: inline-block;
 }
-.logoMainDiv {
+.image7Icon,
+.logoDiv,
+.logoMainArticle {
   position: absolute;
+  width: 160px;
+  height: 196px;
+}
+.logoMainArticle {
   top: 0;
   left: 0;
-  width: 160px;
-  height: 196px;
   overflow: hidden;
-}
-.image7Icon,
-.logoDiv {
-  position: absolute;
-  cursor: pointer;
-}
-.logoDiv {
-  top: 152px;
-  left: 736px;
-  width: 160px;
-  height: 196px;
   text-align: center;
   font-size: 20px;
   color: #342e37;
+  font-family: Montserrat;
+}
+.image7Icon,
+.logoDiv {
+  top: 152px;
+  left: 736px;
+  cursor: pointer;
 }
 .image7Icon {
   top: 377px;

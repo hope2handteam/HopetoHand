@@ -3,7 +3,7 @@ import { HeroSection } from "./HeroSection";
 import { WelcomeSection } from "./WelcomeSection";
 import { BlogSection } from "./BlogSection";
 import { NearbySection } from "./NearbySection";
-import { DonationShopSection } from "./DonationShopSection";
+import  DonationShopSection  from "./DonationShopSection";
 import { Newsletter } from "./Newsletter";
 import { Footer } from "./Footer";
 import styles from "./css/Home.module.css";

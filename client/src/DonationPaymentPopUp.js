@@ -1,12 +1,12 @@
 import { useCallback, useEffect } from "react";
 import { FormControlLabel, Checkbox } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import styles from "./css/DonationPaymentPopUp.module.css";
+import styles from "../src/css/DonationPaymentPopUp.module.css";
 
-export const DonationPaymentPopUp = ({ onClose }) => {
+const DonationPaymentPopUp = ({ onClose }) => {
   const navigate = useNavigate();
 
-  const onLogoButtonClick = useCallback(() => {
+  const onLogoContainerClick = useCallback(() => {
     navigate("/");
   }, [navigate]);
 
@@ -122,34 +122,36 @@ export const DonationPaymentPopUp = ({ onClose }) => {
         <p className={styles.agreeToTerms}>Agree to Terms?</p>
         <article className={styles.paymentTypeArticle}>
           <div className={styles.paypalDiv}>
-            <img className={styles.ellipseIcon} alt="" src="ellipse-1.svg" />
+            <img className={styles.ellipseIcon} alt="" src="../ellipse-1.svg" />
             <img
               className={styles.download11}
               alt=""
-              src="download-1-1@2x.png"
+              src="../download-1-1@2x.png"
             />
           </div>
-          <div className={styles.frameDiv1}>
-            <img className={styles.image1Icon} alt="" src="image-12@2x.png" />
-            <img className={styles.image3Icon} alt="" src="image-3@2x.png" />
-          </div>
-          <div className={styles.frameDiv2}>
-            <img className={styles.image1Icon} alt="" src="image-13@2x.png" />
-            <img className={styles.image2Icon} alt="" src="image-22@2x.png" />
-          </div>
-          <img className={styles.frameIcon} alt="" src="frame-2@2x.png" />
+          <img
+            className={styles.visaCardsIcon}
+            alt=""
+            src="../visacards@2x.png"
+          />
         </article>
         <div className={styles.outlineDiv} />
         <button className={styles.closeButton} onClick={onClose}>
-          <img className={styles.ellipseIcon1} alt="" src="ellipse-2253.svg" />
-          <img className={styles.lineIcon} alt="" src="line-83.svg" />
-          <img className={styles.lineIcon1} alt="" src="line-93.svg" />
+          <img
+            className={styles.ellipseIcon1}
+            alt=""
+            src="../ellipse-2251.svg"
+          />
+          <img className={styles.lineIcon} alt="" src="../line-81.svg" />
+          <img className={styles.lineIcon1} alt="" src="../line-91.svg" />
         </button>
-        <button className={styles.logoButton} onClick={onLogoButtonClick}>
+        <article className={styles.logoArticle} onClick={onLogoContainerClick}>
           <b className={styles.logoTitleB}>HOPE2HAND</b>
-          <img className={styles.logoMainIcon} alt="" src="logomain4.svg" />
-        </button>
+          <img className={styles.logoMainIcon} alt="" src="../logomain2.svg" />
+        </article>
       </div>
     </div>
   );
 };
+
+export default DonationPaymentPopUp;

@@ -1,25 +1,3 @@
-@keyframes wobble-hor-bottom {
-  0%,
-  to {
-    transform: translateX(0);
-    transform-origin: 50% 50%;
-  }
-  15% {
-    transform: translateX(-30px) rotate(-6deg);
-  }
-  30% {
-    transform: translateX(15px) rotate(6deg);
-  }
-  45% {
-    transform: translateX(-15px) rotate(-3.6deg);
-  }
-  60% {
-    transform: translateX(9px) rotate(2.4deg);
-  }
-  75% {
-    transform: translateX(-6px) rotate(-1.2deg);
-  }
-}
 .donateNowAndWeWillMakeSu,
 .youWantToDonateAndHelpOu {
   position: absolute;
@@ -55,10 +33,6 @@
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
-}
-.button:hover {
-  animation: 1s ease 0s 1 normal none wobble-hor-bottom;
-  opacity: 1;
 }
 .bgArticle {
   position: relative;
