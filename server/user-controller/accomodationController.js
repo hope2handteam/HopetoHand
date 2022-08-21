@@ -49,15 +49,15 @@ export const deleteAccomodation = async (req, res) => {
 
 export const updateAccomodation = async (req, res) => {
     const { id } = req.params;
-    const { address, city, accomodationType, numberOfPersons, availabilityFrom, availabilityTo, } = req.body;
+    const { address, city, accomodationType, numberOfPersons,  } = req.body;
     try {
         await accomodationFormModel.findByIdAndUpdate(id, {
             address,
             city,
             accomodationType,
             numberOfPersons,
-            availabilityFrom,
-            availabilityTo,
+            // availabilityFrom,
+            // availabilityTo,
         });
         res.status(200).json({ msg: "Accomodation Updated!" });
     } catch (error) {
@@ -69,7 +69,7 @@ export const getAllAccomodation = async (req, res) => {
     //code here
     try {
       const accomodation = await accomodationFormModel.find();
-      res.status(200).json({ details: accomodation });
+      res.status(200).json({ data: accomodation });
     } catch (error) {
       console.log(error.message);
     }

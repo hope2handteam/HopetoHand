@@ -2,9 +2,14 @@ import { useState, useCallback } from "react";
 import { LoginSignUpPopUp } from "./LoginSignUpPopUp";
 import { PortalPopup } from "./PortalPopup";
 import styles from "./css/LoginSignInPopUp.module.css";
+import {useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export const LoginSignInPopUp = ({ onClose }) => {
   const [isSignUpPopUpOpen, setSignUpPopUpOpen] = useState(false);
+  const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState(false);
 
   const openSignUpPopUp = useCallback(() => {
     setSignUpPopUpOpen(true);
@@ -14,11 +19,46 @@ export const LoginSignInPopUp = ({ onClose }) => {
     setSignUpPopUpOpen(false);
   }, []);
 
+
+  const navigate = useNavigate();
+    const postRequestLogin = async () => {
+        const API = axios.create({ baseURL: "http://localhost:5000" });
+
+
+    API.interceptors.request.use((req) => {
+        if (localStorage.getItem("profile")) {
+          req.headers.Authorization = `Bearer ${
+            JSON.parse(localStorage.getItem("profile")).res.tokenId
+          }`;
+          
+        }
+        return req;
+      });
+
+
+      const data = {email, password};
+        const response = await API.post("/login",
+        data);
+        
+        console.log("login",response.data);
+        localStorage.setItem("profile", JSON.stringify({ res: response.data }));
+        
+        setMessage(true);
+      
+      setEmail("");
+        setPassword("");
+        onClose();
+     navigate("/");
+    }
+    
+    
+
+
   return (
     <>
       <div className={styles.signInPopUpDiv}>
         <article className={styles.loginWholeArticle}>
-          <div className={styles.loginSignupLinkDiv} onClick={onClose}>
+          <div className={styles.loginSignupLinkDiv} >
             <p className={styles.dontHaveAccount}>{`Don’t have account? `}</p>
             <button className={styles.signUpButton} onClick={openSignUpPopUp}>
               Sign up
@@ -28,12 +68,12 @@ export const LoginSignInPopUp = ({ onClose }) => {
             <div className={styles.usernameDiv}>
               <div className={styles.passwordDiv}>
                 <div className={styles.usernameFillDiv}>
-                  <p className={styles.dontHaveAccount}>Username</p>
-                  <input className={styles.frameInput} type="text" autoFocus />
+                  <p className={styles.dontHaveAccount}>Email</p>
+                  <input onChange={(e) => setEmail(e.target.value)} className={styles.frameInput} type="text" autoFocus />
                 </div>
                 <div className={styles.usernameFillDiv}>
                   <p className={styles.dontHaveAccount}>Password</p>
-                  <input className={styles.frameInput} type="password" />
+                  <input  onChange={(e) => setPassword(e.target.value)} className={styles.frameInput} type="password" />
                 </div>
                 <div className={styles.rememberMeDiv}>
                   <input
@@ -47,11 +87,18 @@ export const LoginSignInPopUp = ({ onClose }) => {
                   </a>
                 </div>
               </div>
-              <button className={styles.buttonLogin} id="Login Button">
+              <button onClick={postRequestLogin} className={styles.buttonLogin} id="Login Button">
                 <div className={styles.frameDiv}>
                   <p className={styles.lOGINP}>LOG IN</p>
                 </div>
               </button>
+              {message ? (
+          
+         
+          <h3 style={{ color: "green" }}>Data inserted successfully!</h3>
+        ) : (
+          ""
+        )}
             </div>
             <p className={styles.oRP}>OR</p>
             <button className={styles.buttonLogin}>

@@ -2,21 +2,53 @@ import { useState, useCallback } from "react";
 import { LoginSignInPopUp } from "./LoginSignInPopUp";
 import { PortalPopup } from "./PortalPopup";
 import styles from "./css/LoginSignUpPopUp.module.css";
+import axios from "axios";
+// import { useNavigate } from "react-router-dom";
+
 
 export const LoginSignUpPopUp = ({ onClose }) => {
   const [isSignInPopUpOpen, setSignInPopUpOpen] = useState(false);
+  const [userName, setUserName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirm_password, setConfirmPassword] = useState("");
+    const [message, setMessage] = useState(false);
 
-  const onFrameButtonClick = useCallback(() => {
-    // Please sync "LoggedInOptionPopUp" to the project
-  }, []);
-
-  const openSignInPopUp = useCallback(() => {
+  // const onFrameButtonClick = useCallback(() => {
+  //   // Please sync "LoggedInOptionPopUp" to the project
+  // }, []);
+    const openSignInPopUp = useCallback(() => {
     setSignInPopUpOpen(true);
   }, []);
 
   const closeSignInPopUp = useCallback(() => {
     setSignInPopUpOpen(false);
   }, []);
+
+  const postRequestHandler = async () => {
+    const data = { userName, email, password, confirm_password,};
+   
+   
+    const response = await axios.post(
+      "http://localhost:5000/signup",
+      data,
+    );
+    console.log(data);
+
+    const results = (response.data.token);
+    localStorage.setItem("token", results);
+   
+    
+    setMessage(true);
+    setUserName("");
+    setEmail("");
+      setPassword("");
+    setConfirmPassword("");
+    // onClose();
+    //  navigate("/login");
+    
+  //   setRepeatPassword("");
+  };
 
   return (
     <>
@@ -33,23 +65,53 @@ export const LoginSignUpPopUp = ({ onClose }) => {
               <div className={styles.frameDiv2}>
                 <p className={styles.usernameP}>Username</p>
                 <input
+                 onChange={(e) => setUserName(e.target.value)}
+                 value={userName}
                   className={styles.rectangleInput}
                   type="text"
                   autoFocus
                 />
+                   <p className={styles.usernameP}>Email</p>
+                <input
+                 onChange={(e) => setEmail(e.target.value)}
+                 value={email}
+                  className={styles.rectangleInput}
+                  type="text"
+                  
+                />
+                   <p className={styles.usernameP}>Password</p>
+                <input
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                  className={styles.rectangleInput}
+                  type="text"
+                  
+                />
+                   <p className={styles.usernameP}>Confirm Password</p>
+                <input
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                value={confirm_password}
+                  className={styles.rectangleInput}
+                  type="text"
+                  
+                />
+          
               </div>
-              <input
-                className={styles.frameInput}
-                type="text"
-                placeholder="Password"
-              />
-              <select className={styles.frameSelect} />
+             
+             
             </div>
-            <button className={styles.frameButton} onClick={onFrameButtonClick}>
+            <button  className={styles.frameButton} onClick={postRequestHandler }>
               <div className={styles.frameDiv3}>
                 <p className={styles.sIGNUP}>SIGN UP</p>
               </div>
             </button>
+            {message ? (
+          
+         
+          <h3 style={{ color: "green" }}>Data inserted successfully!</h3>
+        ) : (
+          ""
+        )}
           </div>
           <p className={styles.oRP}>OR</p>
           <button className={styles.frameButton1}>

@@ -13,6 +13,7 @@ import { VolunteerForms } from "./VolunteerForms";
 import { AboutUsPage } from "./AboutUsPage";
 import { FindSupportPage } from "./FindSupportPage";
 import { useEffect } from "react";
+import GetAccomodations from "./GetAccomodations";
 
 function App() {
   const action = useNavigationType();
@@ -96,6 +97,7 @@ function App() {
       <Route path="/aboutuspage" element={<AboutUsPage />} />
 
       <Route path="/findsupportpage" element={<FindSupportPage />} />
+      <Route path="/getaccomodations" element={<GetAccomodations />} />
     </Routes>
   );
 }

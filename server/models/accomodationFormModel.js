@@ -11,6 +11,8 @@ const accomodationFormSchema = new mongoose.Schema({
     }
     ,
 
+    image:String,
+
     city: {
         type: String,
         required: true,
@@ -27,14 +29,14 @@ const accomodationFormSchema = new mongoose.Schema({
         // minlength: 6
     },
 
-    availabilityFrom: {
-        type: Date,
-        required: true,
-    } ,
-    availabilityTo: {
-        type: Date,
-        required: true,
-    } ,
+    // availabilityFrom: {
+    //     type: Number,
+    //     required: true,
+    // } ,
+    // availabilityTo: {
+    //     type: Number,
+    //     required: true,
+    // } ,
 
 
  
