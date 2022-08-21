@@ -1,23 +1,33 @@
-import { MainHeader } from "./MainHeader";
-import { HeroSection1 } from "./HeroSection1";
-import { VolunteerSection } from "./VolunteerSection";
-import { SeekerCardsSection } from "./SeekerCardsSection";
-import { Newsletter } from "./Newsletter";
-import { Footer } from "./Footer";
-import styles from "./css/VolunteerForms.module.css";
+import {MainHeader} from "./MainHeader";
+import {HeroSection} from "./HeroSection";
+import {VolunteerSection} from "./VolunteerSection";
+import{SeekerCardsSection} from "./SeekerCardsSection";
+import {Newsletter} from "./Newsletter";
+import {Footer} from "./Footer";
+import styles from "../src/css/VolunteerForms.module.css";
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  FormHelperText,
+  Select,
+} from "@mui/material";
 
-export const VolunteerForms = () => {
+const VolunteerForms = () => {
+  
   return (
-    <main className={styles.volunteerProfilePageMain}>
+    <>
+    <main className={styles.volunteerFormsPageMain}>
+      
       <MainHeader />
-      <HeroSection1 />
+      <HeroSection />
       <VolunteerSection />
       <SeekerCardsSection />
-      <Newsletter
-        ellipse18="ellipse-181.svg"
-        phpaperPlane="phpaperplane1.svg"
-      />
+      <Newsletter />
       <Footer />
     </main>
+    </>
   );
 };
+
+export default VolunteerForms;

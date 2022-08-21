@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { MainHeader } from "./MainHeader";
 import { Footer } from "./Footer";
+// import PostStatus from "./PostStatus";
 
 const GetAccomodations = () => {
     const [request, setRequest] = useState();
@@ -30,6 +31,7 @@ const GetAccomodations = () => {
     return (
       <>
       <MainHeader />
+      {/* <PostStatus/> */}
       <div>
         <h1>Click the button to get all users</h1>
         <button onClick={getRequestHandler}>GET</button>

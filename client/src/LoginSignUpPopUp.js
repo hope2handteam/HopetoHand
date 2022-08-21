@@ -44,8 +44,8 @@ export const LoginSignUpPopUp = ({ onClose }) => {
     setEmail("");
       setPassword("");
     setConfirmPassword("");
-    // onClose();
-    //  navigate("/login");
+    
+   
     
   //   setRepeatPassword("");
   };
