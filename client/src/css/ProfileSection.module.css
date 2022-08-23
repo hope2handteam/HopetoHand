@@ -38,7 +38,7 @@
   font-size: 13px;
   display: inline-block;
   font-family: Montserrat;
-  color: #342e37;
+  color: #342E37;
   text-align: center;
   height: 18.26px;
 }
@@ -72,7 +72,7 @@
 .formRegistrationBgArticle {
   flex: 1;
   border-radius: 0 12px 12px 0;
-  background-color: #ead49c;
+  background-color: #EAD49C;
   flex-direction: column;
   padding: 77px 61px;
   box-sizing: border-box;
@@ -86,3 +86,45 @@
   flex-direction: row;
   align-items: flex-start;
 }
+.formContainer{
+  width: 100%;
+}
+.profileSectionForm{
+  margin: 0 auto;
+}
+.accommodationDiv{
+  width: 100%;
+  /* border: 3px solid red; */
+}
+.accommodationCont{
+
+  width: 60%;
+  /* border: 3px solid red; */
+  margin: 30px auto;
+}
+.accommodationDetails{
+  font-family: Montserrat;
+  font-size: 18px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  /* border: 3px solid green; */
+  width: 100%;
+}
+img{
+  width: 400px;
+  margin: 5px;
+ 
+}
+.acInfo{
+  width: 25%;
+}
+.acInfo p{
+  font-weight: 500;
+}
+.acInfo p span{
+  font-style: italic-
+  ;
+}
+
+/* Job form */

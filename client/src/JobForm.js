@@ -2,8 +2,7 @@ import { useState } from "react";
 import { TextField, InputAdornment, Icon, Autocomplete } from "@mui/material";
 import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-import styles from "../src/css/JobForm.module.css";
-
+import styles from "./css/JobForm.module.css"
 const JobForm = () => {
   const [datePickerDateTimePickerValue, setDatePickerDateTimePickerValue] =
     useState(null);
