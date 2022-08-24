@@ -51,7 +51,7 @@ const [datePickerDateTimePicker1Value, setDatePickerDateTimePicker1Value] =
                 >
                   <MenuItem value="accommodation">Accommodation</MenuItem>
                   <MenuItem value="Jobs">Jobs</MenuItem>
-                  <MenuItem value="Helpers">Helpers</MenuItem>
+                  <MenuItem value="Helpers">Other Help</MenuItem>
                   <MenuItem value="Translation Service">
                     Translation Service
                   </MenuItem>

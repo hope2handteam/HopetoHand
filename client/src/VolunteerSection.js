@@ -244,14 +244,17 @@ export const VolunteerSection = () => {
           </button>
         </section>
       </LocalizationProvider> ) 
-       : volenForm === "Help" ? (       <LocalizationProvider dateAdapter={AdapterDateFns}>
+
+
+
+       : volenForm === "Help" ? (<LocalizationProvider dateAdapter={AdapterDateFns}>
         <section className={styles.jobFormSection}>
           <form className={styles.step3Form}>
             <form className={styles.userDataForm} method="post">
               <div className={styles.subheadDiv}>
                 <div className={styles.textDiv}>{` `}</div>
               </div>
-              <div className={styles.fieldDiv}>
+              {/* <div className={styles.fieldDiv}>
                 <TextField
                   className={styles.inputTextField}
                   sx={{ width: 441 }}
@@ -262,7 +265,28 @@ export const VolunteerSection = () => {
                   size="medium"
                   margin="none"
                 />
-              </div>
+              </div> */}
+               
+                 <input
+                className={styles.inputFieldDiv}
+                type="text"
+                placeholder="Contact Person"
+              
+              />
+              <input
+                className={styles.inputFieldDivContact}
+                type="Number"
+                placeholder="Contact Number"
+              
+              />
+                      <input
+                className={styles.inputFieldDivContact}
+                type="email"
+                placeholder="E-mail"
+              
+              />
+  
+        
               <div className={styles.selectDiv}>
                 <Autocomplete
                   sx={{ width: 438 }}
@@ -285,12 +309,12 @@ export const VolunteerSection = () => {
                 className={styles.autocompleteStandard}
                 sx={{ width: 438 }}
                 disablePortal
-                options={["English", "Deutsch", "Arabic", "Persian"]}
+                options={["English", "Germany", "Arabic", "Persian","Russian"]}
                 renderInput={(params) => (
                   <TextField
                     {...params}
                     color="primary"
-                    label="Type of Language"
+                    label="Language"
                     variant="standard"
                     placeholder="Select Language"
                     helperText=""
@@ -302,23 +326,45 @@ export const VolunteerSection = () => {
                 className={styles.autocompleteStandard1}
                 sx={{ width: 438 }}
                 disablePortal
-                options={["Job", "Translation", "Transportation", ""]}
+                options={["Store Greeter", "Housekeeper", "Security Guard","Housekeeping Technician",
+              "Packaging Laborer","Student Worker", "Stocker"]}
                 renderInput={(params) => (
                   <TextField
                     {...params}
                     color="primary"
-                    label="Type of Help"
+                    label="Jobs List"
                     variant="standard"
-                    placeholder="Select Help"
+                    placeholder="Select from the List"
                     helperText=""
                   />
                 )}
                 size="medium"
               />
+
+<p className={styles.inputFieldDivContact4}> available from:</p>
+                <input
+                className={styles.inputFieldDivContact1}
+                type="time"
+                min="09:00" max="18:00" required
+                placeholder="E-mail" />
+
+    
+                    <input
+                className={styles.inputFieldDivContact2}
+               
+                type="time"
+                id="appt" 
+                name="appt"
+                min="09:00" max="18:00" required
+               
+              
+              />
+  
+  
               <div className={styles.fieldsDiv}>
                 <div className={styles.datePickerDiv}>
                   <DatePicker
-                    label="From"
+                    label="Start Date"
                     value={datePickerDateTimePickerValue}
                     onChange={(newValue) => {
                       setDatePickerDateTimePickerValue(newValue);
@@ -337,7 +383,7 @@ export const VolunteerSection = () => {
                 </div>
                 <div className={styles.datePickerDiv}>
                   <DatePicker
-                    label="To"
+                    label="End Date"
                     value={datePickerDateTimePicker1Value}
                     onChange={(newValue) => {
                       setDatePickerDateTimePicker1Value(newValue);
@@ -355,10 +401,10 @@ export const VolunteerSection = () => {
                   />
                 </div>
               </div>
-              <div className={styles.availabilityDiv}>Availability</div>
+  
               <h6 className={styles.jobInformationForm}>Job Information Form</h6>
               <p className={styles.usedToProposeJobOffersOr}>
-                Used to propose job offers or weiterbildung
+              Used to propose job offers or weiterbildung
               </p>
             </form>
             <div className={styles.agreementDiv}>
@@ -529,10 +575,7 @@ export const VolunteerSection = () => {
                 />
               </div>
             </div>
-           
 
-
-           
             <h6 className={styles.jobInformationForm}>Job Information Form</h6>
             <p className={styles.usedToProposeJobOffersOr}>
             Used to propose job offers or weiterbildung

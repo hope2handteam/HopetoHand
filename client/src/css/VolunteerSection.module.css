@@ -978,7 +978,11 @@
 
   padding-left: 0px;
 }
-.inputFieldDivContact{
+.inputFieldDivContact,
+.inputFieldDivContact1,
+.inputFieldDivContact2,
+.
+{
   width: 85%;
   height: 35px;
   border: none;
@@ -989,6 +993,14 @@
 
   margin-top: 7px;
   padding-left: 0px;
+}
+.inputFieldDivContact1{
+  margin-top: 220px;
+  width: 40%;
+}
+.inputFieldDivContact2{
+  margin-top: 180px;
+  width: 40%;
 }
 .inputComponentTextarea {
   /* border: 1px solid #f50505; */
