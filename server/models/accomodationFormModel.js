@@ -10,8 +10,21 @@ const accomodationFormSchema = new mongoose.Schema({
 
     }
     ,
+    contactPerson: {
+        type: String,
+        required: true
+    },
+    contactNumber: {
+        type: Number,
+        required: true
+    },
+    contactEmail: {
+        type: String,
+        required: true
+    },
 
-    image:String,
+
+    // image:String,
 
     city: {
         type: String,
@@ -28,6 +41,20 @@ const accomodationFormSchema = new mongoose.Schema({
         required: true,
         // minlength: 6
     },
+    
+    //  startDate: {
+    //     type: Date,
+    //     required: true,
+    //  },
+    //     endDate: {
+    //     type: Date,
+    //     required: true,
+    //     },
+
+
+
+
+
     lastActive: { type: Date, default: Date }
 
     // availabilityFrom: {

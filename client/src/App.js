@@ -80,6 +80,8 @@ function App() {
     }
   }, [pathname]);
 
+  // const user = JSON.parse(localStorage.getItem("profile"));
+
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -90,10 +92,10 @@ function App() {
 
       <Route path="/jobform" element={<JobForm />} />
 
-      <Route path="/accomodationform" element={<AccomodationForm />} />
-
+      <Route path="/accomodationform/postaccommodation" element={<AccomodationForm />} />
+    
       <Route path="/volunteerformspage" element={<VolunteerForms />} />
-
+    
       <Route path="/aboutuspage" element={<AboutUsPage />} />
 
       <Route path="/findsupportpage" element={<FindSupportPage />} />

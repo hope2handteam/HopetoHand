@@ -40,15 +40,16 @@ export const LoginSignInPopUp = ({ onClose }) => {
         const response = await API.post("/login",
         data);
         
-        console.log("login",response.data);
-        localStorage.setItem("profile", JSON.stringify({ res: response.data }));
+        const token = response.data.token
+        console.log("login",response.data.token);
+        localStorage.setItem("profile", JSON.stringify({ token }));
         
         setMessage(true);
       
       setEmail("");
         setPassword("");
         onClose();
-     navigate("/");
+     navigate("/volunteerformspage");
     }
     
     

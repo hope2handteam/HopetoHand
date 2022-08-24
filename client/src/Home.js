@@ -8,11 +8,13 @@ import { Newsletter } from "./Newsletter";
 import { Footer } from "./Footer";
 import styles from "./css/Home.module.css";
 
+
 export const Home = () => {
   return (
     <main className={styles.homeMain}>
       <MainHeader />
       <HeroSection />
+    
       <WelcomeSection />
       <BlogSection />
       <NearbySection />
