@@ -5,25 +5,26 @@ import accomodationFormModel from "../models/accomodationFormModel.js";
 export const postAccomodation = async (req, res) => {
 
 
-    const { address, city, accomodationType, numberOfPersons} = req.body;
+    const { address, city, accomodationType, numberOfPersons,lastActive,contactPerson,contactNumber,contactEmail } = req.body;
     try {
         const user = await usersModel.findById(req.user.id);
         if (!user) {
             return res.status(404).json({ msg: "User not found" });
         }
-
-        console.log(user);
+     
         const accomodation = new accomodationFormModel({
+            
             address,
             city,
             accomodationType,
-            numberOfPersons,   
+            numberOfPersons,  
+            lastActive ,
+            contactPerson,
+            contactNumber,
+            contactEmail,
 
         });
-
-       
-
-
+console.log("Accomodation:", accomodation);
         await accomodation.save();
         user.accomodation.push(accomodation._id);
         await user.save();

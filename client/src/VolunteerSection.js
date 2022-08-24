@@ -11,6 +11,8 @@ import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import styles from "./css/VolunteerSection.module.css";
 
+import API from "./Api"
+import axios from "axios";
 
 export const VolunteerSection = () => {
   const [datePickerDateTimePickerValue, setDatePickerDateTimePickerValue] =
@@ -20,6 +22,61 @@ export const VolunteerSection = () => {
     const [volenForm, setVolenForm] = useState("")
 
 
+  const [address, setAddress] = useState("");
+  const [contactPerson, setContactPerson] = useState("");
+  const [contactNumber, setContactNumber] = useState("");
+  const [contactEmail, setContactEmail] = useState("");
+  // const [image, setImage] = useState("");
+  const [city, setCity] = useState("");
+  const [accomodationType, setAccomodationType] = useState("");
+  const [numberOfPersons, setNumberOfPersons] = useState("");
+  // const [startDate, setStartDate] = useState("");
+  // const [endDate, setEndDate] = useState("");
+  const [lastActive, setLastActive] = useState("");
+  // const [message, setMessage] = useState(false);
+
+ 
+
+  const createAccomodation = async () => {
+    const data = {address, contactPerson, contactNumber, contactEmail, city, accomodationType, numberOfPersons,  lastActive };
+
+    const API = axios.create({ baseURL: "http://localhost:5000" });
+
+    API.interceptors.request.use((req) => {
+      if (localStorage.getItem("profile")) {
+        req.headers.Authorization = `Bearer ${
+          JSON.parse(localStorage.getItem("profile")).token
+        }`;
+      }
+      return req;
+    });
+
+
+    await API.post("/volunteerformspage/postaccommodation", data)
+
+    setAddress("");
+    setContactPerson("");
+    setContactNumber("");
+    setContactEmail("");
+    // setImage("");
+    setCity("");
+    setAccomodationType("");
+    setNumberOfPersons("");
+    // setStartDate("");
+    // setEndDate("");
+    setLastActive("");
+    // setMessage(true);
+
+  }
+
+
+const user = JSON.parse(localStorage.getItem("profile"));
+
+// console.log("Local storage: ", user.res.token);
+ if (!user?.token) {
+   return  <div>You are not logged in</div>;
+ 
+};
 
 
   return (
@@ -57,7 +114,7 @@ export const VolunteerSection = () => {
             </div>
             <div className={styles.frameDiv5}>
               <div className={styles.skillsDiv}>
-                <h6 className={styles.skillsH6}>Skills</h6>
+                <h6 className={styles.skillsH6}>What would you like to offer?</h6>
 
                 <Select className={styles.dropdownSelect}
                   onChange={(e) => setVolenForm(e.target.value)}
@@ -65,7 +122,7 @@ export const VolunteerSection = () => {
                  size="2x"
                   label="Select Here"
                 >
-                  <MenuItem value="accommodation">Accommodation</MenuItem>
+                  <MenuItem  value="accommodation">Accommodation</MenuItem>
                   <MenuItem value="Help">Help</MenuItem>
                   {/* <MenuItem value="Translation">Translation</MenuItem> */}
                   <MenuItem value="Job">Job</MenuItem>
@@ -97,45 +154,51 @@ export const VolunteerSection = () => {
               className={styles.inputFieldDiv}
               type="text"
               placeholder="Contact Person"
+              onChange={(e) => setContactPerson(e.target.value)}
             
             />
             <input
               className={styles.inputFieldDivContact}
               type="Number"
               placeholder="Contact Number"
-            
+            onChange={(e) => setContactNumber(e.target.value)}
             />
                     <input
               className={styles.inputFieldDivContact}
               type="email"
               placeholder="E-mail"
-            
+            onChange={(e) => setContactEmail(e.target.value)}
             />
               <div className={styles.fieldDiv1}>
                 <TextField
+                 onChange={(e) => setAddress(e.target.value)}
                   className={styles.inputTextField1}
                   sx={{ width: 441 }}
                   color="info"
                   variant="standard"
                   type="text"
-                  label="Street Name"
+                  label="address"
                   size="medium"
                   margin="none"
+                  
                 />
               </div>
-              <div className={styles.selectDiv}>
+              <div  className={styles.selectDiv}>
                 <Autocomplete
+               
                   sx={{ width: 438 }}
                   disablePortal
                   options={["Berlin", "Barndenboug"]}
                   renderInput={(params) => (
                     <TextField
+                    onChange={(e) => setCity(e.target.value)}
                       {...params}
                       color="primary"
                       label="Accommodation location "
                       variant="standard"
                       placeholder="Select City"
                       helperText=""
+                      
                     />
                   )}
                   size="medium"
@@ -145,8 +208,10 @@ export const VolunteerSection = () => {
 
      
 
-
+                    <div  >
+                      
               <Autocomplete
+             
                 className={styles.autocompleteStandard3}
                 sx={{ width: 438 }}
                 disablePortal
@@ -154,6 +219,7 @@ export const VolunteerSection = () => {
               "Chalets", "Garage", "Garden", "Cottages"]}
                 renderInput={(params) => (
                   <TextField
+                  onChange={(e) => setAccomodationType(e.target.value)}
                     {...params}
                     color="primary"
                     label="Type of Accommodation"
@@ -164,7 +230,10 @@ export const VolunteerSection = () => {
                 )}
                 size="medium"
               />
+              </div>
+              <div >
               <Autocomplete
+             
                 className={styles.autocompleteStandard4}
                 sx={{ width: 438 }}
                 disablePortal
@@ -172,6 +241,7 @@ export const VolunteerSection = () => {
                 renderInput={(params) => (
                   <TextField
                     {...params}
+                    onChange={(e) => setNumberOfPersons(e.target.value)}
                     color="primary"
                     label="Number of Person"
                     variant="standard"
@@ -181,14 +251,14 @@ export const VolunteerSection = () => {
                 )}
                 size="medium"
               />
-              <div className={styles.fieldsDiv}>
-                <div className={styles.datePickerDiv}>
+              </div>
+              {/* <div className={styles.fieldsDiv}> */}
+                {/* <div className={styles.datePickerDiv}>
                   <DatePicker
+                 
                     label="Start Date"
                     value={datePickerDateTimePickerValue}
-                    onChange={(newValue) => {
-                      setDatePickerDateTimePickerValue(newValue);
-                    }}
+                    onChange={(e)=>setStartDate(e.target.value)}
                     renderInput={(params) => (
                       <TextField
                         {...params}
@@ -200,14 +270,12 @@ export const VolunteerSection = () => {
                       />
                     )}
                   />
-                </div>
-                <div className={styles.datePickerDiv}>
+                </div> */}
+                {/* <div className={styles.datePickerDiv}>
                   <DatePicker
                     label="End Date"
                     value={datePickerDateTimePicker1Value}
-                    onChange={(newValue) => {
-                      setDatePickerDateTimePicker1Value(newValue);
-                    }}
+                    onChange={(e)=>setEndDate(e.target.value)}
                     renderInput={(params) => (
                       <TextField
                         {...params}
@@ -219,8 +287,8 @@ export const VolunteerSection = () => {
                       />
                     )}
                   />
-                </div>
-              </div>
+                </div> */}
+              {/* </div> */}
               <div className={styles.availabilityDiv}>Availability</div>
               <h6 className={styles.accomodationInformationForm}>
                 Accomodation Information Form
@@ -238,10 +306,10 @@ export const VolunteerSection = () => {
               <p className={styles.captionText}>I agree with</p>
               <p className={styles.linkP}>Terms of use</p>
             </div>
-          </form>
-          <button className={styles.button} autoFocus>
+          <button onClick={createAccomodation} className={styles.button} autoFocus>
             <b className={styles.sendRequestB}>{`Send Infos  `}</b>
           </button>
+          </form>
         </section>
       </LocalizationProvider> ) 
        : volenForm === "Help" ? (       <LocalizationProvider dateAdapter={AdapterDateFns}>
