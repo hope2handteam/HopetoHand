@@ -18,19 +18,19 @@ const GetAccomodations = () => {
       setRequest("GET");
     };
   
-    const removeAccomodation = async (id) => {
-      try {
-        await axios.delete(`http://localhost:5000/deleteaccomodations/${id}`);
-        console.log("USer deleted! ", id);
-        getRequestHandler();
-      } catch (error) {
-        alert(error);
-      }
-    };
+    // const removeAccomodation = async (id) => {
+    //   try {
+    //     await axios.delete(`http://localhost:5000/deleteaccomodations/${id}`);
+    //     console.log("USer deleted! ", id);
+    //     getRequestHandler();
+    //   } catch (error) {
+    //     alert(error);
+    //   }
+    // };
   
     return (
       <>
-      <MainHeader />
+      
       {/* <PostStatus/> */}
       <div>
         <h1>Click the button to get all users</h1>
@@ -43,15 +43,15 @@ const GetAccomodations = () => {
                   <h3>
                   address: {value.address} | city: {value.city} | accomodation Type: {value.accomodationType} | numberOfPersons: {value.numberOfPersons}
                   </h3>
-                  <div style={{ display: "inline" }}>
+                  {/* <div style={{ display: "inline" }}>
                     <small onClick={() => removeAccomodation(value._id)}>Delete</small>
-                  </div>
+                  </div> */}
                 </div>
               );
             })
           : ""}
       </div>
-      <Footer />
+     
       </>
     );
   };

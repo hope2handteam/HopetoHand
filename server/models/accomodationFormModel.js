@@ -4,12 +4,12 @@ import mongoose from "mongoose";
 
 
 const accomodationFormSchema = new mongoose.Schema({
-    address: {
-        type: String,
-        required: true
+   
+    // creator: {
+    //     type: String,
+    // },
+   
 
-    }
-    ,
     contactPerson: {
         type: String,
         required: true
@@ -22,13 +22,18 @@ const accomodationFormSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    address: {
+        type: String,
+        required: true
 
+    }
+    ,
 
     // image:String,
 
     city: {
         type: String,
-        required: true,
+       // required: true,
         // minlength: 6
     },
     accomodationType: {
@@ -42,14 +47,14 @@ const accomodationFormSchema = new mongoose.Schema({
         // minlength: 6
     },
     
-    //  startDate: {
-    //     type: Date,
-    //     required: true,
-    //  },
-    //     endDate: {
-    //     type: Date,
-    //     required: true,
-    //     },
+     startDate: {
+        type: String,
+        
+     },
+        endDate: {
+        type: String,
+        
+        },
 
 
 

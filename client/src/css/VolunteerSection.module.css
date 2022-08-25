@@ -1004,3 +1004,120 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
+
+
+
+.formContainer{
+  width: 50%;
+  padding: 5% 0% 10% 0%;
+  background-color: wheat;
+}
+.accommodationForm,
+.jobForm,
+.helpForm{
+padding: 20px;
+padding-top: 70px;
+padding-bottom: 70px;
+  width: 90%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin:  auto;
+  border-radius: 10px;
+}
+.contactPersonName,
+.contactPersonNumber,
+.contactPersonEmail,
+.accommodationSelectDiv,
+.jobSelectDiv,
+.helpSelectDiv,
+.accommodationStreetDate,
+.jobStartDate{
+  width: 85%;
+  margin: 0px auto;
+  margin-top: 8px;
+ align-content: center;
+ font-size: 18px;
+ border-radius: 4px;
+ border: none;
+ border-bottom: 2px solid black;
+}
+.contactPersonName,
+.contactPersonNumber,
+.contactPersonEmail{
+  width: 84%;
+  padding: 18px;
+  font-size: 18px;
+  border-radius: 4px;
+  margin-top: 20px;
+  border: none;background-color: #f3efef;
+  border: 1px solid black;
+}
+.accommodationSelect,
+.jobSelect,
+.helpSelect,
+.accommodationStreet,
+.jobStreet,
+.accommodationDetails,
+.jobDetails,
+.helpDetails,
+.accommodationTitles,
+.jobTitles,
+.helpTitles,
+.accommodationPersonsNumber,
+.jobPersonsNumber,
+.accommodationStreetDate,
+.jobStartDate,
+.ContactPersonAvailable,
+.accommodationStreetEnd,
+.jobEndDate{
+  width: 49%;
+  margin: 5px auto;
+  padding: 18px;
+   align-content: center;
+ border-radius: 4px;
+ font-size: 18px;
+ border: none;background-color: #f3efef;
+ border: none;
+ border: 1px solid black;
+}
+.accommodationSelectDiv,
+.jobSelectDiv,
+.helpSelectDiv{
+  display: flex;
+  flex-wrap: wrap;
+  border: none;
+}
+.termsOfUse{
+  font-size: 18px;
+}
+.checkBoxBox{
+  width: 20px;
+}
+.formButton
+{
+  color: white;
+  margin-top: 50px;
+  padding: 18px;
+  width: 200px;
+  font-size: 20px;
+  border-radius: 30px;
+  border: none;
+ cursor: pointer;
+ background-color:  #908DB9;
+}
+.accommodationTitles,
+.jobTitles,
+.helpTitles{
+  font-size: 16px;
+  padding: 0px;
+  border: none;
+  border: none;background-color: transparent;
+}
+.formFileButton
+{
+margin-top: 30px;
+width: 400px;
+padding: 10px;
+}
