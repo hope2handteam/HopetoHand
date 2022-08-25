@@ -1,11 +1,12 @@
 
 import usersModel from "../models/users.js";
 import accomodationFormModel from "../models/accomodationFormModel.js";
+import mongoose from "mongoose";
 
 export const postAccomodation = async (req, res) => {
 
 
-    const { address, city, accomodationType, numberOfPersons,lastActive,contactPerson,contactNumber,contactEmail } = req.body;
+    const { address, city, accomodationType, numberOfPersons,lastActive,contactPerson,contactNumber,contactEmail, startDate, endDate } = req.body;
     try {
         const user = await usersModel.findById(req.user.id);
         if (!user) {
@@ -22,6 +23,9 @@ export const postAccomodation = async (req, res) => {
             contactPerson,
             contactNumber,
             contactEmail,
+            startDate,
+            endDate,
+            // creator: req.user.id
 
         });
 console.log("Accomodation:", accomodation);
@@ -34,6 +38,28 @@ console.log("Accomodation:", accomodation);
     }
 
 };
+
+
+export const getUserAccomodations = async (req, res)=>{
+
+    try {
+        const accs = []
+        const user = await usersModel.findById(req.user.id);
+
+        user.accomodation.forEach(place=> {
+            accs.push(place.toHexString()) 
+
+        })
+
+        const records = await accomodationFormModel.find({'_id': {$in: accs}})
+       
+        res.json(records)
+    } catch (error) {
+        res.send(error)
+    }
+}
+
+
 export const deleteAccomodation = async (req, res) => {
     const { id } = req.params;
     try {
@@ -75,3 +101,4 @@ export const getAllAccomodation = async (req, res) => {
       console.log(error.message);
     }
   };
+

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {
-  
+
   Select,
   MenuItem,
   TextField,
@@ -11,15 +11,17 @@ import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import styles from "./css/VolunteerSection.module.css";
 
-import API from "./Api"
+
 import axios from "axios";
+import GetUserPost from "./GetUserPost";
+import GetAccomodations from "./GetAccomodations";
 
 export const VolunteerSection = () => {
   const [datePickerDateTimePickerValue, setDatePickerDateTimePickerValue] =
     useState(null);
   const [datePickerDateTimePicker1Value, setDatePickerDateTimePicker1Value] =
     useState(null);
-    const [volenForm, setVolenForm] = useState("")
+  const [volenForm, setVolenForm] = useState("");
 
 
   const [address, setAddress] = useState("");
@@ -27,32 +29,31 @@ export const VolunteerSection = () => {
   const [contactNumber, setContactNumber] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   // const [image, setImage] = useState("");
-  const [city, setCity] = useState("");
-  const [accomodationType, setAccomodationType] = useState("");
-  const [numberOfPersons, setNumberOfPersons] = useState("");
-  // const [startDate, setStartDate] = useState("");
-  // const [endDate, setEndDate] = useState("");
+  const [city, setCity] = useState("Berlin");
+  const [accomodationType, setAccomodationType] = useState(1);
+  const [numberOfPersons, setNumberOfPersons] = useState(1);
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
   const [lastActive, setLastActive] = useState("");
-  // const [message, setMessage] = useState(false);
+  const [message, setMessage] = useState(false);
 
- 
+
 
   const createAccomodation = async () => {
-    const data = {address, contactPerson, contactNumber, contactEmail, city, accomodationType, numberOfPersons,  lastActive };
+    const data = { address, contactPerson, contactNumber, contactEmail, accomodationType, numberOfPersons, city, startDate, endDate };
 
     const API = axios.create({ baseURL: "http://localhost:5000" });
 
     API.interceptors.request.use((req) => {
       if (localStorage.getItem("profile")) {
-        req.headers.Authorization = `Bearer ${
-          JSON.parse(localStorage.getItem("profile")).token
-        }`;
+        req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem("profile")).token
+          }`;
       }
       return req;
     });
 
 
-    await API.post("/volunteerformspage/postaccommodation", data)
+    await API.post("/volunteerformspage/postaccommodation", data);
 
     setAddress("");
     setContactPerson("");
@@ -62,21 +63,23 @@ export const VolunteerSection = () => {
     setCity("");
     setAccomodationType("");
     setNumberOfPersons("");
-    // setStartDate("");
-    // setEndDate("");
-    setLastActive("");
+    setStartDate("");
+    setEndDate("");
+
+
     // setMessage(true);
 
-  }
+  };
 
 
-const user = JSON.parse(localStorage.getItem("profile"));
 
-// console.log("Local storage: ", user.res.token);
- if (!user?.token) {
-   return  <div>You are not logged in</div>;
- 
-};
+  const user = JSON.parse(localStorage.getItem("profile"));
+
+  // console.log("Local storage: ", user.res.token);
+  if (!user?.token) {
+    return <div>You are not logged in</div>;
+
+  };
 
 
   return (
@@ -119,10 +122,10 @@ const user = JSON.parse(localStorage.getItem("profile"));
                 <Select className={styles.dropdownSelect}
                   onChange={(e) => setVolenForm(e.target.value)}
                   color="secondary"
-                 size="2x"
+                  size="2x"
                   label="Select Here"
                 >
-                  <MenuItem  value="accommodation">Accommodation</MenuItem>
+                  <MenuItem value="accommodation">Accommodation</MenuItem>
                   <MenuItem value="Help">Help</MenuItem>
                   {/* <MenuItem value="Translation">Translation</MenuItem> */}
                   <MenuItem value="Job">Job</MenuItem>
@@ -134,505 +137,352 @@ const user = JSON.parse(localStorage.getItem("profile"));
                   </MenuItem> */}
                 </Select>
 
-                  
-                
+
+
               </div>
-             
+
             </div>
 
 
 
-          {volenForm === "accommodation" ? (    <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <section className={styles.accomodationFormSection}>
-          <form className={styles.step3Form}>
-            <form className={styles.userDataForm} method="post">
-              <div className={styles.subheadDiv}>
-                <div className={styles.textDiv}>{` `}</div>
-              </div>
+            {volenForm === "accommodation" ? (
 
-              <input
-              className={styles.inputFieldDiv}
-              type="text"
-              placeholder="Contact Person"
-              onChange={(e) => setContactPerson(e.target.value)}
-            
-            />
-            <input
-              className={styles.inputFieldDivContact}
-              type="Number"
-              placeholder="Contact Number"
-            onChange={(e) => setContactNumber(e.target.value)}
-            />
-                    <input
-              className={styles.inputFieldDivContact}
-              type="email"
-              placeholder="E-mail"
-            onChange={(e) => setContactEmail(e.target.value)}
-            />
-              <div className={styles.fieldDiv1}>
-                <TextField
-                 onChange={(e) => setAddress(e.target.value)}
-                  className={styles.inputTextField1}
-                  sx={{ width: 441 }}
-                  color="info"
-                  variant="standard"
+              <form className={styles.accommodationForm} >
+                <input
+                  onChange={(e) => setContactPerson(e.target.value)}
+                  className={styles.contactPersonName}
                   type="text"
-                  label="address"
-                  size="medium"
-                  margin="none"
-                  
+                  placeholder="Name"
                 />
-              </div>
-              <div  className={styles.selectDiv}>
-                <Autocomplete
-               
-                  sx={{ width: 438 }}
-                  disablePortal
-                  options={["Berlin", "Barndenboug"]}
-                  renderInput={(params) => (
-                    <TextField
+                <input
+                  onChange={(e) => setContactNumber(e.target.value)}
+                  className={styles.contactPersonNumber}
+                  type="string"
+                  placeholder="Phone Number"
+                />
+                <input
+                  onChange={(e) => setContactEmail(e.target.value)}
+                  className={styles.contactPersonEmail}
+                  type="email"
+                  placeholder=" Email"
+                />
+                <div className={styles.accommodationSelectDiv}>
+                  <div className={styles.accommodationTitles}>City</div>
+                  <div className={styles.accommodationTitles}>Address</div>
+                  <select
                     onChange={(e) => setCity(e.target.value)}
-                      {...params}
-                      color="primary"
-                      label="Accommodation location "
-                      variant="standard"
-                      placeholder="Select City"
-                      helperText=""
-                      
-                    />
-                  )}
-                  size="medium"
-                />
-              </div>
-
-
-     
-
-                    <div  >
-                      
-              <Autocomplete
-             
-                className={styles.autocompleteStandard3}
-                sx={{ width: 438 }}
-                disablePortal
-                options={["Hotels", "House", "Apartment", "Guest house","Hoste",
-              "Chalets", "Garage", "Garden", "Cottages"]}
-                renderInput={(params) => (
-                  <TextField
-                  onChange={(e) => setAccomodationType(e.target.value)}
-                    {...params}
-                    color="primary"
-                    label="Type of Accommodation"
-                    variant="standard"
-                    placeholder="Select Accommodation"
-                    helperText=""
+                    className={styles.accommodationSelect}
+                  >
+                    <option selected className={styles.optionBox}>Berlin</option>
+                    <option className={styles.optionBox}>Brandenburg</option>
+                  </select>
+                  <input
+                    onChange={(e) => setAddress(e.target.value)}
+                    className={styles.accommodationStreet}
+                    type="text"
+                    placeholder="Address"
                   />
-                )}
-                size="medium"
-              />
-              </div>
-              <div >
-              <Autocomplete
-             
-                className={styles.autocompleteStandard4}
-                sx={{ width: 438 }}
-                disablePortal
-                options={["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
+                </div>
+                <div className={styles.accommodationSelectDiv}>
+                  <div className={styles.accommodationTitles}>Type of Accommodation</div>
+                  <div className={styles.accommodationTitles}>Number of Persons</div>
+                  <select
+                    onChange={(e) => setAccomodationType(e.target.value)}
+
+                    className={styles.accommodationDetails}>
+                    <option>Hotels</option>
+                    <option>House</option>
+                    <option>Apartment</option>
+                    <option>Guest house</option>
+                    <option>Hoste</option>
+                    <option>Chalets</option>
+                    <option>Garage</option>
+                    <option>Cottages</option>
+                  </select>
+                  <select
                     onChange={(e) => setNumberOfPersons(e.target.value)}
-                    color="primary"
-                    label="Number of Person"
-                    variant="standard"
-                    placeholder="Select the Number"
-                    helperText=""
+                    className={styles.accommodationPersonsNumber}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </div>
+                <div className={styles.accommodationSelectDiv}>
+                  <div className={styles.accommodationTitles}> available from</div>
+                  <div className={styles.accommodationTitles}> to</div>
+                  <input
+                    placeholder="dd.mm.yyyy"
+                    onChange={(e) => setStartDate(e.target.value)}
+                    className={styles.accommodationStreetDate}
+                    type="string"
+                    name="date"
+                    id="date"
                   />
-                )}
-                size="medium"
-              />
-              </div>
-              {/* <div className={styles.fieldsDiv}> */}
-                {/* <div className={styles.datePickerDiv}>
-                  <DatePicker
-                 
-                    label="Start Date"
-                    value={datePickerDateTimePickerValue}
-                    onChange={(e)=>setStartDate(e.target.value)}
-                    renderInput={(params) => (
-                      <TextField
-                        {...params}
-                        color="primary"
-                        variant="standard"
-                        size="medium"
-                        renderInput={{ placeholder: "Start Date" }}
-                        helperText=""
-                      />
-                    )}
+                  <input
+                    placeholder="dd.mm.yyyy"
+                    onChange={(e) => setEndDate(e.target.value)}
+                    className={styles.accommodationStreetEnd}
+                    type="string"
+                    name="date"
+                    id="date"
                   />
-                </div> */}
-                {/* <div className={styles.datePickerDiv}>
-                  <DatePicker
-                    label="End Date"
-                    value={datePickerDateTimePicker1Value}
-                    onChange={(e)=>setEndDate(e.target.value)}
-                    renderInput={(params) => (
-                      <TextField
-                        {...params}
-                        color="primary"
-                        variant="standard"
-                        size="medium"
-                        renderInput={{ placeholder: "End Date" }}
-                        helperText=""
-                      />
-                    )}
-                  />
-                </div> */}
-              {/* </div> */}
-              <div className={styles.availabilityDiv}>Availability</div>
-              <h6 className={styles.accomodationInformationForm}>
-                Accomodation Information Form
-              </h6>
-              <p className={styles.usedToHostPeopleAndPropos}>
-                Used to host people and propose a place to stay in Berlin
-              </p>
-            </form>
-            <div className={styles.agreementDiv}>
-              <img
-                className={styles.buttonIconGhostOff}
-                alt=""
-                src="buttoniconghostoff.svg"
-              />
-              <p className={styles.captionText}>I agree with</p>
-              <p className={styles.linkP}>Terms of use</p>
-            </div>
-          <button onClick={createAccomodation} className={styles.button} autoFocus>
-            <b className={styles.sendRequestB}>{`Send Infos  `}</b>
-          </button>
-          </form>
-        </section>
-      </LocalizationProvider> ) 
-       : volenForm === "Help" ? (       <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <section className={styles.jobFormSection}>
-          <form className={styles.step3Form}>
-            <form className={styles.userDataForm} method="post">
-              <div className={styles.subheadDiv}>
-                <div className={styles.textDiv}>{` `}</div>
-              </div>
-              <div className={styles.fieldDiv}>
-                <TextField
-                  className={styles.inputTextField}
-                  sx={{ width: 441 }}
-                  color="info"
-                  variant="standard"
+                </div>
+                {/* <div className={styles.accommodationSelectDiv}>
+               <div className={styles.accommodationTitles}> contact person available from</div>
+               <div className={styles.accommodationTitles}> to</div>
+                 <input
+                   className={styles.accommodationStreetDate}
+                   type="time"
+                   name="time"
+                   id="time"
+                 />
+                 <input
+                   className={styles.ContactPersonAvailable}
+                   type="time"
+                   name="time"
+                   id="time"
+                 />
+               </div>  */}
+                <div className={styles.accommodationSelectDiv}>
+                  < input className={styles.formFileButton} type="file" id="file_input" name="filepath" multiple="multiple" />
+                </div>
+                <div className={styles.accommodationSelectDiv}>
+                  <input className={styles.checkBoxBox} type="checkbox" />{" "}
+                  <p className={styles.termsOfUse}>
+                    I am agree with terms of use
+                  </p>
+                </div>
+                <div className={styles.accommodationSelectDiv}>
+                  <button onClick={createAccomodation} className={styles.formButton}> submit the info</button>
+                </div>
+              </form>
+
+
+            )
+              : volenForm === "Job" ? (<form className={styles.jobForm} method="post">
+                <input
+                  className={styles.contactPersonName}
                   type="text"
-                  label="Weisestr."
-                  size="medium"
-                  margin="none"
+                  placeholder="Contact Person Name"
                 />
-              </div>
-              <div className={styles.selectDiv}>
-                <Autocomplete
-                  sx={{ width: 438 }}
-                  disablePortal
-                  options={["Berlin", "Barndenboug"]}
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      color="primary"
-                      label="City"
-                      variant="standard"
-                      placeholder="Select City"
-                      helperText=""
-                    />
-                  )}
-                  size="medium"
+                <input
+                  className={styles.contactPersonNumber}
+                  type="number"
+                  placeholder="Contact Person Number"
                 />
-              </div>
-              <Autocomplete
-                className={styles.autocompleteStandard}
-                sx={{ width: 438 }}
-                disablePortal
-                options={["English", "Deutsch", "Arabic", "Persian"]}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    color="primary"
-                    label="Type of Language"
-                    variant="standard"
-                    placeholder="Select Language"
-                    helperText=""
-                  />
-                )}
-                size="medium"
-              />
-              <Autocomplete
-                className={styles.autocompleteStandard1}
-                sx={{ width: 438 }}
-                disablePortal
-                options={["Job", "Translation", "Transportation", ""]}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    color="primary"
-                    label="Type of Help"
-                    variant="standard"
-                    placeholder="Select Help"
-                    helperText=""
-                  />
-                )}
-                size="medium"
-              />
-              <div className={styles.fieldsDiv}>
-                <div className={styles.datePickerDiv}>
-                  <DatePicker
-                    label="From"
-                    value={datePickerDateTimePickerValue}
-                    onChange={(newValue) => {
-                      setDatePickerDateTimePickerValue(newValue);
-                    }}
-                    renderInput={(params) => (
-                      <TextField
-                        {...params}
-                        color="primary"
-                        variant="standard"
-                        size="medium"
-                        renderInput={{ placeholder: "Start Date" }}
-                        helperText=""
-                      />
-                    )}
+                <input
+                  className={styles.contactPersonEmail}
+                  type="email"
+                  placeholder="Contact Person Email"
+                />
+                <div className={styles.jobSelectDiv}>
+                  <div className={styles.jobTitles}>Job location</div>
+                  <div className={styles.jobTitles}>
+                    Job Provider</div>
+                  <select
+                    className={styles.jobSelect}
+                  >
+                    <option className={styles.optionBox}>Berlin</option>
+                    <option className={styles.optionBox}>Brandenburg</option>
+                  </select>
+                  <input
+                    className={styles.jobStreet}
+                    type="text"
+                    placeholder="Person/Company/Organization Name"
                   />
                 </div>
-                <div className={styles.datePickerDiv}>
-                  <DatePicker
-                    label="To"
-                    value={datePickerDateTimePicker1Value}
-                    onChange={(newValue) => {
-                      setDatePickerDateTimePicker1Value(newValue);
-                    }}
-                    renderInput={(params) => (
-                      <TextField
-                        {...params}
-                        color="primary"
-                        variant="standard"
-                        size="medium"
-                        renderInput={{ placeholder: "End Date" }}
-                        helperText=""
-                      />
-                    )}
+                <div className={styles.jobSelectDiv}>
+                  <div className={styles.jobTitles}>Language</div>
+                  <div className={styles.jobTitles}>Job List</div>
+                  <select className={styles.jobDetails}>
+                    <option>Germany</option>
+                    <option>English</option>
+                    <option>Arabic</option>
+                    <option>Russian</option>
+                    <option>Persian</option>
+                  </select>
+                  <select className={styles.jobPersonsNumber}>
+                    <option>Store Greeter</option>
+                    <option>Housekeeper</option>
+                    <option>Security Guard</option>
+                    <option>Housekeeping Technician</option>
+                    <option>Packaging Laborer</option>
+                    <option>Student Worker</option>
+                    <option>Stocker</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div className={styles.jobSelectDiv}>
+                  <div className={styles.jobTitles}>Job Type</div>
+                  <div className={styles.jobTitles}>Salary Basis</div>
+                  <select className={styles.jobDetails}>
+                    <option>Full time</option>
+                    <option>Part Time</option>
+                  </select>
+                  <select className={styles.jobPersonsNumber}>
+                    <option>Monthly</option>
+                    <option>Weekly</option>
+                    <option>Daley</option>
+                    <option>Hourly</option>
+                  </select>
+                </div>
+                <div className={styles.jobSelectDiv}>
+                  <div className={styles.jobTitles}> Contract Start Date:</div>
+                  <div className={styles.jobTitles}> Contract Finish Date:</div>
+                  <input
+                    className={styles.jobStartDate}
+                    type="date"
+                    name="date"
+                    id="date"
+                  />
+                  <input
+                    className={styles.jobEndDate}
+                    type="date"
+                    name="date"
+                    id="date"
                   />
                 </div>
-              </div>
-              <div className={styles.availabilityDiv}>Availability</div>
-              <h6 className={styles.jobInformationForm}>Job Information Form</h6>
-              <p className={styles.usedToProposeJobOffersOr}>
-                Used to propose job offers or weiterbildung
-              </p>
-            </form>
-            <div className={styles.agreementDiv}>
-              <img
-                className={styles.buttonIconGhostOff}
-                alt=""
-                src="../buttoniconghostoff.svg"
-              />
-              <p className={styles.captionText}>I agree with</p>
-              <p className={styles.linkP}>Terms of use</p>
-            </div>
-          </form>
-          <button className={styles.button} autoFocus>
-            <b className={styles.sendRequestB}>{`Send Infos  `}</b>
-          </button>
-        </section>
-      </LocalizationProvider>) 
-      
-     : volenForm === "Job" ? (<LocalizationProvider dateAdapter={AdapterDateFns}>
-      <section className={styles.jobFormSection}>
-        <form className={styles.step3Form}>
-          <form className={styles.userDataForm} method="post">
-            <div className={styles.subheadDiv}>
-              <div className={styles.textDiv}>{` `}</div>
-            </div>
-            {/* <div className={styles.fieldDiv}>
-              <TextField
-                className={styles.inputTextField}
-                sx={{ width: 441 }}
-                color="info"
-                variant="standard"
-                type="text"
-                label="Weisestr."
-                size="medium"
-                margin="none"
-              />
-            </div> */}
-             
-               <input
-              className={styles.inputFieldDiv}
-              type="text"
-              placeholder="Contact Person"
-            
-            />
-            <input
-              className={styles.inputFieldDivContact}
-              type="Number"
-              placeholder="Contact Number"
-            
-            />
+                <div className={styles.jobSelectDiv}>
+                  <div className={styles.jobTitles}>Contact Person Availability from</div>
+                  <div className={styles.jobTitles}> to</div>
+                  <input
+                    className={styles.jobStartDate}
+                    type="time"
+                    name="time"
+                    id="time"
+                  />
+                  <input
+                    className={styles.ContactPersonAvailable}
+                    type="time"
+                    name="time"
+                    id="time"
+                  />
+                </div>
+                <div className={styles.accommodationSelectDiv}>
+                  <input className={styles.checkBoxBox} type="checkbox" />{" "}
+                  <p className={styles.termsOfUse}>
+                    I am agree with terms of use
+                  </p>
+                </div>
+                <div className={styles.jobSelectDiv}>
+                  <button className={styles.formButton}> submit</button>
+                </div>
+              </form>)
+                : volenForm === "Help" ? (<form className={styles.helpForm} method="post">
+                  <input
+                    className={styles.contactPersonName}
+                    type="text"
+                    placeholder="Contact Person Name"
+                  />
+                  <input
+                    className={styles.contactPersonNumber}
+                    type="number"
+                    placeholder="Contact Person Number"
+                  />
+                  <input
+                    className={styles.contactPersonEmail}
+                    type="email"
+                    placeholder="Contact Person Email"
+                  />
+                  <div className={styles.helpSelectDiv}>
+                    <div className={styles.helpTitles}>Activity location</div>
+                    <div className={styles.helpTitles}>Helper</div>
+                    <select
+                      className={styles.helpSelect}
+                    >
+                      <option className={styles.optionBox}>Berlin</option>
+                      <option className={styles.optionBox}>Brandenburg</option>
+                    </select>
                     <input
-              className={styles.inputFieldDivContact}
-              type="email"
-              placeholder="E-mail"
-            
-            />
-
-      
-            <div className={styles.selectDiv}>
-              <Autocomplete
-                sx={{ width: 438 }}
-                disablePortal
-                options={["Berlin", "Barndenboug"]}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    color="primary"
-                    label="City"
-                    variant="standard"
-                    placeholder="Select City"
-                    helperText=""
-                  />
-                )}
-                size="medium"
-              />
-            </div>
-            <Autocomplete
-              className={styles.autocompleteStandard}
-              sx={{ width: 438 }}
-              disablePortal
-              options={["English", "Germany", "Arabic", "Persian","Russian"]}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  color="primary"
-                  label="Language"
-                  variant="standard"
-                  placeholder="Select Language"
-                  helperText=""
-                />
-              )}
-              size="medium"
-            />
-            <Autocomplete
-              className={styles.autocompleteStandard1}
-              sx={{ width: 438 }}
-              disablePortal
-              options={["Store Greeter", "Housekeeper", "Security Guard","Housekeeping Technician",
-            "Packaging Laborer","Student Worker", "Stocker"]}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  color="primary"
-                  label="Jobs List"
-                  variant="standard"
-                  placeholder="Select from the List"
-                  helperText=""
-                />
-              )}
-              size="medium"
-            />
-                        <Autocomplete
-              className={styles.autocompleteStandard2}
-              sx={{ width: 438 }}
-              disablePortal
-              options={["Part time", "full time"]}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  color="primary"
-                  label="Job Type"
-                  variant="standard"
-                  placeholder="Select the Type"
-                  helperText=""
-                />
-              )}
-              size="medium"
-            />
-
-
-            <div className={styles.fieldsDiv}>
-              <div className={styles.datePickerDiv}>
-                <DatePicker
-                  label="Start Date"
-                  value={datePickerDateTimePickerValue}
-                  onChange={(newValue) => {
-                    setDatePickerDateTimePickerValue(newValue);
-                  }}
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      color="primary"
-                      variant="standard"
-                      size="medium"
-                      renderInput={{ placeholder: "Start Date" }}
-                      helperText=""
+                      className={styles.jobStreet}
+                      type="text"
+                      placeholder="Person/Company/Organization Name"
                     />
-                  )}
-                />
-              </div>
-              <div className={styles.datePickerDiv}>
-                <DatePicker
-                  label="End Date"
-                  value={datePickerDateTimePicker1Value}
-                  onChange={(newValue) => {
-                    setDatePickerDateTimePicker1Value(newValue);
-                  }}
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      color="primary"
-                      variant="standard"
-                      size="medium"
-                      renderInput={{ placeholder: "End Date" }}
-                      helperText=""
+                  </div>
+                  <div className={styles.helpSelectDiv}>
+                    <div className={styles.helpTitles}>Language</div>
+                    <div className={styles.helpTitles}>Helping type</div>
+                    <select className={styles.helpDetails}>
+                      <option>Germany</option>
+                      <option>English</option>
+                      <option>Arabic</option>
+                      <option>Russian</option>
+                      <option>Persian</option>
+                    </select>
+                    <select className={styles.jobPersonsNumber}>
+                      <option>Interpretation</option>
+                      <option>Translation</option>
+                      <option>finding Integration Course</option>
+                      <option>finding nursery school</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div className={styles.helpSelectDiv}>
+                    <div className={styles.helpTitles}> Cooperation Start Date:</div>
+                    <div className={styles.helpTitles}> Cooperation Finish Date:</div>
+                    <input
+                      className={styles.jobStartDate}
+                      type="date"
+                      name="date"
+                      id="date"
                     />
+                    <input
+                      className={styles.jobEndDate}
+                      type="date"
+                      name="date"
+                      id="date"
+                    />
+                  </div>
+                  <div className={styles.helpSelectDiv}>
+                    <div className={styles.helpTitles}>Contact Person Availability from</div>
+                    <div className={styles.helpTitles}> to</div>
+                    <input
+                      className={styles.jobStartDate}
+                      type="time"
+                      name="time"
+                      id="time"
+                    />
+                    <input
+                      className={styles.ContactPersonAvailable}
+                      type="time"
+                      name="time"
+                      id="time"
+                    />
+                  </div>
+                  <div className={styles.accommodationSelectDiv}>
+                    <input className={styles.checkBoxBox} type="checkbox" />{" "}
+                    <p className={styles.termsOfUse}>
+                      I am agree with terms of use
+                    </p>
+                  </div>
+                  <div className={styles.helpSelectDiv}>
+                    <button className={styles.formButton}> submit</button>
+                  </div>
+                </form>)
+
+
+
+                  //  :  volenForm === "Medical_Services" ? ( <div>Medical Services</div>)
+
+                  : (
+                    volenForm == null
                   )}
-                />
-              </div>
-            </div>
-           
-
-
-           
-            <h6 className={styles.jobInformationForm}>Job Information Form</h6>
-            <p className={styles.usedToProposeJobOffersOr}>
-            Used to propose job offers or weiterbildung
-            </p>
-          </form>
-          <div className={styles.agreementDiv}>
-            <img
-              className={styles.buttonIconGhostOff}
-              alt=""
-              src="../buttoniconghostoff.svg"
-            />
-            <p className={styles.captionText}>I agree with</p>
-            <p className={styles.linkP}>Terms of use</p>
-          </div>
-        </form>
-        <button className={styles.button} autoFocus>
-          <b className={styles.sendRequestB}>{`Send Infos  `}</b>
-        </button>
-      </section>
-    </LocalizationProvider>)
-        
-      //  :  volenForm === "Medical_Services" ? ( <div>Medical Services</div>)
-     
-       : (
-        volenForm == null
-      )}
-
 
           </article>
+
+
         </div>
 
       </section>
+      <GetUserPost />
     </LocalizationProvider>
+
   );
 };
