@@ -4,7 +4,7 @@ import { loginUser } from "../user-controller/signinController.js";
 import { getUser, deleteUser, updateUser, loggedIn, saveContactForm } from "../user-controller/usersController.js";
 import auth from "../middle/auth.js";
 import { body } from "express-validator";
-import { deleteAccomodation, updateAccomodation, postAccomodation, getAllAccomodation, getUserAccomodations } from "../user-controller/accomodationController.js";
+import { deleteUserAccomodation, updateAccomodation, postAccomodation, getAllAccomodation, getUserAccomodations } from "../user-controller/accomodationController.js";
 import { getAllStatus, postStatus, deleteStatus } from "../user-controller/statusController.js";
 // import { sendEmail } from "../user-controller/sendEmail.js";
 
@@ -45,7 +45,8 @@ router.get("/getuseraccomodations", auth, getUserAccomodations)
 
 
 
-router.delete("/deleteaccomodation/:id",auth, deleteAccomodation);
+router.delete("/deleteuseraccommodation/:id",auth, deleteUserAccomodation);
+
 router.put("/updateaccomodation/:id", auth, updateAccomodation);
 
 

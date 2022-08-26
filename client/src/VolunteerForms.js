@@ -22,7 +22,7 @@ const VolunteerForms = () => {
       <MainHeader />
       <HeroSection />
       <VolunteerSection />
-      <SeekerCardsSection />
+      
       <Newsletter />
       <Footer />
     </main>

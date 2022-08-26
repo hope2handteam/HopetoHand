@@ -14,7 +14,12 @@ import styles from "./css/VolunteerSection.module.css";
 
 import axios from "axios";
 import GetUserPost from "./GetUserPost";
-import GetAccomodations from "./GetAccomodations";
+
+import FileBase64 from "react-file-base64";
+
+
+
+
 
 export const VolunteerSection = () => {
   const [datePickerDateTimePickerValue, setDatePickerDateTimePickerValue] =
@@ -36,17 +41,18 @@ export const VolunteerSection = () => {
   const [endDate, setEndDate] = useState("");
   const [lastActive, setLastActive] = useState("");
   const [message, setMessage] = useState(false);
+  const [image, setImage] = useState("");
 
 
 
   const createAccomodation = async () => {
-    const data = { address, contactPerson, contactNumber, contactEmail, accomodationType, numberOfPersons, city, startDate, endDate };
+    const data = { image,address, contactPerson, contactNumber, contactEmail, accomodationType, numberOfPersons, city, startDate, endDate };
 
     const API = axios.create({ baseURL: "http://localhost:5000" });
 
     API.interceptors.request.use((req) => {
       if (localStorage.getItem("profile")) {
-        req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem("profile")).token
+        req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem("profile")).token 
           }`;
       }
       return req;
@@ -65,6 +71,7 @@ export const VolunteerSection = () => {
     setNumberOfPersons("");
     setStartDate("");
     setEndDate("");
+    setImage("");
 
 
     // setMessage(true);
@@ -81,6 +88,7 @@ export const VolunteerSection = () => {
 
   };
 
+const userName =  JSON.parse(localStorage.getItem("profile")).userName;
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -101,7 +109,7 @@ export const VolunteerSection = () => {
                   >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit, `}</p>
                   <p className={styles.sedDoEiusmod}>sed do eiusmod tempor.</p>
                 </p>
-                <h5 className={styles.johnDoeH5}>John Doe</h5>
+                <h5 className={styles.johnDoeH5}>{userName}</h5>
               </div>
             </div>
             <div className={styles.frameDiv3} />
@@ -251,13 +259,18 @@ export const VolunteerSection = () => {
                  />
                </div>  */}
                 <div className={styles.accommodationSelectDiv}>
-                  < input className={styles.formFileButton} type="file" id="file_input" name="filepath" multiple="multiple" />
+                <FileBase64
+        multiple={false}
+        onDone={({ base64 }) => {
+          setImage(base64);
+        }}
+      />
                 </div>
                 <div className={styles.accommodationSelectDiv}>
                   <input className={styles.checkBoxBox} type="checkbox" />{" "}
-                  <p className={styles.termsOfUse}>
+                  
                     I am agree with terms of use
-                  </p>
+                 
                 </div>
                 <div className={styles.accommodationSelectDiv}>
                   <button onClick={createAccomodation} className={styles.formButton}> submit the info</button>
@@ -477,11 +490,11 @@ export const VolunteerSection = () => {
 
           </article>
 
-
+        
         </div>
-
+        <GetUserPost />
       </section>
-      <GetUserPost />
+      
     </LocalizationProvider>
 
   );

@@ -84,13 +84,7 @@
   box-sizing: border-box;
   gap: 57px;
 }
-.frameDiv3 {
-  position: relative;
-  width: 296px;
-  height: 1479px;
-  flex-shrink: 0;
-  overflow: hidden;
-}
+
 .userFrameArticle {
   border-radius: 12px 0 0 12px;
   background-color: #f5eacd;
@@ -502,7 +496,7 @@
 }
 .volunteerSection {
   box-shadow: 0 0 8px rgba(194, 198, 204, 0.6);
-  height: 2530px;
+ 
   flex-shrink: 0;
   flex-direction: column;
   padding: 59px 89px;

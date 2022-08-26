@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { ServiceCard } from "./ServiceCard";
 
 const GetUserPost = () => {
 
@@ -25,16 +26,18 @@ const GetUserPost = () => {
         console.log("Clicked!")
         const response = await API.get("/getuseraccomodations");
         console.log(response.data);
-        //setDetails(response);
-       // setRequest("GET");
+        setDetails(response.data);
+       setRequest("GET");
       };
 
       
 
       const removeAccomodation = async (id) => {
         try {
-          await axios.delete(`http://localhost:5000/getuser/${id}`);
-          console.log("USer deleted! ", id);
+         
+
+const response = await API.delete(`/deleteuseraccommodation/${id}`);
+          console.log(response);
           getRequestHandler();
         } catch (error) {
           alert(error);
@@ -68,6 +71,21 @@ const GetUserPost = () => {
               })
             : ""}
         </div>
+        <ServiceCard
+        title="joseph"
+        city="Cuiaba"
+      
+        />
+        <ServiceCard
+        title="brasil"
+        city="Cuiaba"
+      
+        />
+        <ServiceCard
+        title="japao"
+        city="Cuiaba"
+      
+        />
         
         </>
       );

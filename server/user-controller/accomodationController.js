@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 export const postAccomodation = async (req, res) => {
 
 
-    const { address, city, accomodationType, numberOfPersons,lastActive,contactPerson,contactNumber,contactEmail, startDate, endDate } = req.body;
+    const {image, address, city, accomodationType, numberOfPersons,lastActive,contactPerson,contactNumber,contactEmail, startDate, endDate } = req.body;
     try {
         const user = await usersModel.findById(req.user.id);
         if (!user) {
@@ -25,6 +25,7 @@ export const postAccomodation = async (req, res) => {
             contactEmail,
             startDate,
             endDate,
+            image,
             // creator: req.user.id
 
         });
@@ -60,11 +61,12 @@ export const getUserAccomodations = async (req, res)=>{
 }
 
 
-export const deleteAccomodation = async (req, res) => {
+export const deleteUserAccomodation = async (req, res) => {
     const { id } = req.params;
     try {
         await accomodationFormModel.findByIdAndDelete(id);
-        const user = await usersModel.findById(req.body.user_id);
+        const user = await usersModel.findById(req.user.id);
+        console.log("User:", user);
         const updatedAccomodation = user.accomodation.filter(item => item != id);
         user.accomodation = updatedAccomodation;
         await user.save();

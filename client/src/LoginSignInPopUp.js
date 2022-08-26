@@ -41,8 +41,9 @@ export const LoginSignInPopUp = ({ onClose }) => {
         data);
         
         const token = response.data.token
-        console.log("login",response.data.token);
-        localStorage.setItem("profile", JSON.stringify({ token }));
+        console.log("login",response.data.result.userName);
+        const userName = response.data.result.userName
+        localStorage.setItem("profile", JSON.stringify({ userName,token }));
         
         setMessage(true);
       
