@@ -71,7 +71,7 @@ const accomodationFormSchema = new mongoose.Schema({
     //     required: true,
     // } ,
 
-image:String,
+image:[],
 
  
 

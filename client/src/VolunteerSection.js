@@ -41,7 +41,7 @@ export const VolunteerSection = () => {
   const [endDate, setEndDate] = useState("");
   const [lastActive, setLastActive] = useState("");
   const [message, setMessage] = useState(false);
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState([]);
 
 
 
@@ -71,13 +71,13 @@ export const VolunteerSection = () => {
     setNumberOfPersons("");
     setStartDate("");
     setEndDate("");
-    setImage("");
+    setImage([]);
 
 
     // setMessage(true);
 
   };
-
+console.log(image);
 
 
   const user = JSON.parse(localStorage.getItem("profile"));
@@ -260,9 +260,9 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                </div>  */}
                 <div className={styles.accommodationSelectDiv}>
                 <FileBase64
-        multiple={false}
-        onDone={({ base64 }) => {
-          setImage(base64);
+        multiple={true}
+        onDone={(files ) => {
+          setImage(files.map((file) => file.base64));
         }}
       />
                 </div>
