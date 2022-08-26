@@ -60,7 +60,7 @@ const accomodationFormSchema = new mongoose.Schema({
 
 
 
-    lastActive: { type: Date, default: Date }
+    lastActive: { type: Date, default: Date },
 
     // availabilityFrom: {
     //     type: Number,
@@ -71,6 +71,7 @@ const accomodationFormSchema = new mongoose.Schema({
     //     required: true,
     // } ,
 
+image:String,
 
  
 

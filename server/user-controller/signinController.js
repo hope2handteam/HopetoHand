@@ -34,5 +34,6 @@ export const loginUser = async (req, res) => {
           if (err) throw err;
           res.status(200).json({result: user,  token });
         });
+        // console.log("User:", user.userName);
       } catch (error) {}
     };
