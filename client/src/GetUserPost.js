@@ -63,6 +63,12 @@ const response = await API.delete(`/deleteuseraccommodation/${id}`);
                     <h3>
                     address: {value.address} | city: {value.city} | accomodation Type: {value.accomodationType} | numberOfPersons: {value.numberOfPersons}
                     </h3>
+                    {value.image.map((img) => {
+                      
+                      return (
+                        <img src={img} alt="" />
+                      )}
+                    )}
                     <div style={{ display: "inline" }}>
                       <small onClick={() => removeAccomodation(value._id)}>Delete</small>
                     </div>
@@ -71,7 +77,19 @@ const response = await API.delete(`/deleteuseraccommodation/${id}`);
               })
             : ""}
         </div>
-        <ServiceCard
+        {/* {data.map((value) => {
+          return (
+            <ServiceCard
+              key={value._id}
+              Image={value.image}
+              title={value.title}
+              city={value.city}
+              heartIcon={value.heartIcon}
+              h2={value.h2}
+            />
+          );
+        } */}
+        {/* <ServiceCard
         title="joseph"
         city="Cuiaba"
       
@@ -85,7 +103,7 @@ const response = await API.delete(`/deleteuseraccommodation/${id}`);
         title="japao"
         city="Cuiaba"
       
-        />
+        /> */}
         
         </>
       );
