@@ -2,28 +2,36 @@
 import usersModel from "../models/users.js";
 import helpFormModel from "../models/helpFormModel.js";
 
-export const posthelp = async (req, res) => {
+import mongoose from "mongoose";
+
+export const postHelp = async (req, res) => {
 
 
-    const { address, city, helpType, numberOfPersons} = req.body;
+    const { address, city, helpType, typeOfLanguage,lastActive,contactPerson,contactNumber,contactEmail, startDate, endDate } = req.body;
     try {
         const user = await usersModel.findById(req.user.id);
         if (!user) {
             return res.status(404).json({ msg: "User not found" });
         }
-
-        console.log(user);
+     
         const help = new helpFormModel({
+            
             address,
             city,
+           
             helpType,
-            numberOfPersons,   
+            typeOfLanguage,  
+            helperOrg,
+            contactPerson,
+            contactNumber,
+            contactEmail,
+            startDate,
+            endDate,
+            
+            // creator: req.user.id
 
         });
-
-       
-
-
+console.log("Help:", help);
         await help.save();
         user.help.push(help._id);
         await user.save();
@@ -33,11 +41,34 @@ export const posthelp = async (req, res) => {
     }
 
 };
-export const deletehelp = async (req, res) => {
+
+
+export const getUserHelp = async (req, res)=>{
+
+    try {
+        const accs = []
+        const user = await usersModel.findById(req.user.id);
+
+        user.help.forEach(place=> {
+            accs.push(place.toHexString()) 
+
+        })
+
+        const records = await helpFormModel.find({'_id': {$in: accs}})
+       
+        res.json(records)
+    } catch (error) {
+        res.send(error)
+    }
+}
+
+
+export const deleteUserHelp = async (req, res) => {
     const { id } = req.params;
     try {
         await helpFormModel.findByIdAndDelete(id);
-        const user = await usersModel.findById(req.body.user_id);
+        const user = await usersModel.findById(req.user.id);
+        console.log("User:", user);
         const updatedhelp = user.help.filter(item => item != id);
         user.help = updatedhelp;
         await user.save();
@@ -47,17 +78,17 @@ export const deletehelp = async (req, res) => {
     }
 }
 
-export const updatehelp = async (req, res) => {
+export const updateHelp = async (req, res) => {
     const { id } = req.params;
-    const { address, city, helpType, numberOfPersons, availabilityFrom, availabilityTo, } = req.body;
+    const { address, city, helpType, numberOfPersons,  } = req.body;
     try {
         await helpFormModel.findByIdAndUpdate(id, {
             address,
             city,
             helpType,
             numberOfPersons,
-            availabilityFrom,
-            availabilityTo,
+            // availabilityFrom,
+            // availabilityTo,
         });
         res.status(200).json({ msg: "help Updated!" });
     } catch (error) {
@@ -65,7 +96,7 @@ export const updatehelp = async (req, res) => {
     }
 }
 
-export const getAllhelp = async (req, res) => {
+export const getAllHelp = async (req, res) => {
     //code here
     try {
       const help = await helpFormModel.find();

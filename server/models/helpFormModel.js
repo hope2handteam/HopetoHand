@@ -10,14 +10,31 @@ const helpFormSchema = new mongoose.Schema({
 
     }
     ,
+    contactEmail: {
+        type: String,
+        required: true
+
+    }
+    ,
+    contactNumber: {
+        type: String,
+        required: true
+
+    }
+    ,
 
     city: {
         type: String,
         required: true,
         // minlength: 6
     },
-    TypeOfLanguage: {
-        type: Number,
+    typeOfLanguage: {
+        type: String,
+        required: true,
+        // minlength: 6
+    },
+    helperOrg: {
+        type: String,
         required: true,
         // minlength: 6
     },
@@ -27,11 +44,11 @@ const helpFormSchema = new mongoose.Schema({
         // minlength: 6
     },
 
-    availabilityFrom: {
+    startDate: {
         type: Date,
         required: true,
     } ,
-    availabilityTo: {
+    endDate: {
         type: Date,
         required: true,
     } ,

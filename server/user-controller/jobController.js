@@ -1,29 +1,39 @@
 
 import usersModel from "../models/users.js";
 import jobFormModel from "../models/jobFormModel.js";
+import mongoose from "mongoose";
 
-export const postjob = async (req, res) => {
+
+export const postJob = async (req, res) => {
 
 
-    const { address, city, jobType, numberOfPersons} = req.body;
+    const {  salaryBasis,address, city, jobType, jobList,jobProvider,contactPerson,contactNumber,contactEmail, startDate, endDate } = req.body;
     try {
         const user = await usersModel.findById(req.user.id);
         if (!user) {
             return res.status(404).json({ msg: "User not found" });
         }
-
-        console.log(user);
+     
         const job = new jobFormModel({
+            
+            contactPerson,
+            contactNumber,
+            contactEmail,
             address,
             city,
-            jobType,
-            numberOfPersons,   
+            
+            jobType,  
+            jobList,
+            jobProvider,
+            salaryBasis,
+
+            startDate,
+            endDate,
+           
+            // creator: req.user.id
 
         });
-
-       
-
-
+console.log("job:", job);
         await job.save();
         user.job.push(job._id);
         await user.save();
@@ -33,11 +43,34 @@ export const postjob = async (req, res) => {
     }
 
 };
-export const deletejob = async (req, res) => {
+
+
+export const getUserJob = async (req, res)=>{
+
+    try {
+        const accs = []
+        const user = await usersModel.findById(req.user.id);
+
+        user.job.forEach(place=> {
+            accs.push(place.toHexString()) 
+
+        })
+
+        const records = await jobFormModel.find({'_id': {$in: accs}})
+       
+        res.json(records)
+    } catch (error) {
+        res.send(error)
+    }
+}
+
+
+export const deleteUserJob = async (req, res) => {
     const { id } = req.params;
     try {
         await jobFormModel.findByIdAndDelete(id);
-        const user = await usersModel.findById(req.body.user_id);
+        const user = await usersModel.findById(req.user.id);
+        console.log("User:", user);
         const updatedjob = user.job.filter(item => item != id);
         user.job = updatedjob;
         await user.save();
@@ -47,17 +80,17 @@ export const deletejob = async (req, res) => {
     }
 }
 
-export const updatejob = async (req, res) => {
+export const updateJob = async (req, res) => {
     const { id } = req.params;
-    const { address, city, jobType, numberOfPersons, availabilityFrom, availabilityTo, } = req.body;
+    const { address, city, jobType, numberOfPersons,  } = req.body;
     try {
         await jobFormModel.findByIdAndUpdate(id, {
             address,
             city,
             jobType,
             numberOfPersons,
-            availabilityFrom,
-            availabilityTo,
+            // availabilityFrom,
+            // availabilityTo,
         });
         res.status(200).json({ msg: "job Updated!" });
     } catch (error) {
@@ -65,7 +98,7 @@ export const updatejob = async (req, res) => {
     }
 }
 
-export const getAlljob = async (req, res) => {
+export const getAllJob = async (req, res) => {
     //code here
     try {
       const job = await jobFormModel.find();

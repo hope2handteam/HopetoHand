@@ -5,8 +5,8 @@ import { getUser, deleteUser, updateUser, loggedIn, saveContactForm } from "../u
 import auth from "../middle/auth.js";
 import { body } from "express-validator";
 import { deleteUserAccomodation, updateAccomodation, postAccomodation, getAllAccomodation, getUserAccomodations } from "../user-controller/accomodationController.js";
-import { getAllStatus, postStatus, deleteStatus } from "../user-controller/statusController.js";
-// import { sendEmail } from "../user-controller/sendEmail.js";
+import { postHelp, getUserHelp, deleteUserHelp, updateHelp, getAllHelp } from "../user-controller/helpController.js";
+import { postJob, getUserJob, deleteUserJob, updateJob, getAllJob } from "../user-controller/jobController.js";
 
 const router = express.Router();
 
@@ -39,29 +39,31 @@ router.put("/:id", updateUser);
 router.get("/getaccomodations", getAllAccomodation);
 router.post("/volunteerformspage", auth);
 router.post("/volunteerformspage/postaccommodation",auth, postAccomodation);
-
 router.get("/getuseraccomodations", auth, getUserAccomodations)
-
-
-
-
 router.delete("/deleteuseraccommodation/:id",auth, deleteUserAccomodation);
-
 router.put("/updateaccomodation/:id", auth, updateAccomodation);
-
 
 // ------------ContactForm------------
 
 router.post("/contactform", saveContactForm);
 
 // -------------Help------------
+router.get("/gethelper", getAllHelp);
 
+router.post("/volunteerformspage/posthelp",auth, postHelp);
+router.get("/getuserhelp", auth, getUserHelp)
+router.delete("/deleteuserhelp/:id",auth, deleteUserHelp);
+router.put("/updatehelp/:id", auth, updateHelp);
 
 // -------------Jobs------------
 
-router.get("/getstatus", getAllStatus);
-router.post("/poststatus", auth,loggedIn, postStatus);
-router.delete("/deletestatus/:id",auth, deleteStatus);
+router.get("/getjob", getAllJob);
+
+router.post("/volunteerformspage/postjob",auth, postJob);
+router.get("/getuserjob", auth, getUserJob)
+router.delete("/deleteuserjob/:id",auth, deleteUserJob);
+router.put("/updatejob/:id", auth, updateJob);
+
 
 
 router.get("/autho", auth, loggedIn);

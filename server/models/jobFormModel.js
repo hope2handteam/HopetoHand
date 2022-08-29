@@ -10,6 +10,18 @@ const jobFormSchema = new mongoose.Schema({
 
     }
     ,
+    contactEmail: {
+        type: String,
+        required: true
+
+    }
+    ,
+    contactNumber: {
+        type: String,
+        required: true
+
+    }
+    ,
 
     city: {
         type: String,
@@ -21,19 +33,29 @@ const jobFormSchema = new mongoose.Schema({
         required: true,
         // minlength: 6
     },
-    salaryRange: {
-        type: Number,
+    jobList: {
+        type: String,
+        required: true,
+        // minlength: 6
+    },
+    jobProvider: {
+        type: String,
+        required: true,
+        // minlength: 6
+    },
+    salaryBasis: {
+        type: String,
         required: true,
         // minlength: 6
     },
 
-    availabilityFrom: {
+    startDate: {
         type: Date,
-        required: true,
+        
     } ,
-    availabilityTo: {
+    endDate: {
         type: Date,
-        required: true,
+       
     } ,
 
 
