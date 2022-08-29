@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ServiceCard } from "./ServiceCard";
 
 const GetUserPost = () => {
@@ -30,6 +30,9 @@ const GetUserPost = () => {
        setRequest("GET");
       };
 
+useEffect( () => {
+  getRequestHandler();        
+},[]);
       
 
       const removeAccomodation = async (id) => {
@@ -53,8 +56,7 @@ const response = await API.delete(`/deleteuseraccommodation/${id}`);
         
         {/* <PostStatus/> */}
         <div>
-          <h1>Click the button to get all users</h1>
-          <button onClick={getRequestHandler}>GET!</button>
+          <h1>Click the button to get all users</h1>         
           {request 
             ? details.map((value) => {
                 return (

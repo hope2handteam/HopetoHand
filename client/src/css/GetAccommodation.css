@@ -1,0 +1,11 @@
+.main_container {
+   background-color: bisque; 
+   text-align: center;
+  display: flex;
+    flex-direction: row;
+    
+  margin-top: 10px;
+  width: 70%;
+   margin-left: 15%;
+   
+}
