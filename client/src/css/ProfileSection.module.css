@@ -33,14 +33,15 @@
   position: absolute;
   width: 100%;
   right: 0;
-  bottom: 0;
-  left: 0;
+  bottom: -6px;
+  left: 3px;
   font-size: 13px;
   display: inline-block;
   font-family: Montserrat;
   color: #342E37;
   text-align: center;
   height: 18.26px;
+  
 }
 .logoMainIcon {
   position: absolute;
@@ -49,6 +50,7 @@
   width: 62.61px;
   height: 72.17px;
   overflow: hidden;
+  
 }
 .logoDiv {
   position: relative;

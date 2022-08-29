@@ -27,6 +27,9 @@ export const MainHeader = () => {
   const onContactUsButtonClick = useCallback(() => {
     navigate("/aboutuspage");
   }, [navigate]);
+  const donationUsButtonClick = useCallback(() => {
+    navigate("/donationpage");
+  }, [navigate]);
 
   const openSignUpPopUp = useCallback(() => {
     setSignUpPopUpOpen(true);
@@ -51,6 +54,13 @@ export const MainHeader = () => {
   const closeBurgerMenuPopUp = useCallback(() => {
     setBurgerMenuPopUpOpen(false);
   }, []);
+  const [Logout, setLogout] = useState(false);
+
+  const handleLogout = () => {
+    setLogout(true);
+    localStorage.clear();
+    navigate("/");
+  };
 
   return (
     <>
@@ -85,6 +95,12 @@ export const MainHeader = () => {
             >
               Contact Us
             </button>
+            <button
+              className={styles.contactUsButton}
+              onClick={donationUsButtonClick}
+            >
+              Donation
+            </button>
           </a>
           <div className={styles.mainCTADiv}>
             <button className={styles.button} onClick={openSignUpPopUp}>
@@ -104,10 +120,17 @@ export const MainHeader = () => {
                 <div className={styles.rectangleDiv} />
                 <img className={styles.ggmenuIcon} alt="" src="ggmenu.svg" />
               </button>
+              <button style={{margin:"-23px"}} className={styles.buttonSignIn} onClick={handleLogout}>
+              <div className={styles.bxbxsUserCircleDiv}>
+                <img className={styles.vectorIcon} alt="" src="vector.svg" />
+              </div>
+              <label className={styles.signInLabel}>Logout</label>
+            </button>
             </div>
           </div>
         </div>
       </header>
+     
       {isSignUpPopUpOpen && (
         <PortalPopup
           overlayColor="rgba(113, 113, 113, 0.3)"

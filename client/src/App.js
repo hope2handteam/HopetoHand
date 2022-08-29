@@ -100,6 +100,9 @@ function App() {
 
       <Route path="/findsupportpage" element={<FindSupportPage />} />
       <Route path="/getaccomodations" element={<GetAccomodations />} />
+
+      
+      <Route path="/donationpage" element={<DonationPage />} />
     </Routes>
   );
 }
