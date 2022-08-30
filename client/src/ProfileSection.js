@@ -14,6 +14,10 @@ import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import GetAccomodations from "./GetAccomodations";
 import axios from "axios";
+import BootstrapCarouselComponent from "./BootstrapCarouselComponent.js";
+import { Carousel } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 
@@ -27,6 +31,7 @@ const [datePickerDateTimePicker1Value, setDatePickerDateTimePicker1Value] =
  
     const [request, setRequest] = useState();
     const [details, setDetails] = useState();
+    const [detailsHelp, setDetailsHelp] = useState();
   
   
   
@@ -35,6 +40,13 @@ const [datePickerDateTimePicker1Value, setDatePickerDateTimePicker1Value] =
       const response = await axios.get("http://localhost:5000/getaccomodations");
       console.log(response.data.data);
       setDetails(response.data.data);
+      setRequest("GET");
+    };
+
+    const getRequestHandlerHelp = async () => {
+      const response = await axios.get("http://localhost:5000/gethelp");
+      console.log(response.data.data);
+      setDetailsHelp(response.data.data);
       setRequest("GET");
     };
 
@@ -66,7 +78,7 @@ const [datePickerDateTimePicker1Value, setDatePickerDateTimePicker1Value] =
                 >
                   <MenuItem onClick={getRequestHandler} value="accommodation">Accommodation</MenuItem>
                   <MenuItem value="Jobs">Jobs</MenuItem>
-                  <MenuItem value="Helpers">Helpers</MenuItem>
+                  <MenuItem onClick={getRequestHandlerHelp} value="Helpers">Helpers</MenuItem>
                   <MenuItem value="Translation Service">
                     Translation Service
                   </MenuItem>
@@ -83,52 +95,8 @@ const [datePickerDateTimePicker1Value, setDatePickerDateTimePicker1Value] =
       </form>
 
       {menu === "accommodation" ? (
-        // <div className={styles.accommodationDiv}>
-        //   <div className={styles.accommodationCont}>
-        //     <div className={styles.accommodationDetails}>
-
-        //       <div className={styles.acInfo}>
-        //       <p>AccomodationType: <span> BakendIfo</span></p>
-        //       <p> Number of Persons: <span> BakendIfo</span> </p>
-        //      </div>
-
-        //       <div className={styles.acInfo}>
-        //         <p> city: <span> BakendIfo</span></p>
- 
-        //         <p>Street: <span> BakendIfo</span></p></div>
- 
-        //       <div className={styles.acInfo}>
-        //         <p>  Contact Person: <span> BakendIfo</span></p>
-        //         <p> Tell: <span> BakendIfo</span></p>  
-        //       </div>
-
-        //       <div className={styles.acInfo}>
-        //         <p> Last Active: <span> BakendIfo</span> </p>
-        //       </div>
-
-        //     </div>
-          
-           
-        //       <img
-        //         src="https://images.unsplash.com/photo-1463620910506-d0458143143e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"
-        //         alt=""
-        //       />
-        //       <img
-        //         src="https://images.unsplash.com/photo-1466098672325-c9ddda4b7975?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"
-        //         alt=""
-        //       />
-        //       <img
-        //         src="https://images.unsplash.com/photo-1541123603104-512919d6a96c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"
-        //         alt=""
-        //       />
-        //       <img
-        //         src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"
-        //         alt=""
-        //       />
-        //           </div>
-        //    <div>
-        //   </div>
-        // </div>
+        
+       
         <div>
          <>
 
@@ -146,43 +114,162 @@ const [datePickerDateTimePicker1Value, setDatePickerDateTimePicker1Value] =
 
 value.image.length >= 0 ? (
   value.image.map((img) => 
+  
   <img src={img} alt="" />
   
   )
 ) : "No image"
 
 
-            }           
-            ` </div>
+            }  
+               </div>         
+             </div>
            
               <div className="acc_info">
+                <div className="availability">
+                <h3>Availability</h3>
+                <p> From: {value.startDate}  </p>
+                <p> to: {value.endDate}  </p>
+                </div>
+                <div className="place">
                 <p>City: {value.city} </p>
                 <p>Address: {value.address}</p>
+                </div>
+                <span>
                 <p>Accomodation Type: {value.accomodationType} </p>
+                </span>
+                
+                <span>
+                <p>Number of Persons: {value.numberOfPersons}</p>
+                </span>
+                <div className="contact_info">
+                <p>Email: {value.contactEmail}</p>
+                <p>contact: {value.contactPerson}</p>
+                <p>Phone Number: {value.contactNumber}</p>
+                </div>
+              </div>
+              
+              {/* <div style={{ display: "inline" }}>
+              <small onClick={() => removeAccomodation(value._id)}>Delete</small>
+            </div> */}
+         
+          
+            </div>
+            
+            
+      );
+    })
+    : ""}
+</div>
+{/* <div>
+                <div style={{width:"500px"}} className='container-fluid' >
+                    <div className="row">
+                        <div className="col-sm-12">
+                            <h3>React Bootstrap Carousel</h3>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-12">
+                            <Carousel>
+ 
+                                <Carousel.Item>
+                                    <img 
+                                        className="d-block w-100"
+                                        src="https://picsum.photos/500/300?img=1"
+                                        alt="First slide"
+                                    />
+                                    <Carousel.Caption>
+                                        <h3>First slide label</h3>
+                                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                    </Carousel.Caption>
+                                </Carousel.Item>
+ 
+                                <Carousel.Item>
+                                    <img
+                                        className="d-block w-100"
+                                        src="https://picsum.photos/500/300?img=2"
+                                        alt="Second slide"
+                                    />
+ 
+                                    <Carousel.Caption>
+                                        <h3>Second slide label</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </Carousel.Caption>
+                                </Carousel.Item>
+ 
+                                <Carousel.Item>
+                                    <img
+                                        className="d-block w-100"
+                                        src="https://picsum.photos/500/300?img=3"
+                                        alt="Third slide"
+                                    />
+                                    <Carousel.Caption>
+                                        <h3>Third slide label</h3>
+                                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                    </Carousel.Caption>
+                                </Carousel.Item>
+ 
+                            </Carousel>
+                        </div>
+                    </div>
+                </div>
+            </div> */}
+          
+
+</>
+        </div>
+      ) : menu === "Jobs" ? (
+        <div> 
+          <div className="main_acc">
+  <h1>Accommodations</h1>
+ 
+  {request
+    ? detailsHelp.map((value) => {
+      return (
+       <div className="img_card" >
+          <div className="main_container" key={value._id}>
+            <div className="img_acc" >   
+            {/* {
+
+value.image.length >= 0 ? (
+  value.image.map((img) => 
+  <img src={img} alt="" />
+  
+  )
+) : "No image"
+
+
+            }            */}
+             </div>
+           
+              
+                <div>
+                <h3 className="availability">Availability</h3>
+                <span className="availability_span">
+                <p> From: {value.startDate}  </p>
+                <p> to: {value.endDate}  </p>
+                </span>
+                </div>
+                <p>City: {value.city} </p>
+                <p>Address: {value.address}</p>
+                <p>Accomodation Type: {value.helpType} </p>
                 <p>Number of Persons: {value.numberOfPersons}</p>
                 <p>Email: {value.contactEmail}</p>
                 <p>contact: {value.contactPerson}</p>
                 <p>Phone Number: {value.contactNumber}</p>
-                <h3>Availability</h3>
-                <p> From: {value.startDate}  </p>
-                <p> to: {value.endDate}  </p>
-                 
               </div>
               {/* <div style={{ display: "inline" }}>
               <small onClick={() => removeAccomodation(value._id)}>Delete</small>
             </div> */}
             </div>
           
-            </div>
+            
       );
     })
     : ""}
 </div>
 
-</>
         </div>
-      ) : menu === "Jobs" ? (
-        <div> jobs</div>
       ) : menu === "Helpers" ? (
         <div> helpers</div>
       ) : menu === "Translation Service" ? (
@@ -190,7 +277,9 @@ value.image.length >= 0 ? (
       ) : (
         menu == null
       )}
+     
     </div>
+       
 
   );
 };

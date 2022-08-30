@@ -4,57 +4,62 @@ import mongoose from "mongoose";
 
 
 const helpFormSchema = new mongoose.Schema({
-    address: {
+    addressHelp: {
         type: String,
-        required: true
+       
 
     }
     ,
-    contactEmail: {
+    contactEmailHelp: {
         type: String,
-        required: true
+        
 
     }
     ,
-    contactNumber: {
+    contactNumberHelp: {
         type: String,
-        required: true
+        
+
+    }
+    ,
+    contactPersonHelp: {
+        type: String,
+      
 
     }
     ,
 
-    city: {
+
+    cityHelp: {
         type: String,
-        required: true,
+        
         // minlength: 6
     },
-    typeOfLanguage: {
+    TypeOfLanguageHelp: {
         type: String,
-        required: true,
+        
         // minlength: 6
     },
-    helperOrg: {
+    orgHelp: {
         type: String,
-        required: true,
+       
         // minlength: 6
     },
     helpType: {
         type: String,
-        required: true,
+       
         // minlength: 6
     },
 
-    startDate: {
-        type: Date,
-        required: true,
+    startDateHelp: {
+        type: String,
+        
     } ,
-    endDate: {
-        type: Date,
-        required: true,
-    } ,
+    endDateHelp: {
+    type: String,
+        
+    } 
 
-
- 
 
 
 
