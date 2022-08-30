@@ -1,10 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { ServiceCard } from "./ServiceCard";
 
 
-
-const GetUserPost = () => {
+const GetUserPostHelp = () => {
 
     const [request, setRequest] = useState();
     const [details, setDetails] = useState();
@@ -26,7 +24,7 @@ const GetUserPost = () => {
    
     const getRequestHandler = async () => {
         console.log("Clicked!")
-        const response = await API.get("/getuseraccomodations");
+        const response = await API.get("/getuserhelp");
         console.log(response.data);
         setDetails(response.data);
        setRequest("GET");
@@ -37,11 +35,11 @@ useEffect( () => {
 },[]);
       
 
-      const removeAccomodation = async (id) => {
+      const removeHelp = async (id) => {
         try {
          
 
-const response = await API.delete(`/deleteuseraccommodation/${id}`);
+const response = await API.delete(`/deleteuserhelp/${id}`);
           console.log(response);
           getRequestHandler();
         } catch (error) {
@@ -65,16 +63,16 @@ const response = await API.delete(`/deleteuseraccommodation/${id}`);
                   <div key={value._id}>
                     {/* <img alt="myimage" src={value.image} width="50px" /> */}
                     <h3>
-                    address: {value.address} | city: {value.city} | accomodation Type: {value.accomodationType} | numberOfPersons: {value.numberOfPersons}
+                    address: {value.addressHelp} | city: {value.cityHelp} | accomodation Type: {value.contactPersonHelp} | numberOfPersons: {value.TypeOfLanguageHelp}
                     </h3>
-                    {value.image.map((img) => {
+                    {/* {value.image.map((img) => {
                       
                       return (
                         <img src={img} alt="" />
                       )}
-                    )}
+                    )} */}
                     <div style={{ display: "inline" }}>
-                      <small onClick={() => removeAccomodation(value._id)}>Delete</small>
+                      <small onClick={() => removeHelp(value._id)}>Delete</small>
                     </div>
                   </div>
                 );
@@ -112,4 +110,4 @@ const response = await API.delete(`/deleteuseraccommodation/${id}`);
         </>
       );
     };
-export default GetUserPost
+export default GetUserPostHelp

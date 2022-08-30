@@ -17,6 +17,8 @@ import GetUserPost from "./GetUserPost";
 
 import FileBase64 from "react-file-base64";
 
+import GetUserPostHelp from "./GetUserPostHelp";
+
 
 
 
@@ -44,6 +46,17 @@ export const VolunteerSection = () => {
   const [image, setImage] = useState([]);
 
 
+
+  const [contactNumberHelp, setContactNumberHelp] = useState("");
+  const [contactEmailHelp, setContactEmailHelp] = useState("");
+  const [addressHelp, setAddressHelp] = useState("");
+  const [contactPersonHelp, setContactPersonHelp] = useState("");
+  const [cityHelp, setCityHelp] = useState("Berlin");
+  const [TypeOfLanguageHelp, setTypeOfLanguageHelp] = useState("German");
+  const [orgHelp, setOrgHelp] = useState("");
+  const [startDateHelp, setStartDateHelp] = useState("");
+  const [endDateHelp, setEndDateHelp] = useState("");
+  const[helpType, setHelpType] = useState("Interpretation");
 
   const createAccomodation = async () => {
     const data = { image,address, contactPerson, contactNumber, contactEmail, accomodationType, numberOfPersons, city, startDate, endDate };
@@ -77,7 +90,37 @@ export const VolunteerSection = () => {
     // setMessage(true);
 
   };
-console.log(image);
+  const createHelp = async () => {
+    const data = {contactEmailHelp, addressHelp, contactPersonHelp, cityHelp, TypeOfLanguageHelp, orgHelp, startDateHelp, endDateHelp, helpType, contactNumberHelp };
+    
+
+    const API = axios.create({ baseURL: "http://localhost:5000"});
+
+    API.interceptors.request.use((req) => {
+      if (localStorage.getItem("profile")) {
+        req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem("profile")).token 
+          }`;
+      }
+      return req;
+    });
+
+
+    await API.post("/volunteerformspage/posthelp", data);
+
+    setAddressHelp("");
+    setContactPersonHelp("");
+    setContactNumberHelp("");
+    setContactEmailHelp("");
+    // setImage("");
+    setCityHelp("");
+    setTypeOfLanguageHelp("");
+    setOrgHelp("");
+    setStartDateHelp("");
+    setEndDateHelp("");
+    setHelpType("");
+  };
+
+
 
 
   const user = JSON.parse(localStorage.getItem("profile"));
@@ -388,18 +431,21 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                   <button className={styles.formButton}> submit</button>
                 </div>
               </form>)
-                : volenForm === "Help" ? (<form className={styles.helpForm} method="post">
+                : volenForm === "Help" ? (<form className={styles.helpForm} >
                   <input
+                  onChange={(e) => setContactPersonHelp(e.target.value)}
                     className={styles.contactPersonName}
                     type="text"
                     placeholder="Contact Person Name"
                   />
                   <input
+                  onChange={(e) => setContactNumberHelp(e.target.value)}
                     className={styles.contactPersonNumber}
                     type="number"
                     placeholder="Contact Person Number"
                   />
                   <input
+                  onChange={(e) => setContactEmailHelp(e.target.value)}
                     className={styles.contactPersonEmail}
                     type="email"
                     placeholder="Contact Person Email"
@@ -414,6 +460,7 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                       <option className={styles.optionBox}>Brandenburg</option>
                     </select>
                     <input
+                   onChange={(e) => setOrgHelp(e.target.value)}
                       className={styles.jobStreet}
                       type="text"
                       placeholder="Person/Company/Organization Name"
@@ -422,14 +469,18 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                   <div className={styles.helpSelectDiv}>
                     <div className={styles.helpTitles}>Language</div>
                     <div className={styles.helpTitles}>Helping type</div>
-                    <select className={styles.helpDetails}>
-                      <option>Germany</option>
+                    <select 
+                    onChange={(e) => setHelpType(e.target.value)}
+                    className={styles.helpDetails}>
+                      <option>German</option>
                       <option>English</option>
                       <option>Arabic</option>
                       <option>Russian</option>
                       <option>Persian</option>
                     </select>
-                    <select className={styles.jobPersonsNumber}>
+                    <select 
+                   onChange={(e) => setTypeOfLanguageHelp(e.target.value)}
+                    className={styles.jobPersonsNumber}>
                       <option>Interpretation</option>
                       <option>Translation</option>
                       <option>finding Integration Course</option>
@@ -441,22 +492,27 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                     <div className={styles.helpTitles}> Cooperation Start Date:</div>
                     <div className={styles.helpTitles}> Cooperation Finish Date:</div>
                     <input
-                      className={styles.jobStartDate}
-                      type="date"
-                      name="date"
-                      id="date"
-                    />
-                    <input
-                      className={styles.jobEndDate}
-                      type="date"
-                      name="date"
-                      id="date"
-                    />
+                    
+                    placeholder="dd.mm.yyyy"
+                    onChange={(e) => setStartDateHelp(e.target.value)}
+                    className={styles.accommodationStreetDate}
+                    type="string"
+                    name="date"
+                    
+                  />
+                  <input
+                    placeholder="dd.mm.yyyy"
+                    onChange={(e) => setEndDateHelp(e.target.value)}
+                    className={styles.accommodationStreetEnd}
+                    type="string"
+                    name="date"
+                    
+                  />
                   </div>
                   <div className={styles.helpSelectDiv}>
                     <div className={styles.helpTitles}>Contact Person Availability from</div>
                     <div className={styles.helpTitles}> to</div>
-                    <input
+                    {/* <input
                       className={styles.jobStartDate}
                       type="time"
                       name="time"
@@ -467,16 +523,16 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                       type="time"
                       name="time"
                       id="time"
-                    />
+                    /> */}
                   </div>
                   <div className={styles.accommodationSelectDiv}>
-                    <input className={styles.checkBoxBox} type="checkbox" />{" "}
+                    <input className={styles.checkBoxBox} type="checkbox" />
                     <p className={styles.termsOfUse}>
                       I am agree with terms of use
                     </p>
                   </div>
                   <div className={styles.helpSelectDiv}>
-                    <button className={styles.formButton}> submit</button>
+                    <button onClick={createHelp} className={styles.formButton}> submit</button>
                   </div>
                 </form>)
 
@@ -492,7 +548,10 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
 
         
         </div>
+        
         <GetUserPost />
+        <GetUserPostHelp />
+        
       </section>
       
     </LocalizationProvider>

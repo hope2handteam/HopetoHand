@@ -7,26 +7,25 @@ import mongoose from "mongoose";
 export const postHelp = async (req, res) => {
 
 
-    const { address, city, helpType, typeOfLanguage,lastActive,contactPerson,contactNumber,contactEmail, startDate, endDate } = req.body;
+    const { contactEmailHelp, addressHelp, contactPersonHelp, TypeOfLanguageHelp,orgHelp,startDateHelp,endDateHelp, helpType, contactNumberHelp, cityHelp } = req.body;
     try {
         const user = await usersModel.findById(req.user.id);
         if (!user) {
             return res.status(404).json({ msg: "User not found" });
         }
-     
+     console.log(req.body);
         const help = new helpFormModel({
             
-            address,
-            city,
-           
+            contactEmailHelp,
+            addressHelp,
+            contactPersonHelp,
+            cityHelp,
             helpType,
-            typeOfLanguage,  
-            helperOrg,
-            contactPerson,
-            contactNumber,
-            contactEmail,
-            startDate,
-            endDate,
+            TypeOfLanguageHelp,  
+            orgHelp,
+            startDateHelp,
+            endDateHelp,
+            contactNumberHelp,
             
             // creator: req.user.id
 

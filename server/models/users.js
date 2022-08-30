@@ -24,7 +24,7 @@ const UsersSchema = new mongoose.Schema({
     accomodation: [{type : mongoose.Schema.Types.ObjectId, ref: "Accomodation"}],
    help: [{type : mongoose.Schema.Types.ObjectId, ref: "Help"}],
   job: [{type : mongoose.Schema.Types.ObjectId, ref: "Job"}],
-  status: [{type : mongoose.Schema.Types.ObjectId, ref: "Status"}],
+
    
 });
 

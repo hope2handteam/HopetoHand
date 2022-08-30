@@ -45,7 +45,7 @@ const GetAccomodations = () => {
                     <img alt="myimage" src={value.image} width="50px" />
                   </div>
                  
-                    <div className="acc_info">
+                    <div className="">
                       <p>City: {value.city} </p>
                       <p>Address: {value.address}</p>
                       <p>Accomodation Type: {value.accomodationType} </p>
@@ -54,9 +54,10 @@ const GetAccomodations = () => {
                       <p>contact: {value.contactPerson}</p>
                       <p>Phone Number: {value.contactNumber}</p>
                       <h3>Availability</h3>
+                      <span className="date_span">
                       <p> From: {value.startDate}  </p>
                       <p> to: {value.endDate}  </p>
-                       
+                      </span>
                     </div>
                     {/* <div style={{ display: "inline" }}>
                     <small onClick={() => removeAccomodation(value._id)}>Delete</small>
