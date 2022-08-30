@@ -102,7 +102,7 @@ const [datePickerDateTimePicker1Value, setDatePickerDateTimePicker1Value] =
 
 {/* <PostStatus/> */}
 <div className="main_acc">
-  <h1>Accommodations</h1>
+  <h1 className="title_acc">Accommodations</h1>
  
   {request
     ? details.map((value) => {
@@ -135,13 +135,13 @@ value.image.length >= 0 ? (
                 <p>City: {value.city} </p>
                 <p>Address: {value.address}</p>
                 </div>
-                <span>
+                <div>
                 <p>Accomodation Type: {value.accomodationType} </p>
-                </span>
                 
-                <span>
+                
                 <p>Number of Persons: {value.numberOfPersons}</p>
-                </span>
+                </div>
+                
                 <div className="contact_info">
                 <p>Email: {value.contactEmail}</p>
                 <p>contact: {value.contactPerson}</p>
