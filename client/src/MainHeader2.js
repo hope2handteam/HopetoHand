@@ -6,14 +6,11 @@ import { LoginSignInPopUp } from "./LoginSignInPopUp";
 import { BurgerMenuPopUp } from "./BurgerMenuPopUp";
 import styles from "./css/MainHeader.module.css";
 
-export const MainHeader = () => {
+export const MainHeader2 = () => {
   const navigate = useNavigate();
   const [isSignUpPopUpOpen, setSignUpPopUpOpen] = useState(false);
   const [isSignInPopUpOpen, setSignInPopUpOpen] = useState(false);
   const [isBurgerMenuPopUpOpen, setBurgerMenuPopUpOpen] = useState(false);
-  
-
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
 
   const onFindSupportButtonClick = useCallback(() => {
     navigate("/findsupportpage");
@@ -32,9 +29,6 @@ export const MainHeader = () => {
   }, [navigate]);
   const donationUsButtonClick = useCallback(() => {
     navigate("/donationpage");
-  }, [navigate]);
-  const myProfileButtonClick = useCallback(() => {
-    navigate("/volunteerformspage");
   }, [navigate]);
 
   const openSignUpPopUp = useCallback(() => {
@@ -64,9 +58,8 @@ export const MainHeader = () => {
 
   const handleLogout = () => {
     setLogout(true);
-   localStorage.clear();
+    localStorage.clear();
     navigate("/");
-   // setUser(null);
   };
 
   return (
@@ -108,32 +101,10 @@ export const MainHeader = () => {
             >
               Donation
             </button>
-            {user ? <button
-              className={styles.contactUsButton}
-              onClick={myProfileButtonClick}
-            >
-              My Profile
-            </button>: ""}
           </a>
           <div className={styles.mainCTADiv}>
-            <button className={styles.button} onClick={openSignUpPopUp}>
-              <b className={styles.becomeAVolunteer}>Become A Volunteer</b>
-            </button>
-            {user ? <button style={{margin:"-23px"}} className={styles.buttonSignIn} onClick={handleLogout}>
-              <div className={styles.bxbxsUserCircleDiv}>
-                <img className={styles.vectorIcon} alt="" src="vector.svg" />
-              </div>
-              <label className={styles.signInLabel}>Logout</label>
-            </button> : <button className={styles.buttonSignIn} onClick={openSignInPopUp}>
-              <div className={styles.bxbxsUserCircleDiv}>
-                <img className={styles.vectorIcon} alt="" src="vector.svg" />
-              </div>             
-              <label className={styles.signInLabel}>
-                Sign In
-                </label>
-            </button> }
-
             
+           
             <div className={styles.loginButtonDiv}>
               <button
                 className={styles.authBtnButton}
@@ -142,7 +113,12 @@ export const MainHeader = () => {
                 <div className={styles.rectangleDiv} />
                 <img className={styles.ggmenuIcon} alt="" src="ggmenu.svg" />
               </button>
-              
+              <button style={{margin:"-23px"}} className={styles.buttonSignIn} onClick={handleLogout}>
+              <div className={styles.bxbxsUserCircleDiv}>
+                <img className={styles.vectorIcon} alt="" src="vector.svg" />
+              </div>
+              <label className={styles.signInLabel}>Logout</label>
+            </button>
             </div>
           </div>
         </div>
