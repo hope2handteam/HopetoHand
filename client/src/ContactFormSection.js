@@ -40,10 +40,8 @@ export const ContactFormSection = () => {
           />
           <div className={styles.frameDiv2}>
           <button className={styles.logoMainButton}>
-              <img className={styles.vectorIcon} alt="" src="vector9.svg" />
-              <img className={styles.vectorIcon1} alt="" src="vector10.svg" />
-              <img className={styles.vectorIcon2} alt="" src="vector11.svg" />
-              <img className={styles.vectorIcon3} alt="" src="vector12.svg" />
+              <img className={styles.vectorIcon} alt="" src="logomain.svg" />
+             
               <b className={styles.logoTitleB}>HOPE2HAND</b>
             </button>
 

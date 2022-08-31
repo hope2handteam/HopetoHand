@@ -84,7 +84,7 @@ export const LoginSignUpPopUp = ({ onClose }) => {
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                   className={styles.rectangleInput}
-                  type="text"
+                  type="password"
                   
                 />
                    <p className={styles.usernameP}>Confirm Password</p>
@@ -92,7 +92,7 @@ export const LoginSignUpPopUp = ({ onClose }) => {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 value={confirm_password}
                   className={styles.rectangleInput}
-                  type="text"
+                  type="password"
                   
                 />
           

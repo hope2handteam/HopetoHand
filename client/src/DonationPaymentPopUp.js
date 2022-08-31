@@ -129,11 +129,11 @@ const DonationPaymentPopUp = ({ onClose }) => {
               src="../download-1-1@2x.png"
             />
           </div>
-          <img
+          {/* <img
             className={styles.visaCardsIcon}
             alt=""
             src="../visacards@2x.png"
-          />
+          /> */}
         </article>
         <div className={styles.outlineDiv} />
         <button className={styles.closeButton} onClick={onClose}>
@@ -145,10 +145,10 @@ const DonationPaymentPopUp = ({ onClose }) => {
           <img className={styles.lineIcon} alt="" src="../line-81.svg" />
           <img className={styles.lineIcon1} alt="" src="../line-91.svg" />
         </button>
-        <article className={styles.logoArticle} onClick={onLogoContainerClick}>
+        {/* <article className={styles.logoArticle} onClick={onLogoContainerClick}>
           <b className={styles.logoTitleB}>HOPE2HAND</b>
           <img className={styles.logoMainIcon} alt="" src="../logomain2.svg" />
-        </article>
+        </article> */}
       </div>
     </div>
   );
