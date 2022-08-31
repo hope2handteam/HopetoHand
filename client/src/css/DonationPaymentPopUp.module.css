@@ -347,7 +347,7 @@
 .download11 {
   position: absolute;
   top: 16.39px;
-  left: 16.1px;
+  left: 10.1px;
   width: 77.8px;
   height: 79.22px;
   object-fit: cover;
@@ -387,7 +387,7 @@
   position: absolute;
   top: 0;
   right: -0.64px;
-  width: 41.99px;
+  width: 30.99px;
   height: 41.99px;
 }
 .closeButton,
@@ -395,13 +395,13 @@
 .lineIcon1 {
   position: absolute;
   top: 13.55px;
-  right: 13.91px;
+  right: 8.91px;
   width: 14.17px;
   height: 14.17px;
 }
 .closeButton,
 .lineIcon1 {
-  right: 14.62px;
+  right: 8.62px;
 }
 .closeButton {
   cursor: pointer;
