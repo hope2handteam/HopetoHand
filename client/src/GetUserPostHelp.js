@@ -56,7 +56,7 @@ const response = await API.delete(`/deleteuserhelp/${id}`);
         
         {/* <PostStatus/> */}
         <div>
-          <h1>Click the button to get all users</h1>         
+          <h1>Help</h1>         
           {request 
             ? details.map((value) => {
                 return (

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { ServiceCard } from "./ServiceCard";
-
+import styles from "./css/ProfileSection.module.css";
 
 
 const GetUserPost = () => {
@@ -54,62 +54,71 @@ const response = await API.delete(`/deleteuseraccommodation/${id}`);
       
      };
       return (
-        <>
         
-        {/* <PostStatus/> */}
-        <div>
-          <h1>Click the button to get all users</h1>         
-          {request 
-            ? details.map((value) => {
+        <>
+
+       
+          <div className={styles.accommodationMainContainer}>
+            <h2 className={styles.title}> Accommodation List:</h2>
+
+
+            {request
+              ? details.map((value) => {
                 return (
-                  <div key={value._id}>
-                    {/* <img alt="myimage" src={value.image} width="50px" /> */}
-                    <h3>
-                    address: {value.address} | city: {value.city} | accomodation Type: {value.accomodationType} | numberOfPersons: {value.numberOfPersons}
-                    </h3>
-                    {value.image.map((img) => {
-                      
-                      return (
-                        <img src={img} alt="" />
-                      )}
-                    )}
-                    <div style={{ display: "inline" }}>
-                      <small onClick={() => removeAccomodation(value._id)}>Delete</small>
+                  //  <div className="img_card" >
+                  //     <div className="main_container" key={value._id}>
+                  //       <div className="img_acc" >   
+                  <div className={styles.accommodationContainer} key={value._id}>
+                    <div className={styles.detailsContainer}>
+                      <div className={styles.contactPersonDetails}>
+                        <p>contact Person: {value.contactPerson}</p>
+                        <p>Phone Number: {value.contactNumber}</p>
+                        <p>Email: {value.contactEmail}</p>
+                      </div>
+                      <div className={styles.accommodationDetails}>
+                        <p>Accommodation Type: {value.accomodationType} </p>
+                        <p>Number of Persons: {value.numberOfPersons}</p>
+                        <p>Address: {value.address}, {value.city} </p>
+                      </div>
+                      <div className={styles.accommodationAvailable}>
+                        <p>Available from: {value.startDate} </p>
+                        <p>to: {value.endDate} </p>
+                        <p>Status: <span> Available</span>  </p>
+                      </div>
+                    </div>
+                    <div className={styles.accommodationImgContainer}>
+
+                      {
+
+                        value.image.length >= 0 ? (
+                          value.image.map((img) =>
+
+
+                            <img className={styles.accommodationImg} src={img} alt="" />
+
+                          )
+                        ) : "No image"
+
+
+                      }
+                        <div style={{ display: "inline" }}>
+          <small onClick={() => removeAccomodation(value._id)}>Delete</small>
+         </div>
+
+
                     </div>
                   </div>
+
+
                 );
               })
-            : ""}
-        </div>
-        {/* {data.map((value) => {
-          return (
-            <ServiceCard
-              key={value._id}
-              Image={value.image}
-              title={value.title}
-              city={value.city}
-              heartIcon={value.heartIcon}
-              h2={value.h2}
-            />
-          );
-        } */}
-        {/* <ServiceCard
-        title="joseph"
-        city="Cuiaba"
-      
-        />
-        <ServiceCard
-        title="brasil"
-        city="Cuiaba"
-      
-        />
-        <ServiceCard
-        title="japao"
-        city="Cuiaba"
-      
-        /> */}
-        
+              : ""}
+          </div>
         </>
-      );
-    };
+        
+     
+    );
+        
+}
+    
 export default GetUserPost
