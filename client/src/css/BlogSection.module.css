@@ -128,7 +128,7 @@
 .blogSection,
 .cardsMain {
   flex-direction: row;
-  gap: 3px;
+  
 }
 .blogSection {
   background-color: #fff;
