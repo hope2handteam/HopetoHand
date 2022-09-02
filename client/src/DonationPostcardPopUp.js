@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "../src/css/DonationPostcardPopUp.module.css";
+import styles from "./css/DonationPostcardPopUp.module.css";
 
 const DonationPostcardPopUp = ({ onClose }) => {
   const navigate = useNavigate();

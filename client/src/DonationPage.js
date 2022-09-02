@@ -4,8 +4,8 @@ import DonateNowSection from "./DonateNowSection";
 import DonationShopSection from "./DonationShopSection";
 import {BlogSection} from "./BlogSection";
 import {Newsletter} from "./Newsletter";
-import {Footer} from "./Footer";
-import styles from "../src/css/DonationPage.module.css";
+import{ Footer }from "./Footer";
+import styles from "./css/DonationPage.module.css";
 
 const DonationPage = () => {
   return (
@@ -14,7 +14,7 @@ const DonationPage = () => {
       <HeroSection />
       <DonateNowSection />
       <DonationShopSection />
-      <BlogSection />
+      {/* <BlogSection /> */}
       <Newsletter />
       <Footer />
     </main>

@@ -12,7 +12,7 @@ export const GeoLocSearchPage = () => {
     <main className={styles.geoLocSearchPageMain}>
       <MainHeader />
       <HeroSection />
-      <NearbySection />
+      {/* <NearbySection /> */}
       <GeoMapSection />
       <AboutSection />
       <Newsletter ellipse18="ellipse-18.svg" phpaperPlane="phpaperplane.svg" />

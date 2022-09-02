@@ -1,16 +1,16 @@
 import styles from "./css/ServiceCard.module.css";
 
-export const ServiceCard = ({Image,title,city = "",h2,heartIcon}) => {
+export const ServiceCard = ({ bgImage, title, heartIcon, icon}) => {
   return (
-    <article >
-      <img  alt="" src={Image} />
-      <div >
-        <h4 >{title}</h4>
-        <p >{city}</p>
+    <article className={styles.cardArticle}>
+      <img className={styles.bgImageIcon} alt="" src={bgImage} />
+      <div className={styles.cardDescriptionDiv}>
+        <h4 className={styles.titleH4}>{title}</h4>
+        <p className={styles.subTitleP}>Berlin, DE</p>
       </div>
-      <img  alt="" src={heartIcon} />
-      <div >
-        <h2 > {h2} </h2>
+      <img className={styles.heartIcon} alt="" src={heartIcon} />
+      <div className={styles.cardIconDiv}>
+        <img className={styles.icon} alt="" src={icon} />
       </div>
     </article>
   );

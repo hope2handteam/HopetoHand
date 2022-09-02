@@ -15,7 +15,9 @@ export const VolunteerSection1 = () => {
   }, []);
 
   return (
-    <>
+    <> <div className={styles.container}>
+
+    
       <section className={styles.volunteerSection}>
         <div className={styles.frameDiv}>
           <div className={styles.frameDiv1}>
@@ -42,7 +44,9 @@ export const VolunteerSection1 = () => {
         >
           <LoginSignInPopUp onClose={closeSignInPopUp2} />
         </PortalPopup>
+        
       )}
+      </div>
     </>
   );
 };

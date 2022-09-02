@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "../src/css/DonationShopSection.module.css";
+import styles from "./css/DonationShopSection.module.css";
 
 const DonationShopSection = () => {
   const navigate = useNavigate();

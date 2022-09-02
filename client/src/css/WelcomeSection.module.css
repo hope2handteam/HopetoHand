@@ -28,7 +28,7 @@
   margin: 0;
 }
 .welcomeH1 {
-  margin: 0;
+  margin-top: 13px;
   font-weight: 700;
   align-self: stretch;
   position: relative;
@@ -85,25 +85,26 @@
   align-self: stretch;
   border-radius: 12px;
   background-color: #ead49c;
-  padding: 72px 66px 23px;
+  padding: 72px 40px 20px;
   gap: 48px;
   text-align: left;
-  font-size: 20px;
+  font-size: 16px;
   color: #342e37;
 }
 .becomeVolunteerFrameArticle {
   border-radius: 10px;
   background-color: #f5eacd;
-  width: 626.17px;
+  width: 600px;
   flex-shrink: 0;
   padding: 143px 108px 188px 82px;
-  gap: 136px;
+  /* gap: 136px; */
   text-align: center;
   font-size: 50px;
   color: #4c4446;
+  /* margin: 10px; */
 }
 .descriptionDiv {
-  font-weight: 600;
+  font-weight: 500;
 }
 .descriptionDiv,
 .descriptionDiv1 {
@@ -152,7 +153,7 @@
   font-family: Montserrat;
 }
 .welcomeSection {
-  align-self: stretch;
+margin-top: 80px;
   border-radius: 12px;
   flex-direction: row;
   padding: 57px 113px;
@@ -164,6 +165,7 @@
     padding-top: 80px;
     padding-bottom: 80px;
     box-sizing: border-box;
+
   }
   .button1 {
     margin-top: 400px;
@@ -172,7 +174,7 @@
     margin-top: 40px;
     background-position: center;
     flex: unset;
-    align-self: stretch;
+    /* align-self: stretch; */
   }
   .welcomeSection {
     flex-direction: column;
