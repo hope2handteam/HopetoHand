@@ -106,7 +106,7 @@ export const ProfileSection = () => {
 
 
               {request
-                ? details.map((value) => {
+                ? details?.map((value) => {
                   return (
                     //  <div className="img_card" >
                     //     <div className="main_container" key={value._id}>
@@ -165,33 +165,21 @@ export const ProfileSection = () => {
             <h1>Helper</h1>
 
             {request
-              ? detailsHelp.map((value) => {
-                return (
-                  
+              ? detailsHelp?.map((value) => {
+                return (                 
                     <div  key={value._id}>
-                      <div  >
-
-                      
-
-
-                    
-                        
-                        
-                          <p> From: {value.startDateHelp}  </p>
-                          <p> to: {value.endDateHelp}  </p>
-                        
-                     
-                      <p>City: {value.cityHelp} </p>
-                      <p>Address: {value.addressHelp}</p>
-                      <p>Accomodation Type: {value.helpType} </p>
-                      <p>Number of Persons: {value.numberOfPersons}</p>
-                      <p>Email: {value.contactEmailHelp}</p>
-                      <p>contact: {value.contactPersonHelp}</p>
-                      <p>Phone Number: {value.contactNumberHelp}</p>
-                      <p>Language: {value.TypeOfLanguageHelp}</p>
+                      <div >
+                      <p>Cooperation type: <span>{value.helpType}</span>  </p>
+                      <p>Cooperation City: {value.cityHelp} </p>
                       <p>Organization: {value.orgHelp}</p>
-                    </div>
-              
+                      <p>Language: {value.TypeOfLanguageHelp}</p>
+                      <p>contact Person: {value.contactPersonHelp}</p>
+                      <p>Phone Number: {value.contactNumberHelp}</p>
+                      <p>Email: {value.contactEmailHelp}</p>
+                      <p> Valid From: {value.startDateHelp} </p>
+                      <p> to: {value.endDateHelp} </p>
+                    
+                    </div>          
                   </div>
 
 

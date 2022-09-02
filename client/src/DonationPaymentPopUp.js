@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from "react";
 import { FormControlLabel, Checkbox } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import styles from "../src/css/DonationPaymentPopUp.module.css";
+import styles from "./css/DonationPaymentPopUp.module.css";
 
 const DonationPaymentPopUp = ({ onClose }) => {
   const navigate = useNavigate();
@@ -145,10 +145,10 @@ const DonationPaymentPopUp = ({ onClose }) => {
           <img className={styles.lineIcon} alt="" src="../line-81.svg" />
           <img className={styles.lineIcon1} alt="" src="../line-91.svg" />
         </button>
-        {/* <article className={styles.logoArticle} onClick={onLogoContainerClick}>
+        <article className={styles.logoArticle} onClick={onLogoContainerClick}>
           <b className={styles.logoTitleB}>HOPE2HAND</b>
           <img className={styles.logoMainIcon} alt="" src="../logomain2.svg" />
-        </article> */}
+        </article>
       </div>
     </div>
   );

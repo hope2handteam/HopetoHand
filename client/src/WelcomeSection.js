@@ -1,19 +1,19 @@
 import { useState, useCallback } from "react";
-import { LoginSignInPopUp } from "./LoginSignInPopUp";
+import { LoginSignUpPopUp } from "./LoginSignUpPopUp";
 import { PortalPopup } from "./PortalPopup";
 import { useNavigate } from "react-router-dom";
 import styles from "./css/WelcomeSection.module.css";
 
 export const WelcomeSection = () => {
-  const [isSignInPopUp2Open, setSignInPopUp2Open] = useState(false);
+  const [isSignUpPopUp1Open, setSignUpPopUp1Open] = useState(false);
   const navigate = useNavigate();
 
-  const openSignInPopUp2 = useCallback(() => {
-    setSignInPopUp2Open(true);
+  const openSignUpPopUp1 = useCallback(() => {
+    setSignUpPopUp1Open(true);
   }, []);
 
-  const closeSignInPopUp2 = useCallback(() => {
-    setSignInPopUp2Open(false);
+  const closeSignUpPopUp1 = useCallback(() => {
+    setSignUpPopUp1Open(false);
   }, []);
 
   const onButton2Click = useCallback(() => {
@@ -43,7 +43,7 @@ export const WelcomeSection = () => {
                 </span>
               </p>
             </div>
-            <button className={styles.button} onClick={openSignInPopUp2}>
+            <button className={styles.button} onClick={openSignUpPopUp1}>
               <b className={styles.becomeAVolunteer}>Become A Volunteer</b>
             </button>
           </article>
@@ -66,13 +66,13 @@ export const WelcomeSection = () => {
           </button>
         </article>
       </section>
-      {isSignInPopUp2Open && (
+      {isSignUpPopUp1Open && (
         <PortalPopup
           overlayColor="rgba(113, 113, 113, 0.3)"
           placement="Centered"
-          onOutsideClick={closeSignInPopUp2}
+          onOutsideClick={closeSignUpPopUp1}
         >
-          <LoginSignInPopUp onClose={closeSignInPopUp2} />
+          <LoginSignUpPopUp onClose={closeSignUpPopUp1} />
         </PortalPopup>
       )}
     </>

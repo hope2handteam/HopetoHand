@@ -2,7 +2,7 @@ import styles from "./css/BlogSection.module.css";
 
 export const BlogSection = () => {
   return (
-    <section className={styles.blogSection}>
+<section className={styles.blogSection}>
       <h3 className={styles.titleH3}>
         <h3
           className={styles.cityGuideEventsTips}
@@ -14,7 +14,7 @@ export const BlogSection = () => {
           <img
             className={styles.rightimageIcon}
             alt=""
-            src="rightimage@2x.png"
+            src="../rightimage@2x.png"
           />
           <div className={styles.cardbottomDiv}>
             <b className={styles.chooseTheRightInstitutionT}>
@@ -27,7 +27,7 @@ export const BlogSection = () => {
           <img
             className={styles.middleimageIcon}
             alt=""
-            src="middleimage@2x.png"
+            src="../middleimage@2x.png"
           />
           <div className={styles.cardbottomDiv1}>
             <b className={styles.chooseTheRightInstitutionT}>
@@ -40,7 +40,7 @@ export const BlogSection = () => {
           <img
             className={styles.middleimageIcon}
             alt=""
-            src="leftimage@2x.png"
+            src="../leftimage@2x.png"
           />
           <div className={styles.cardbottomDiv2}>
             <b className={styles.chooseTheRightInstitutionT}>

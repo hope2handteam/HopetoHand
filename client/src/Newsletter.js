@@ -19,8 +19,12 @@ export const Newsletter = ({ ellipse18, phpaperPlane }) => {
           placeholder="Your Email..."
         />
         <button className={styles.sendBtnButton} onClick={onSendBtnButtonClick}>
-          <img className={styles.ellipseIcon} alt="" src={ellipse18} />
-          <img className={styles.phpaperPlaneIcon} alt="" src={phpaperPlane} />
+          <img className={styles.ellipseIcon} alt="" src="../ellipse-18.svg" />
+          <img
+            className={styles.phpaperPlaneIcon}
+            alt=""
+            src="../phpaperplane.svg"
+          />
         </button>
       </div>
     </section>

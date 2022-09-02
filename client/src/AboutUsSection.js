@@ -1,4 +1,6 @@
 import styles from "./css/AboutUsSection.module.css";
+// import { PropertyCard } from "./PropertyCard";
+
 
 export const AboutUsSection = () => {
   return (
@@ -15,6 +17,7 @@ export const AboutUsSection = () => {
             >{`So our mission is to provide a platform, a common ground where all those willing hands can gather and reach out to make hope a reality. Join us or support us in the effort to make of this a better world.      `}</p>
           </div>
         </p>
+        
       </div>
     </section>
   );

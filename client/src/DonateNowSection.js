@@ -1,8 +1,7 @@
 import { useState, useCallback } from "react";
 import DonationPaymentPopUp from "./DonationPaymentPopUp";
 import {PortalPopup} from "./PortalPopup";
-import styles from "../src/css/DonationPage.module.css";
-
+import styles from "./css/DonateNowSection.module.css";
 const DonateNowSection = () => {
   const [isDonationPaymentPopUpOpen, setDonationPaymentPopUpOpen] =
     useState(false);

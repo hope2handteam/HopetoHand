@@ -159,7 +159,7 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
           </article>
           <article className={styles.userVolunteerAboutSectionArticle}>
             <div className={styles.frameDiv4}>
-              <h4 className={styles.helloVolunteerH4}>Hello  <span> backend/Volunteer,</span></h4>
+              <h4 className={styles.helloVolunteerH4}>Hello  <span>{userName}</span></h4>
               <p className={styles.weWelcomeYouInOurEndevour}>
                 We welcome you in our endevour and want to thank you for joining
                 hands with us and help provide more caring hands in times of
@@ -470,7 +470,7 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                     <div className={styles.helpTitles}>Language</div>
                     <div className={styles.helpTitles}>Helping type</div>
                     <select 
-                    onChange={(e) => setHelpType(e.target.value)}
+                    onChange={(e) =>  setTypeOfLanguageHelp(e.target.value)}
                     className={styles.helpDetails}>
                       <option>German</option>
                       <option>English</option>
@@ -479,7 +479,7 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                       <option>Persian</option>
                     </select>
                     <select 
-                   onChange={(e) => setTypeOfLanguageHelp(e.target.value)}
+                   onChange={(e) => setHelpType(e.target.value)}
                     className={styles.jobPersonsNumber}>
                       <option>Interpretation</option>
                       <option>Translation</option>

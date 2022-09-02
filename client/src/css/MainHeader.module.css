@@ -9,13 +9,14 @@
   height: 72.17px;
   overflow: hidden;
   margin-bottom: -3px;
+  /* border: 2px solid red; */
 }
 .logoTitleB {
   display: inline-block;
   width: 92.17px;
   height: 14.26px;
 }
-.logoDiv {
+.logoArticle {
   width: 109.17px;
   flex-shrink: 0;
   overflow: hidden;
@@ -25,6 +26,27 @@
   box-sizing: border-box;
   align-items: center;
   justify-content: flex-start;
+  cursor: pointer;
+  text-align: center;
+  font-size: 13px;
+  color: #342e37;
+  font-family: Montserrat;
+}
+
+.logoMainIcon,
+.logoTitleB {
+  position: relative;
+  flex-shrink: 0;
+}
+.logoTitleB {
+  display: inline-block;
+  width: 92.17px;
+  height: 18.26px;
+}
+.logoMainIcon {
+  width: 62.61px;
+  height: 72.17px;
+  overflow: hidden;
 }
 .aboutUsButton,
 .contactUsButton,
@@ -72,8 +94,6 @@
   align-items: center;
   justify-content: flex-start;
   gap: 30px;
-  margin-right: 200px;
-  margin-top: 20px;
 }
 .becomeAVolunteer {
   position: relative;
@@ -96,13 +116,13 @@
   justify-content: flex-start;
 }
 .vectorIcon {
-  position: absolute;
+  /* position: absolute; */
   height: 83.33%;
   width: 83.33%;
-  top: 0%;
+  top: 8.33%;
   right: 8.33%;
   bottom: 8.33%;
-  left: 2%;
+  left: 8.33%;
   max-width: 100%;
   max-height: 100%;
 }
@@ -132,6 +152,7 @@
   border-radius: 23px;
   background-color: #fff;
   height: 46px;
+  /* border: 2px solid red; */
   
 }
 .buttonSignIn {
@@ -151,10 +172,12 @@
 }
 .ggmenuIcon {
   position: absolute;
-  top: 11px;
-  left: 17.33px;
+  top: 6px;
+  left: 12px;
   width: 34px;
   height: 24px;
+  /* border: 2px solid red; */
+
 }
 .authBtnButton,
 .loginButtonDiv {
@@ -163,12 +186,7 @@
   flex-shrink: 0;
  
 }
-@media screen and (min-width: 1200px) {
-  .authBtnButton,
-  .loginButtonDiv {
-   display: none;
-  }
-}
+
 
 
 
@@ -212,11 +230,13 @@
   padding: 11px 0 11px 93px;
   box-sizing: border-box;
   justify-content: space-between;
-  text-align: center;
-  font-size: 13px;
-  color: #342e37;
-  font-family: Montserrat;
 
+}
+@media screen and (min-width: 1200px) {
+  .authBtnButton,
+  .loginButtonDiv {
+   display: none;
+  }
 }
 @media screen and (max-width: 1200px) {
   .headerNavigations {

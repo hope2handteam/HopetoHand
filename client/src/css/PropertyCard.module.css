@@ -62,7 +62,7 @@
 .serviceTitleSectionArticle {
   align-self: stretch;
   border-radius: 16px 16px 0 0;
-  background-color: #ead49c;
+  background-color: #ffb700;
   height: 384px;
   flex-shrink: 0;
   display: flex;
@@ -158,6 +158,9 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  width: 100%;
+  background-color: #fff;
+  /* height: 15%; */
 }
 .serviceDetailsSectionArticle {
   border-radius: 0 0 16px 16px;
@@ -170,6 +173,7 @@
   font-size: 25px;
   color: #484848;
   font-family: Montserrat;
+  width: 100%;
 }
 .propertyLargeSection {
   border-radius: 12px;

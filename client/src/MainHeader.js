@@ -15,6 +15,11 @@ export const MainHeader = () => {
 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
 
+
+  const onLogoContainerClick = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+
   const onFindSupportButtonClick = useCallback(() => {
     navigate("/findsupportpage");
   }, [navigate]);
@@ -72,10 +77,10 @@ export const MainHeader = () => {
   return (
     <>
       <header className={styles.mainHeader}>
-        <div className={styles.logoDiv}>
-          <img className={styles.logoMainIcon} alt="" src="logomain.svg" />
+      <article className={styles.logoArticle} onClick={onLogoContainerClick}>
+          <img className={styles.logoMainIcon} alt="" src="../logomain.svg" />
           <b className={styles.logoTitleB}>HOPE2HAND</b>
-        </div>
+        </article>
         <div className={styles.frameDiv}>
           <a className={styles.headerNavigations}>
             <button
@@ -119,7 +124,7 @@ export const MainHeader = () => {
             <button className={styles.button} onClick={openSignUpPopUp}>
               <b className={styles.becomeAVolunteer}>Become A Volunteer</b>
             </button>
-            {user ? <button style={{margin:"-23px"}} className={styles.buttonSignIn} onClick={handleLogout}>
+            {user ? <button  className={styles.buttonSignIn} onClick={handleLogout}>
               <div className={styles.bxbxsUserCircleDiv}>
                 <img className={styles.vectorIcon} alt="" src="vector.svg" />
               </div>
@@ -132,8 +137,6 @@ export const MainHeader = () => {
                 Sign In
                 </label>
             </button> }
-
-            
             <div className={styles.loginButtonDiv}>
               <button
                 className={styles.authBtnButton}

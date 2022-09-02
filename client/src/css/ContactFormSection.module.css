@@ -96,21 +96,20 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.vectorIcon,
-.vectorIcon1,
-.vectorIcon2,
-.vectorIcon3 {
+.vectorIcon
+{
   position: absolute;
-  height: 49.91%;
-  width: 100%;
-  top: 35.25%;
+  height:100%;
+  width: 400px;
+  top: 0;
   right: 0;
   bottom: 14.83%;
   left: 0;
   max-width: 100%;
   max-height: 100%;
+  /* border: 2px solid rgb(9, 141, 224); */
 }
-.vectorIcon1,
+/* .vectorIcon1,
 .vectorIcon2,
 .vectorIcon3 {
   height: 14.6%;
@@ -119,22 +118,22 @@
   right: 19.98%;
   bottom: 41.43%;
   left: 62.55%;
-}
-.vectorIcon2,
+} */
+/* .vectorIcon2,
 .vectorIcon3 {
   top: 25.07%;
   right: 62.55%;
   bottom: 60.33%;
   left: 19.98%;
-}
-.vectorIcon3 {
+} */
+/* .vectorIcon3 {
   height: 48.05%;
   width: 100%;
   top: 0.33%;
   right: -0.01%;
   bottom: 51.62%;
   left: 0.01%;
-}
+} */
 .logoTitleB {
   position: absolute;
   width: 147.22%;
@@ -154,14 +153,15 @@
   padding: 0;
   background-color: transparent;
   position: relative;
-  width: 132.57px;
-  height: 151.57px;
+  width: 200px;
+  height: 170px;
   flex-shrink: 0;
   overflow: hidden;
   opacity: 0.9;
+  /* border: 3px solid black; */
 }
 .contactFormH3 {
-  margin: 0;
+  /* margin-bottom: 30px; */
   font-weight: 700;
   position: relative;
   font-size: 40px;
@@ -169,10 +169,13 @@
   color: #908db9;
   text-align: center;
   display: inline-block;
-  width: 401px;
-  height: 60px;
+  /* width: 401px;
+  height: 60px; */
   flex-shrink: 0;
   text-shadow: 0 0 8px rgba(194, 198, 204, 0.6);
+  /* border: 2px solid red; */
+  margin: 0;
+
 }
 .frameDiv1,
 .frameDiv2 {
@@ -184,6 +187,7 @@
   align-self: stretch;
   justify-content: flex-end;
   gap: 35px;
+
 }
 .frameDiv1 {
   position: absolute;
@@ -192,6 +196,7 @@
   height: 642px;
   justify-content: flex-start;
   gap: 325px;
+  /* border: 3px solid red; */
 }
 .pleaseUseContactUsHere {
   margin: 0;

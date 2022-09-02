@@ -6,7 +6,7 @@ export const Footer = () => {
   const navigate = useNavigate();
 
   const onCompanyContainerClick = useCallback(() => {
-    navigate("/aboutuspage");
+    navigate("/aboutuspage1");
   }, [navigate]);
 
   const onFindAHelperClick = useCallback(() => {
@@ -16,7 +16,7 @@ export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <section className={styles.footermainSection}>
-        <img className={styles.logoIcon} alt="" src="logo@2x.png" />
+        <img className={styles.logoIcon} alt="" src="../logo@2x.png" />
         <main className={styles.footerlinksMain}>
           <div className={styles.companyDiv} onClick={onCompanyContainerClick}>
             <h4 className={styles.cOMPANYH4}>COMPANY</h4>
@@ -46,17 +46,21 @@ export const Footer = () => {
               </p>
             </div>
             <article className={styles.socialMediaLinks} id="social links">
-              <img className={styles.instaIcon} alt="" src="insta-icon.svg" />
-              <img className={styles.fbIcon} alt="" src="fb-icon.svg" />
+              <img
+                className={styles.instaIcon}
+                alt=""
+                src="../insta-icon.svg"
+              />
+              <img className={styles.fbIcon} alt="" src="../fb-icon.svg" />
               <img
                 className={styles.twitterIcon}
                 alt=""
-                src="twitter-icon.svg"
+                src="../twitter-icon.svg"
               />
               <img
                 className={styles.linkedinIcoonIcon}
                 alt=""
-                src="linkedin-icoon.svg"
+                src="../linkedin-icoon.svg"
               />
             </article>
           </div>
