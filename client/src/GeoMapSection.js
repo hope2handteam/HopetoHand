@@ -7,14 +7,23 @@ import {FaSchool} from "react-icons/fa";
 import {FaPeopleCarry} from "react-icons/fa";
 import {FaHandHoldingMedical} from "react-icons/fa";
 import { useState } from "react";
+import { useNavigate, NavLink } from "react-router-dom";
 
 export const GeoMapSection = () => {
+
+
 
 const [medical, setMedical]=useState("")
 const [food, setFood]=useState("")
 const [cloth, setCloth]=useState("")
 const [social, setSocial]=useState("")
 const [intrgration, setIntergration]=useState("")
+const [list, setList]=useState("")
+
+const navigateToMedical=(e)=>{
+  setList(e.target.value);
+
+}
 
   return (
 
@@ -24,7 +33,7 @@ const [intrgration, setIntergration]=useState("")
 <div className={styles.listSelect}>
   <div className={styles.mapInfo} >
   <div className={styles.medicalClick}>
-  <button onClick={e=>setMedical(e.target.value)} value="medical" className={styles.buttonClass}>Free Medical service</button>
+  <button onClick={navigateToMedical} value="medical" className={styles.buttonClass}>Free Medical service</button>
   </div>
   <div className={styles.IconClick}>
   <p className={styles.symbole}><FaHandHoldingMedical/></p>
@@ -35,7 +44,7 @@ const [intrgration, setIntergration]=useState("")
 {/* food */}
       <div className={styles.mapInfo} >
   <div className={styles.medicalClick}>
-  <button onClick={e=>setFood(e.target.value)} value="food" className={styles.buttonClass}>Free Food service</button>
+  <button onClick={navigateToMedical} value="food" className={styles.buttonClass}>Free Food service</button>
   </div>
   <div className={styles.IconClick}>
   <p className={styles.symbole}><FaHandHoldingMedical/></p>
@@ -46,7 +55,7 @@ const [intrgration, setIntergration]=useState("")
       {/* intergration */}
             <div className={styles.mapInfo} >
   <div className={styles.medicalClick}>
-  <button onClick={e=>setIntergration(e.target.value)} value="intrgration" className={styles.buttonClass}>integration Courses</button>
+  <button onClick={navigateToMedical} value="intrgration" className={styles.buttonClass}>integration Courses</button>
   </div>
   <div className={styles.IconClick}>
   <p className={styles.symbole}><FaHandHoldingMedical/></p>
@@ -57,7 +66,7 @@ const [intrgration, setIntergration]=useState("")
       {/* social services */}
       <div className={styles.mapInfo} >
   <div className={styles.medicalClick}>
-  <button onClick={e=>setSocial(e.target.value)} value="social" className={styles.buttonClass}>Social Services</button>
+  <button onClick={navigateToMedical} value="social" className={styles.buttonClass}>Social Services</button>
   </div>
   <div className={styles.IconClick}>
   <p className={styles.symbole}><FaHandHoldingMedical/></p>
@@ -71,7 +80,7 @@ const [intrgration, setIntergration]=useState("")
 
 <div className={styles.mapInfo} >
   <div className={styles.medicalClick}>
-  <button onClick={e=>setCloth(e.target.value)} value="cloth" className={styles.buttonClass}>free/cheap cloths</button>
+  <button onClick={navigateToMedical} value="cloth" className={styles.buttonClass}>free/cheap cloths</button>
   </div>
   <div className={styles.IconClick}>
   <p className={styles.symbole}><FaHandHoldingMedical/></p>
@@ -88,8 +97,8 @@ const [intrgration, setIntergration]=useState("")
 
 
  {/*MedicalServiceParen  */}
-{ medical=== "medical" ? (
-       <div className={styles.MedicalServiceParent}>
+{ list=== "medical" ? (
+       <div id="medical" className={styles.MedicalServiceParent}>
        <h1 className={styles.mainHeader}> Free Medical Organizations List in Berlin </h1>
  <div className={styles.medicalService}>
 
@@ -187,10 +196,10 @@ const [intrgration, setIntergration]=useState("")
 </div>
    </div>
     </div>
-    ) : null}
+    ) : 
 
- {/*food service  */}
-{food ==="food" ? (
+ 
+list ==="food" ? (
     <div className={styles.freeFoodServiceParent}>
     <h1 className={styles.mainHeader}> Free/cheap Food Provider List in Berlin
 </h1>
@@ -285,10 +294,10 @@ const [intrgration, setIntergration]=useState("")
 </div>
    </div>
    </div>
-) : null}
+) :
 
-{/* ClothsService */}
-{ cloth==="cloth"? (
+
+list==="cloth"? (
    <div className={styles.freeFoodServiceParent}>
     <h1 className={styles.mainHeader}> Free/cheap Cloths Provider List in Berlin
 </h1>
@@ -377,10 +386,10 @@ const [intrgration, setIntergration]=useState("")
 </div>
  
 </div>
-) : null}
+) :
 
-{/* intergration course */}
-{intrgration==="intrgration" ? (
+
+list==="intrgration" ? (
 <div className={styles.intergrationCourseParent}>
     <h1 className={styles.mainHeader}>Language Courses List in Berlin
 </h1>
@@ -466,10 +475,11 @@ const [intrgration, setIntergration]=useState("")
 </div>
 </div>
 </div>
-): null}
+): 
 
-{/* social service */}
-{social ==="social" ? (
+
+
+list ==="social" ? (
 <div className={styles.socialServiceParent}>
     <h1 className={styles.mainHeader}>Social Services List in Berlin</h1>
     <div className={styles.socialService}>
@@ -524,10 +534,10 @@ const [intrgration, setIntergration]=useState("")
   <p className={styles.cardAddress}> Address: <span className={styles.mainAddress}>Yorckstraße 4-11, 10965 Berlin</span></p>
   <p className={styles.cardPhone}> Phone: <span className={styles.mainPhone}>+49 30 902982370</span></p>
   <p className={styles.cardEmail}> Email: <a className={styles.mainEmail} href="http://www.fonsakademie.de">www.fonsakademie.de</a></p>
-</div>
+</div> 
   
     </div>
-</div>):null}
+</div>): list===null}
 
 
 </div>

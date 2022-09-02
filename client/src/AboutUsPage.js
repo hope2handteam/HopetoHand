@@ -6,6 +6,7 @@ import { ContactFormSection } from "./ContactFormSection";
 import { LegalMention } from "./LegalMention";
 import { Newsletter } from "./Newsletter";
 import { Footer } from "./Footer";
+import AboutTeamSection from "./AboutTeamSection";
 import styles from "./css/AboutUsPage.module.css";
 
 export const AboutUsPage = () => {
@@ -13,6 +14,8 @@ export const AboutUsPage = () => {
     <main className={styles.aboutUsPageMain}>
       <MainHeader />
       <HeroSection />
+     
+      <AboutTeamSection/>
       <AboutUsSection />
       <VolunteerSection1 />
       <ContactFormSection />
