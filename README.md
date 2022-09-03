@@ -116,7 +116,7 @@ Thanks to all the Locofy.ai team for them precious help!
  
  <a>For Digital Career Institute DCI Final Project Presentation</a></p> 
 
-## OUTLOOK
+## Outlook
 
 - Deliver a FullStack Responsive App. version for IOS and Androïds mobile phone
 
