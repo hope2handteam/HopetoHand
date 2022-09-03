@@ -1,35 +1,104 @@
-# HopetoHand
-# ![inmelo-logo](https://user-images.githubusercontent.com/90310689/176145144-573889a0-4b9a-4932-8c8d-a54cf2e01575.png)  inmelo Music Label
+# Wecome to HopetoHand!
+# ![logoh2h](https://user-images.githubusercontent.com/90310689/188268288-d5db878a-ebfa-428f-85b5-3379ad855f73.jpg) Hope2hand Desktop and Tablet Version
 
 ## Description of the project
 
-This is my first UI/UX & Frontend Student Design Research Project, made with Figma, Locofy plugin and, React 18 with Typescript and CSS Modules.
-
-As Musician, I wanna contribute to the diverse industry by creating dynamic websites and mobile apps for my clients, using the most innovatives tools available and propose a web3 sustainable approach for the shop section. 
+This local Assistance App. is here for you in the most needed time.  
+- We want to provide the quickest and most practical online help for newcomers, immigrants, and refugees.
+- We strive to grant the most reliable alternatives in due time for fast integration.
+- We connect the fastest way possible the persons with the things they could need in their local area.
 
 ## Preview high-fidelity prototype
 
 #### Header with NavBar & Hero Image Section
 
-![inemelo-header](https://user-images.githubusercontent.com/90310689/174885026-f51b0ea1-4a70-4742-8e06-d22937663ba9.png)
+![Hope2handCover](https://user-images.githubusercontent.com/90310689/188268553-80e3be5a-5c50-4647-9bc0-3c08632c4ec8.png)
 
-#### Newsletter Section
+#### Welcome & City Guide Section
 
-![inmelo-newsletter](https://user-images.githubusercontent.com/90310689/174885360-b29bcd13-e34d-4f50-b0f1-f0016c792fd5.png)
+<img width="370" alt="welcomeCityguideSection" src="https://user-images.githubusercontent.com/90310689/188268787-c91e56bb-1501-46d9-8f09-b53c8474c182.png">
 
-#### Label Section
+#### Social Services, Shop/Donations & Footer Section
 
-![inmelo-talents](https://user-images.githubusercontent.com/90310689/174885762-d7a3e76e-3762-4aa9-8de4-518b2f93bcb5.png)
+![SocialServicesShopFooterSection](https://user-images.githubusercontent.com/90310689/188268958-6596e515-0cf7-48c7-a265-6020524c82d0.png)
 
-#### Blog & Product Section
+#### Geolocalisation Map Section
 
-![Inmelo-the-label](https://user-images.githubusercontent.com/90310689/174886655-af88a107-47ed-4c01-ab39-adf49a6fa552.png)
+![GeolocalistationMapSection](https://user-images.githubusercontent.com/90310689/188269433-927389de-f624-495f-bee8-59546bafdda5.png)
 
-#### NFT & Footer Section
+#### Our Engineer Team!
 
-![inmelo-products](https://user-images.githubusercontent.com/90310689/174886671-b806263e-3ee9-4ffd-a805-541734f412f6.png)
+![TeamH2H](https://user-images.githubusercontent.com/90310689/188269470-aab6c38e-235c-41b3-8db5-d0b862f9fcc1.png)
 
 ## Tech Stack used for this project
+
+*FRONTEND
+- HTML5
+- CSS MODULES
+- JAVASCRIPT
+- REACT.JS
+
+*BACKEND
+- NODE.JS
+- EXPRESS.JS
+- POSTMAN
+- MONGO DB
+
+*OTHERS
+
+ ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+
+ ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+
+ ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+
+ ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+ 
+- GITHUB PROJECTS
+- SLACK
+
+*DEPENDENCIES 
+- FRONTEND: {
+        "@emotion/react": "^11.7.1",
+        "@emotion/styled": "^11.6.0",
+        "@mui/material": "^5.2.5",
+        "@mui/x-date-pickers": "^5.0.0-beta.0",
+        "@testing-library/jest-dom": "^5.16.1",
+        "@testing-library/react": "^12.1.2",
+        "@testing-library/user-event": "^13.5.0",
+        "@types/jest": "^27.0.3",
+        "@types/node": "^16.11.14",
+        "@types/react": "^17.0.37",
+        "@types/react-dom": "^17.0.11",
+        "axios": "^0.27.2",
+        "bootstrap": "^5.2.0",
+        "date-fns": "^2.28.0",
+        "react": "^17.0.2",
+        "react-bootstrap": "^2.5.0",
+        "react-bootstrap-carousel": "^4.1.1",
+        "react-dom": "^17.0.2",
+        "react-file-base64": "^1.0.3",
+        "react-icons": "^4.4.0",
+        "react-router-dom": "^6.2.1",
+        "react-scripts": "5.0.0",
+        "web-vitals": "^2.1.2"
+    }
+
+- BACKEND: {
+        "bcryptjs": "^2.4.3",
+        "body-parse": "^0.1.0",
+        "body-validator": "^1.3.3",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.1",
+        "express": "^4.18.1",
+        "express-handlebars": "^6.0.6",
+        "express-validator": "^6.14.2",
+        "jsonwebtoken": "^8.5.1",
+        "mongodb": "^4.8.1",
+        "mongoose": "^6.5.2",
+        "nodemailer": "^6.7.8",
+        "nodemon": "^2.0.19"
+  }
 
  ![madewithlocofy](https://user-images.githubusercontent.com/90310689/176138917-71c1af67-f6c7-423f-b827-cf12292fcaf4.png)
 
@@ -40,25 +109,19 @@ Infos here : https://www.locofy.ai/
 
 Thanks to all the team for them help!
 
-#### Other tools
-
- ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
-
- ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-
- ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-
- ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-
- ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-
 
 ## Credits
 
- <p><a> &copy; Paulinhx, 2022. All Rights Reserved.</a>
+ <p><a> &copy; The Third Team, 2022. All Rights Reserved.</a>
  
- <a>Inmelo Music, Neuchâtel, Switzerland,</a>
+ <a>Hope2Hand, Berlin, Germany</a>
  
- <a>Independent music label.</a></p> 
+ <a>For Digital Career Institute DCI Final Project Presentation</a></p> 
 
-## Work In progress
+## OUTLOOK
+
+- Deliver a FullStack Responsive App. version for IOS and Androïds mobile phone
+
+- It is a local application but we could promote it to global use and establish node app. hubs in every cities we can!
+
+- Make a collaboration with Google API so they sponsor our project.
