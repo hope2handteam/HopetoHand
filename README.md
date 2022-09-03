@@ -37,24 +37,24 @@ This local Assistance App. is here for you in the most needed time.
 
 ![Screenshot 2022-08-17 at 10 57 38](https://user-images.githubusercontent.com/90310689/188270175-e22f884b-3dd3-42d0-ba2e-754380bd573a.png)
 
-*FRONTEND
+#### FRONTEND
 - HTML5
 - CSS MODULES
 - JAVASCRIPT
 - REACT.JS
 
-*BACKEND
+#### BACKEND
 - NODE.JS
 - EXPRESS.JS
 - POSTMAN
 - MONGO DB
 
-*OTHERS
+#### OTHERS
 - FIGMA
 - GITHUB PROJECTS
 - SLACK
 
-*DEPENDENCIES 
+#### DEPENDENCIES 
 - FRONTEND: {
         "@emotion/react": "^11.7.1",
         "@emotion/styled": "^11.6.0",
