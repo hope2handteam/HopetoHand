@@ -106,7 +106,7 @@ This local Assistance App. is here for you in the most needed time.
 
 Infos here : https://www.locofy.ai/
 
-Thanks to all the Locofy.ai team for them precious help!
+Thanks to all the Locofy.ai team for the precious help!
 
 
 ## Credits
