@@ -51,6 +51,7 @@ This local Assistance App. is here for you in the most needed time.
 
 #### OTHERS
 - FIGMA
+- LOCOFY.AI PLUGIN
 - GITHUB PROJECTS
 - SLACK
 
