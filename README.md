@@ -1,8 +1,8 @@
-# Welcome to HopetoHand Project!
+# Welcome to our Hope2Hand Website Project!
 
 # ![Mockuph2h](https://user-images.githubusercontent.com/90310689/188270035-0fa3b55b-fc14-48fe-921d-78ff4f23c2da.png)
 
-# Hope2hand Desktop and Tablet Fully Responsive Version
+# This is our Hope2Hand Desktop and Tablet Fully Responsive Website
 
 ## Description of the project
 
