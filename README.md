@@ -1,5 +1,8 @@
-# Wecome to HopetoHand!
-# ![logoh2h](https://user-images.githubusercontent.com/90310689/188268288-d5db878a-ebfa-428f-85b5-3379ad855f73.jpg) Hope2hand Desktop and Tablet Version
+# Welcome to HopetoHand Project!
+
+# ![Mockuph2h](https://user-images.githubusercontent.com/90310689/188270035-0fa3b55b-fc14-48fe-921d-78ff4f23c2da.png)
+
+# Hope2hand Desktop and Tablet Fully Responsive Version
 
 ## Description of the project
 
@@ -26,11 +29,13 @@ This local Assistance App. is here for you in the most needed time.
 
 ![GeolocalistationMapSection](https://user-images.githubusercontent.com/90310689/188269433-927389de-f624-495f-bee8-59546bafdda5.png)
 
-#### Our Engineer Team!
+## Our Engineer Team!
 
 ![TeamH2H](https://user-images.githubusercontent.com/90310689/188269470-aab6c38e-235c-41b3-8db5-d0b862f9fcc1.png)
 
 ## Tech Stack used for this project
+
+![Screenshot 2022-08-17 at 10 57 38](https://user-images.githubusercontent.com/90310689/188270175-e22f884b-3dd3-42d0-ba2e-754380bd573a.png)
 
 *FRONTEND
 - HTML5
@@ -92,13 +97,15 @@ This local Assistance App. is here for you in the most needed time.
         "nodemon": "^2.0.19"
   }
 
-We also used the Locofy.ai Plugin to design our project and export our code to React.JS
+#### We also used the Locofy.ai Plugin to design our project and export our code to React.JS with Figma as main tool for our wireframe and design
+
+![Screenshot 2022-08-16 at 12 13 36](https://user-images.githubusercontent.com/90310689/188270121-7d47e9fc-48e8-4a92-bd75-e141586e4807.png)
 
  ![madewithlocofy](https://user-images.githubusercontent.com/90310689/176138917-71c1af67-f6c7-423f-b827-cf12292fcaf4.png)
 
 Infos here : https://www.locofy.ai/
 
-Thanks to all the Locofy.ai team for them help!
+Thanks to all the Locofy.ai team for them precious help!
 
 
 ## Credits
