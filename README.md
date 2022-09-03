@@ -45,15 +45,7 @@ This local Assistance App. is here for you in the most needed time.
 - MONGO DB
 
 *OTHERS
-
- ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
-
- ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-
- ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-
- ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
- 
+- FIGMA
 - GITHUB PROJECTS
 - SLACK
 
@@ -100,14 +92,13 @@ This local Assistance App. is here for you in the most needed time.
         "nodemon": "^2.0.19"
   }
 
- ![madewithlocofy](https://user-images.githubusercontent.com/90310689/176138917-71c1af67-f6c7-423f-b827-cf12292fcaf4.png)
+We also used the Locofy.ai Plugin to design our project and export our code to React.JS
 
-This is a high fidelity design UI prototype inspired by and made with the Locofy plugin demo in Figma. 
-The Locofy instructions template and videos were used to realize this project.
+ ![madewithlocofy](https://user-images.githubusercontent.com/90310689/176138917-71c1af67-f6c7-423f-b827-cf12292fcaf4.png)
 
 Infos here : https://www.locofy.ai/
 
-Thanks to all the team for them help!
+Thanks to all the Locofy.ai team for them help!
 
 
 ## Credits
