@@ -181,7 +181,7 @@
 }
 .nearbySection {
   flex-direction: column;
-  padding: 71px 68px;
+  padding: 0px 0px 0px 0px;
   box-sizing: border-box;
   align-items: center;
   gap: 35px;
@@ -189,6 +189,13 @@
   font-size: 30px;
   color: #342e37;
   font-family: Montserrat;
+  width: 75%;
+  margin: 5% auto;
+}
+
+.mapLink{
+  text-decoration: none;
+  color: #484848;
 }
 @media screen and (max-width: 1200px) {
   .frameDiv {
@@ -218,5 +225,6 @@
     padding-left: 30px;
     padding-right: 30px;
     box-sizing: border-box;
+   
   }
 }

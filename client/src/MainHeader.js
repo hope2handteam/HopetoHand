@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback,useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginSignUpPopUp } from "./LoginSignUpPopUp";
 import { PortalPopup } from "./PortalPopup";
@@ -11,9 +11,8 @@ export const MainHeader = () => {
   const [isSignUpPopUpOpen, setSignUpPopUpOpen] = useState(false);
   const [isSignInPopUpOpen, setSignInPopUpOpen] = useState(false);
   const [isBurgerMenuPopUpOpen, setBurgerMenuPopUpOpen] = useState(false);
-  
-
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+  const reference = useRef()
 
 
   const onLogoContainerClick = useCallback(() => {
@@ -30,6 +29,7 @@ export const MainHeader = () => {
 
   const onAboutUsButtonClick = useCallback(() => {
     navigate("/aboutuspage");
+    reference.current.scrollIntoView({behavior: "smooth"});
   }, [navigate]);
 
   const onContactUsButtonClick = useCallback(() => {
@@ -95,21 +95,22 @@ export const MainHeader = () => {
             >
               Partners
             </button>
-            <button
+            <button 
               className={styles.aboutUsButton}
               onClick={onAboutUsButtonClick}
-            >
-              About Us
-            </button>
+            ><a  className={styles.aboutSectionButton} href='#aboutTeam'>     About Us          
+            </a>
+            </button> 
             <button
               className={styles.contactUsButton}
               onClick={onContactUsButtonClick}
-            >
-              Contact Us
+            ><a className={styles.contactSectionButton} href='#contactform'> 
+              Contact Us </a>
             </button>
             <button
               className={styles.contactUsButton}
               onClick={donationUsButtonClick}
+
             >
               Donation
             </button>

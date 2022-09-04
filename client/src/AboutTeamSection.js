@@ -1,8 +1,10 @@
 import styles from "./css/AboutTeamSection.module.css"
+import {useRef } from "react";
 
 const AboutTeamSection = () => {
+  const reference = useRef()
   return (
-    <section className={styles.aboutTeamSection} id="AboutTeamSection">
+    <section  className={styles.aboutTeamSection} ref={reference} id="AboutTeamSection">
       <div className={styles.aboutTeamDiv}>
         <h4 className={styles.theWebDeveloperTeamBehind}>
           The Web Developer Team behind Hope2Hand!

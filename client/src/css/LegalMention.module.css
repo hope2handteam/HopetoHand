@@ -41,7 +41,7 @@
   align-items: center;
 }
 .frameDiv {
-  padding: 90px 111px 106px 75px;
+  /* padding: 90px 111px 106px 75px; */
   justify-content: flex-start;
   gap: 27px;
 }
@@ -52,4 +52,7 @@
   font-size: 30px;
   color: #706b5d;
   font-family: Montserrat;
+  margin: 5% 0 7% 0;
+
 }
+

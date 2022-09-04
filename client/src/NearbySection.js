@@ -23,7 +23,7 @@ export const NearbySection = () => {
           className={styles.mapButtonDiv}
           onClick={onMapButtonContainerClick}
         >
-          <h3 className={styles.showOnMap}>Show On Map</h3>
+          <h3 className={styles.showOnMap}> <a className={styles.mapLink} href="#geoMap">Show On Map</a> </h3>
           <img
             className={styles.bxbxsMapPinIcon}
             alt=""

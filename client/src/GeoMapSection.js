@@ -1,104 +1,183 @@
-import {PropertyCard} from "./PropertyCard"
+
 import styles from "./css/GeoMapSection.module.css";
 import {GiMedicalThermometer} from "react-icons/gi";
 import {GiFoodTruck} from "react-icons/gi";
+import {MdOutlineDriveEta} from "react-icons/md";
 import {GiClothes} from "react-icons/gi";
 import {FaSchool} from "react-icons/fa";
+import {TbOlympics} from "react-icons/tb";
 import {FaPeopleCarry} from "react-icons/fa";
-import {FaHandHoldingMedical} from "react-icons/fa";
-import { useState } from "react";
-import { useNavigate, NavLink } from "react-router-dom";
+import {GoLaw} from "react-icons/go";
+import { useState,  useRef } from "react";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import MedicalImage from "./pics/bgimage@2x.png";
+import FoodImage from "./pics/bgimage1@2x.png"
+import IntergrationCourse from "./pics/bgimage2@2x.png"
+import CheapCloths from "./pics/bgimage4@2x.png"
+import DrivingSchools from "./pics/bgimage3@2x.png"
+import SocialService from "./pics/austin-distel-rxpThOwuVgE-unsplash.jpg"
+import Law from "./pics/clarisse-meyer-jKU2NneZAbI-unsplash.jpg"
+import Sport from "./pics/gabin-vallet-J154nEkpzlQ-unsplash.jpg"
+import Park from "./pics/sherry-xu-_jzFIvRMY4U-unsplash.jpg"
+import corona from "./pics/mufid-majnun-oI20ehIGNd4-unsplash.jpg"
+
+
+
 
 export const GeoMapSection = () => {
 
-
-
-const [medical, setMedical]=useState("")
-const [food, setFood]=useState("")
-const [cloth, setCloth]=useState("")
-const [social, setSocial]=useState("")
-const [intrgration, setIntergration]=useState("")
+const moveToContainer = useRef()
 const [list, setList]=useState("")
 
-const navigateToMedical=(e)=>{
+const navigateToLists=(e)=>{
   setList(e.target.value);
 
+  moveToContainer.current.scrollIntoView({behavior: "smooth"});
 }
 
   return (
 
 <div className={styles.geoMapSectionContainer}>
-
+<h1 style={{marginTop:'5%', textAlign:'center',fontFamily: 'Montserrat'
+}}> to view the complete list, please press the bellow Bottoms</h1> 
       <section className={styles.geoMapSection}>
+      <div  id="geoMap" className={styles.mapSectionDiv1}>
+        <iframe className={styles.freeServiceMap} src="https://www.google.com/maps/d/u/0/embed?mid=1JK_78DbC8mjmwDwqA7maE32YHtg33LQ&ehbc=2E312F" width="640" height="480"></iframe>
+       
+      </div>
+      <h1 style={{marginTop:'5%', textAlign:'center',fontFamily: 'Montserrat'
+}}> to view the complete list, please press the bellow Bottoms</h1> 
 <div className={styles.listSelect}>
-  <div className={styles.mapInfo} >
-  <div className={styles.medicalClick}>
-  <button onClick={navigateToMedical} value="medical" className={styles.buttonClass}>Free Medical service</button>
-  </div>
-  <div className={styles.IconClick}>
-  <p className={styles.symbole}><FaHandHoldingMedical/></p>
-  </div>
-     <div>
-     </div>
-      </div>
-{/* food */}
-      <div className={styles.mapInfo} >
-  <div className={styles.medicalClick}>
-  <button onClick={navigateToMedical} value="food" className={styles.buttonClass}>Free Food service</button>
-  </div>
-  <div className={styles.IconClick}>
-  <p className={styles.symbole}><FaHandHoldingMedical/></p>
-  </div>
-     <div>
-     </div>
-      </div>
-      {/* intergration */}
-            <div className={styles.mapInfo} >
-  <div className={styles.medicalClick}>
-  <button onClick={navigateToMedical} value="intrgration" className={styles.buttonClass}>integration Courses</button>
-  </div>
-  <div className={styles.IconClick}>
-  <p className={styles.symbole}><FaHandHoldingMedical/></p>
-  </div>
-     <div>
-     </div>
-      </div>
-      {/* social services */}
-      <div className={styles.mapInfo} >
-  <div className={styles.medicalClick}>
-  <button onClick={navigateToMedical} value="social" className={styles.buttonClass}>Social Services</button>
-  </div>
-  <div className={styles.IconClick}>
-  <p className={styles.symbole}><FaHandHoldingMedical/></p>
-  </div>
-     <div>
-     </div>
-      </div>
 
-{/* Cloths */}
+
+<Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${MedicalImage})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px',  alignSelf: 'stretch'
+}}>
+      <Card.Body>
+        <Card.Title style={{ color: 'white', fontSize:'30px'}}><GiMedicalThermometer/></Card.Title>
+        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button onClick={navigateToLists} variant="primary" value="medical" >  Free Medical service</Button>
+      </Card.Body>
+    </Card>
+
+
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${FoodImage})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+      <Card.Body>
+        <Card.Title style={{ color: 'white', fontSize:'30px'}}><GiFoodTruck/></Card.Title>
+        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button onClick={navigateToLists} variant="primary" value="food" >  Free/cheap Food service</Button>
+      </Card.Body>
+    </Card>
+
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${IntergrationCourse})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+      <Card.Body>
+        <Card.Title style={{ color: 'white', fontSize:'30px'}}><FaSchool/></Card.Title>
+        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button onClick={navigateToLists} variant="primary" value="intrgration" > Integration Courses</Button>
+      </Card.Body>
+    </Card>
+
+
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${CheapCloths})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+      <Card.Body>
+        <Card.Title style={{ color: 'white', fontSize:'30px'}}><GiClothes/></Card.Title>
+        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button onClick={navigateToLists} variant="primary" value="cloth" > Free/cheap Cloths</Button>
+      </Card.Body>
+    </Card>
+
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${SocialService})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+      <Card.Body>
+        <Card.Title style={{ color: 'white', fontSize:'30px'}}><FaPeopleCarry/></Card.Title>
+        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button onClick={navigateToLists} variant="primary" value="social" > Social Services</Button>
+      </Card.Body>
+    </Card>
+
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${DrivingSchools})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+      <Card.Body>
+        <Card.Title style={{ color: 'white', fontSize:'30px'}}><MdOutlineDriveEta/></Card.Title>
+        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button onClick={navigateToLists} variant="primary" value="drivingSchools" >Driving Schools</Button>
+      </Card.Body>
+    </Card>
+
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${Law})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+      <Card.Body>
+        <Card.Title style={{ color: 'white', fontSize:'30px'}}><GoLaw/></Card.Title>
+        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button onClick={navigateToLists} variant="primary" value="lawService" >Free Law Service</Button>
+      </Card.Body>
+    </Card>
+
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${Sport})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+      <Card.Body>
+        <Card.Title style={{ color: 'white', fontSize:'30px'}}><TbOlympics/></Card.Title>
+        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button onClick={navigateToLists} variant="primary" value="sport" >Best place to sport</Button>
+      </Card.Body>
+    </Card>
+
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${Park})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+      <Card.Body>
+        <Card.Title style={{ color: 'white', fontSize:'30px'}}><TbOlympics/></Card.Title>
+        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button onClick={navigateToLists} variant="primary" value="park" >Parks</Button>
+      </Card.Body>
+    </Card>
+
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${corona})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+      <Card.Body>
+        <Card.Title style={{ color: 'white', fontSize:'30px'}}><TbOlympics/></Card.Title>
+        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button onClick={navigateToLists} variant="primary" value="park" >Corona test centers</Button>
+      </Card.Body>
+    </Card>
 
 
 <div className={styles.mapInfo} >
-  <div className={styles.medicalClick}>
-  <button onClick={navigateToMedical} value="cloth" className={styles.buttonClass}>free/cheap cloths</button>
-  </div>
-  <div className={styles.IconClick}>
-  <p className={styles.symbole}><FaHandHoldingMedical/></p>
-  </div>
-     <div>
-     </div>
-      </div>
-
+<div>
 </div>
-        <div className={styles.mapSectionDiv1}>
-        <iframe className={styles.freeServiceMap} src="https://www.google.com/maps/d/u/0/embed?mid=1JK_78DbC8mjmwDwqA7maE32YHtg33LQ&ehbc=2E312F" width="640" height="480"></iframe>
-        </div>
+</div>
+</div>
+
       </section>
 
 
  {/*MedicalServiceParen  */}
 { list=== "medical" ? (
-       <div id="medical" className={styles.MedicalServiceParent}>
+       <div ref={moveToContainer} id="medical" className={styles.MedicalServiceParent}>
        <h1 className={styles.mainHeader}> Free Medical Organizations List in Berlin </h1>
  <div className={styles.medicalService}>
 
@@ -200,7 +279,7 @@ const navigateToMedical=(e)=>{
 
  
 list ==="food" ? (
-    <div className={styles.freeFoodServiceParent}>
+    <div className={styles.freeFoodServiceParent}  ref={moveToContainer}>
     <h1 className={styles.mainHeader}> Free/cheap Food Provider List in Berlin
 </h1>
    
@@ -298,7 +377,7 @@ list ==="food" ? (
 
 
 list==="cloth"? (
-   <div className={styles.freeFoodServiceParent}>
+   <div className={styles.freeFoodServiceParent}  ref={moveToContainer}>
     <h1 className={styles.mainHeader}> Free/cheap Cloths Provider List in Berlin
 </h1>
 
@@ -390,7 +469,7 @@ list==="cloth"? (
 
 
 list==="intrgration" ? (
-<div className={styles.intergrationCourseParent}>
+<div className={styles.intergrationCourseParent}  ref={moveToContainer}>
     <h1 className={styles.mainHeader}>Language Courses List in Berlin
 </h1>
 
@@ -473,6 +552,8 @@ list==="intrgration" ? (
   <p className={styles.cardPhone}> Phone: <span className={styles.mainPhone}>+49 30 31563698</span></p>
   <p className={styles.cardEmail}> Email: <a className={styles.mainEmail} href="http://www.iq-lingua.de">www.iq-lingua.de</a></p>
 </div>
+
+
 </div>
 </div>
 ): 
@@ -480,7 +561,7 @@ list==="intrgration" ? (
 
 
 list ==="social" ? (
-<div className={styles.socialServiceParent}>
+<div className={styles.socialServiceParent}  ref={moveToContainer}>
     <h1 className={styles.mainHeader}>Social Services List in Berlin</h1>
     <div className={styles.socialService}>
 
@@ -537,7 +618,134 @@ list ==="social" ? (
 </div> 
   
     </div>
-</div>): list===null}
+</div>):
+
+
+list ==="drivingSchools" ? (
+  <div className={styles.drivingSchools}  ref={moveToContainer}>
+      <h1 className={styles.mainHeader}>Social Services List in Berlin</h1>
+      <div className={styles.socialService}>
+  
+  
+      <div className={styles.CardContainer}>
+  <h1 className={styles.Logo}>  <FaPeopleCarry/></h1>
+    <p className={styles.cardName}>Soziale Dienste der Justiz</p>
+    <p className={styles.cardAddress}> Address: <span className={styles.mainAddress}>Salzburger Str. 21, 10825 Berlin</span></p>
+    <p className={styles.cardPhone}> Phone: <span className={styles.mainPhone}>+49 30 62980403</span></p>
+    <p className={styles.cardEmail}> Email: <a className={styles.mainEmail} href="http://www.berlin.de">www.berlin.de</a></p>
+  </div>
+     <div className={styles.CardContainer2}>
+  <h1 className={styles.Logo}>  <FaPeopleCarry/></h1>
+    <p className={styles.cardName}>Internationaler Sozialdienst</p>
+    <p className={styles.cardAddress}> Address: <span className={styles.mainAddress}>Michaelkirchstraße 17, 10179 Berlin</span></p>
+    <p className={styles.cardPhone}> Phone: <span className={styles.mainPhone}>+49 30 62980403</span></p>
+    <p className={styles.cardEmail}> Email: <a className={styles.mainEmail} href="http://issger.de">issger.de</a></p>
+  </div>
+     
+  <div className={styles.CardContainer}>
+  <h1 className={styles.Logo}>  <FaPeopleCarry/></h1>
+    <p className={styles.cardName}>Sozialdienst Katholischer Frauen e.V. Berlin</p>
+    <p className={styles.cardAddress}> Address: <span className={styles.mainAddress}>Schönhauser Str. 41, 13158 Berlin</span></p>
+    <p className={styles.cardPhone}> Phone: <span className={styles.mainPhone}>+49 30 4775320</span></p>
+    <p className={styles.cardEmail}> Email: <a className={styles.mainEmail} href="http://www.berlin.de">www.berlin.de</a></p>
+  </div>
+     <div className={styles.CardContainer2}>
+  <h1 className={styles.Logo}>  <FaPeopleCarry/></h1>
+    <p className={styles.cardName}>Bezirksamt Mitte von Berlin - Amt für Soziales</p>
+    <p className={styles.cardAddress}> Address: <span className={styles.mainAddress}>Müllerstraße 146, 13353 Berlin</span></p>
+    <p className={styles.cardPhone}> Phone: <span className={styles.mainPhone}>+49 30 901820</span></p>
+    <p className={styles.cardEmail}> Email: <a className={styles.mainEmail} href="http://www.bildungswelt.eu">www.bildungswelt.eu</a></p>
+  </div>
+  <div className={styles.CardContainer}>
+  <h1 className={styles.Logo}>  <FaPeopleCarry/></h1>
+    <p className={styles.cardName}>Schwangerschaftsberatung Lydia - Sozialdienst katholischer Frauen e.V. Berlin</p>
+    <p className={styles.cardAddress}> Address: <span className={styles.mainAddress}>Selchower Str. 11, 12049 Berlin</span></p>
+    <p className={styles.cardPhone}> Phone: <span className={styles.mainPhone}>+49 30 2814185</span></p>
+    <p className={styles.cardEmail}> Email: <a className={styles.mainEmail} href="http://skf-berlin.de">www.skf-berlin.de</a></p>
+  </div>
+     <div className={styles.CardContainer2}>
+  <h1 className={styles.Logo}>  <FaPeopleCarry/></h1>
+    <p className={styles.cardName}>Sozialdienste der Volkssolidarität Berlin gGmbH</p>
+    <p className={styles.cardAddress}> Address: <span className={styles.mainAddress}>Scharnweberstraße 23, 10247 Berlin</span></p>
+    <p className={styles.cardPhone}> Phone: <span className={styles.mainPhone}>+49 30 84514287</span></p>
+    <p className={styles.cardEmail}> Email: <a className={styles.mainEmail} href="http://volkssolidaritaet-berlin.de">volkssolidaritaet-berlin.de</a></p>
+  </div>
+  <div className={styles.CardContainer}>
+  <h1 className={styles.Logo}>  <FaPeopleCarry/></h1>
+    <p className={styles.cardName}>Amt für soziale Dienste Friedrichshain-Kreuzberg Eingliederungshilfe für behinderte Menschen</p>
+    <p className={styles.cardAddress}> Address: <span className={styles.mainAddress}>Yorckstraße 4-11, 10965 Berlin</span></p>
+    <p className={styles.cardPhone}> Phone: <span className={styles.mainPhone}>+49 30 902982370</span></p>
+    <p className={styles.cardEmail}> Email: <a className={styles.mainEmail} href="http://www.fonsakademie.de">www.fonsakademie.de</a></p>
+  </div> 
+    
+      </div>
+  </div>)
+  :
+
+
+  list ==="Sport" ? (
+    <div className={styles.drivingSchools}  ref={moveToContainer}>
+        <h1 className={styles.mainHeader}>Best place to do Sport in Berlin</h1>
+        <div className={styles.socialService}>
+    
+    
+        <div className={styles.CardContainer}>
+    <h1 className={styles.Logo}>  <FaPeopleCarry/></h1>
+      <p className={styles.cardName}>Soziale Dienste der Justiz</p>
+      <p className={styles.cardAddress}> Address: <span className={styles.mainAddress}>Salzburger Str. 21, 10825 Berlin</span></p>
+      <p className={styles.cardPhone}> Phone: <span className={styles.mainPhone}>+49 30 62980403</span></p>
+      <p className={styles.cardEmail}> Email: <a className={styles.mainEmail} href="http://www.berlin.de">www.berlin.de</a></p>
+    </div>
+       <div className={styles.CardContainer2}>
+    <h1 className={styles.Logo}>  <FaPeopleCarry/></h1>
+      <p className={styles.cardName}>Internationaler Sozialdienst</p>
+      <p className={styles.cardAddress}> Address: <span className={styles.mainAddress}>Michaelkirchstraße 17, 10179 Berlin</span></p>
+      <p className={styles.cardPhone}> Phone: <span className={styles.mainPhone}>+49 30 62980403</span></p>
+      <p className={styles.cardEmail}> Email: <a className={styles.mainEmail} href="http://issger.de">issger.de</a></p>
+    </div>
+       
+    <div className={styles.CardContainer}>
+    <h1 className={styles.Logo}>  <FaPeopleCarry/></h1>
+      <p className={styles.cardName}>Sozialdienst Katholischer Frauen e.V. Berlin</p>
+      <p className={styles.cardAddress}> Address: <span className={styles.mainAddress}>Schönhauser Str. 41, 13158 Berlin</span></p>
+      <p className={styles.cardPhone}> Phone: <span className={styles.mainPhone}>+49 30 4775320</span></p>
+      <p className={styles.cardEmail}> Email: <a className={styles.mainEmail} href="http://www.berlin.de">www.berlin.de</a></p>
+    </div>
+       <div className={styles.CardContainer2}>
+    <h1 className={styles.Logo}>  <FaPeopleCarry/></h1>
+      <p className={styles.cardName}>Bezirksamt Mitte von Berlin - Amt für Soziales</p>
+      <p className={styles.cardAddress}> Address: <span className={styles.mainAddress}>Müllerstraße 146, 13353 Berlin</span></p>
+      <p className={styles.cardPhone}> Phone: <span className={styles.mainPhone}>+49 30 901820</span></p>
+      <p className={styles.cardEmail}> Email: <a className={styles.mainEmail} href="http://www.bildungswelt.eu">www.bildungswelt.eu</a></p>
+    </div>
+    <div className={styles.CardContainer}>
+    <h1 className={styles.Logo}>  <FaPeopleCarry/></h1>
+      <p className={styles.cardName}>Schwangerschaftsberatung Lydia - Sozialdienst katholischer Frauen e.V. Berlin</p>
+      <p className={styles.cardAddress}> Address: <span className={styles.mainAddress}>Selchower Str. 11, 12049 Berlin</span></p>
+      <p className={styles.cardPhone}> Phone: <span className={styles.mainPhone}>+49 30 2814185</span></p>
+      <p className={styles.cardEmail}> Email: <a className={styles.mainEmail} href="http://skf-berlin.de">www.skf-berlin.de</a></p>
+    </div>
+       <div className={styles.CardContainer2}>
+    <h1 className={styles.Logo}>  <FaPeopleCarry/></h1>
+      <p className={styles.cardName}>Sozialdienste der Volkssolidarität Berlin gGmbH</p>
+      <p className={styles.cardAddress}> Address: <span className={styles.mainAddress}>Scharnweberstraße 23, 10247 Berlin</span></p>
+      <p className={styles.cardPhone}> Phone: <span className={styles.mainPhone}>+49 30 84514287</span></p>
+      <p className={styles.cardEmail}> Email: <a className={styles.mainEmail} href="http://volkssolidaritaet-berlin.de">volkssolidaritaet-berlin.de</a></p>
+    </div>
+    <div className={styles.CardContainer}>
+    <h1 className={styles.Logo}>  <FaPeopleCarry/></h1>
+      <p className={styles.cardName}>Amt für soziale Dienste Friedrichshain-Kreuzberg Eingliederungshilfe für behinderte Menschen</p>
+      <p className={styles.cardAddress}> Address: <span className={styles.mainAddress}>Yorckstraße 4-11, 10965 Berlin</span></p>
+      <p className={styles.cardPhone}> Phone: <span className={styles.mainPhone}>+49 30 902982370</span></p>
+      <p className={styles.cardEmail}> Email: <a className={styles.mainEmail} href="http://www.fonsakademie.de">www.fonsakademie.de</a></p>
+    </div> 
+      
+        </div>
+    </div>):
+
+
+
+list===null}
 
 
 </div>
