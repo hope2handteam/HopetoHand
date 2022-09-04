@@ -312,6 +312,7 @@
   display: flex;
   padding: 10px;
   flex-wrap: wrap;
+  justify-content: center;
  
 }
 .CardContainer{
@@ -395,7 +396,7 @@ padding: 0px;
 .medicalClick,
 .IconClick{
   width: 200px;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   padding: 0px;
   margin: 0px;
  
@@ -424,4 +425,16 @@ margin: 3% auto;
  flex-wrap: wrap;
 
   /* padding: 10px; */
+}
+
+.cardBtn{
+  background-color: #908DB9;
+  position: absolute;
+  bottom: 15px;
+  font-weight: 500;
+}
+.cardBtn:hover{
+  background-color:#EAD49C ;
+  color: #342E37;
+
 }
