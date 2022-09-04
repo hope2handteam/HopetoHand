@@ -106,14 +106,17 @@ export const LoginSignUpPopUp = ({ onClose }) => {
               </div>
             </button>
             {message ? (
-          
-         
-          <h3 style={{ color: "green" }}>Data inserted successfully!</h3>
+          <div>
+         <h3 style={{ marginLeft:"30px"}}>You have successfully Signup</h3>
+            <large style={{ color: "#908db9", marginLeft:"50px" ,fontWeight:"bold", cursor:"pointer", }} onClick={openSignInPopUp}>
+         Please Log in
+        </large>
+        </div>
         ) : (
           ""
         )}
           </div>
-          <p className={styles.oRP}>OR</p>
+         
           <button className={styles.frameButton1}>
             <button className={styles.frameButton2}>
               <div className={styles.groupDiv}>
@@ -128,10 +131,8 @@ export const LoginSignUpPopUp = ({ onClose }) => {
           </button>
         </div>
         <div className={styles.haveAccountLinkDiv}>
-          <b className={styles.youHaveAccount}>You have account?</b>
-          <button className={styles.logInButton} onClick={openSignInPopUp}>
-            Log in
-          </button>
+          
+         
         </div>
       </div>
       {isSignInPopUpOpen && (
