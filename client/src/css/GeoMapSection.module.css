@@ -18,7 +18,7 @@
 .imageHolderDiv {
   position: relative;
   border-radius: 10px 0 0 10px;
-  background-color: #ead49c;
+  /* background-color: #ead49c; */
   width: 165.44px;
   height: 160px;
   flex-shrink: 0;
@@ -108,7 +108,7 @@
   font-family: Montserrat;
 }
 .mapSectionDiv1 {
-  width: 55%;
+  width: 100%;
   align-self: stretch;
   position: relative;
   border-radius: 12px;
@@ -116,7 +116,7 @@
   box-sizing: border-box;
   height: 736px;
   flex-shrink: 0;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 .titleDiv {
@@ -245,13 +245,17 @@
   display: flex;
   justify-content: flex-start;
 }
+.geoMapSection{
+  display: block;
+}
 .mapSectionDiv {
   flex: 1;
   flex-direction: column;
   align-items: center;
   gap: 125px;
   /* width: 70%; */
-  border: 2px solid rgb(0, 115, 255);
+  /* border: 2px solid rgb(0, 115, 255); */
+
 
 }
 .geoMapSection {
@@ -269,14 +273,14 @@
 
 .geoMapSectionContainer {
   align-self: stretch;
-  flex-direction: row;
+  /* flex-direction: row; */
   /* padding: 10px 66px; */
   box-sizing: border-box;
   align-items: flex-start;
   gap: 27px;
   /* margin-top: 50px; */
   /* border: 2px solid rgb(0, 115, 255); */
-  width: 80%;
+  width: 90%;
   margin: 50px auto;
 }
 @media screen and (max-width: 1200px) {
@@ -293,7 +297,7 @@
 .freeServiceMap{
   width: 100%;
   height: 100%;
-}
+}.drivingSchools,
 .medicalService,
 .foodService,
 .clothsService,
@@ -412,10 +416,12 @@ padding: 0px;
   text-align: center;
 }
 .listSelect{
-  width: 45%;
+  width: 100%;
   /* border: 1px solid rgba(194, 198, 204, 0.6); */
-  border: 2px solid goldenrod;
+  /* border: 2px solid goldenrod; */
+margin: 3% auto;
  display: flex;
  flex-wrap: wrap;
-  padding: 10px;
+
+  /* padding: 10px; */
 }

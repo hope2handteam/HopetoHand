@@ -122,6 +122,7 @@ padding-left: 5px;
   /* border: 2px solid red; */
   /* height: 40%; */
   padding-bottom: 5%;
+  /* behavior: unset; */
 }
 @media screen and (min-width: 1200px) {
   .headerNavigations {

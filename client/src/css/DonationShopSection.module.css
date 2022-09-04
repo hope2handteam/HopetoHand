@@ -175,7 +175,7 @@
 .donationShopSection {
   overflow: hidden;
   flex-direction: column;
-  padding: 71px 68px 71px 94px;
+  padding: 0px 0px 100px 0px;
   box-sizing: border-box;
   align-items: flex-end;
   gap: 35px;
@@ -184,6 +184,8 @@
   font-size: 30px;
   color: #484848;
   font-family: Montserrat;
+  width: 75%;
+  margin: 0 auto;
 }
 @media screen and (max-width: 1200px) {
   .frameDiv {

@@ -1,13 +1,24 @@
 import styles from "./css/ContactFormSection.module.css";
-import { useState } from "react";
+import { useState, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+
 import axios from 'axios'
+
 export const ContactFormSection = () => {
   const [name, setName]=useState("")
   const [phoneNumber, setPhoneNumber]=useState("")
   const [companyName, setCompanyName]=useState("")
   const [email, setEmail]=useState("")
   const [message, setMessage]=useState("")
+
+  const myNavigate = useNavigate();
+    
+  const onLHomeContainerClick = useCallback(() => {
+    myNavigate("/");
+  }, [myNavigate]);
+
   const postRequestHandler = async ()=>{
+
    const data = {name, phoneNumber, companyName, email, message}
    console.log(data)
    await axios.post("http://localhost:5000/contactform", data)
@@ -38,8 +49,10 @@ export const ContactFormSection = () => {
             type="text"
             placeholder="Your Email"
           />
+
+
           <div className={styles.frameDiv2}>
-          <button className={styles.logoMainButton}>
+          <button className={styles.logoMainButton} onClick={onLHomeContainerClick}>
               <img className={styles.vectorIcon} alt="" src="logomain.svg" />
              
               <b className={styles.logoTitleB}>HOPE2HAND</b>

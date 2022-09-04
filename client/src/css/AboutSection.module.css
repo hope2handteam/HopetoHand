@@ -23,6 +23,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 20px;
+  
 }
 .becomeOurPartner {
   margin-block-start: 0;
@@ -89,15 +90,18 @@
   object-fit: cover;
 }
 .aboutSection {
+  margin: 8% auto;
   align-self: stretch;
   background-color: #fff;
   display: flex;
   flex-direction: row;
-  padding: 48px 83px;
+  /* padding: 48px 83px; */
   box-sizing: border-box;
   align-items: center;
   justify-content: flex-start;
   gap: 47px;
+  /* border: 2px solid red; */
+width: 76%;
 }
 @media screen and (max-width: 768px) {
   .titleTextArticle {

@@ -96,21 +96,21 @@
 }
 .accommodationDiv{
   width: 100%;
-  /* border: 3px solid red; */
+
 }
 .accommodationCont{
 
   width: 60%;
-  /* border: 3px solid red; */
+
   margin: 30px auto;
 }
 .accommodationDetails{
   font-family: Montserrat;
   font-size: 18px;
   padding: 20px;
-  display: flex;
+  
   flex-wrap: wrap;
-  /* border: 3px solid green; */
+  
   width: 100%;
 }
 img{
@@ -130,20 +130,18 @@ img{
 }
 .accommodationMainContainer{
   background-color: #fdf4dd;
-  /* padding: 30px; */
+
   margin: 60px auto;
   width: 50%;
   padding-bottom: 30px;
   
 }
 .accommodationContainer{
-  /* background-color: lightgoldenrodyellow; */
   background-color: #ead49c;
   margin-bottom: 30px;
   width: 90%;
   border-radius: 8px;
   margin: 20px auto;
-  /* border: 2px solid green; */
 }
 .accommodationImgContainer{
   width: 100%;
@@ -170,21 +168,21 @@ img{
   font-family: Montserrat;
   width: 31%;
   padding: 5px;
-  /* border: 2px solid red; */
+
 }
 .accommodationDetails{
   font-size: 13px;
   font-family: Montserrat;
   width: 31%;
   padding: 5px;
-  /* border: 2px solid red; */
+
 }
 .accommodationAvailable{
   width: 31%;
   font-size: 13px;
   font-family: Montserrat;
   padding: 5px;
-  /* border: 2px solid red; */
+
 }
 .title{
   font-family: Montserrat;
@@ -192,4 +190,4 @@ img{
   color: #494849;
 }
 
-/* Job form */
+

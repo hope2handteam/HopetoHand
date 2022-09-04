@@ -48,6 +48,13 @@
   height: 72.17px;
   overflow: hidden;
 }
+.aboutSectionButton,
+.contactSectionButton{
+  text-decoration: none;
+  color: #484848;
+}
+
+/* .aboutSectionButton, */
 .aboutUsButton,
 .contactUsButton,
 .findSupportButton,
@@ -67,6 +74,8 @@
   flex-shrink: 0;
 }
 .aboutUsButton:hover,
+.aboutSectionButton:hover,
+.contactSectionButton:hover,
 .contactUsButton:hover,
 .findSupportButton:hover,
 .partnersButton:hover {
