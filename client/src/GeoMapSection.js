@@ -34,7 +34,7 @@ const [list, setList]=useState("")
 const navigateToLists=(e)=>{
   setList(e.target.value);
 
-  moveToContainer.current.scrollIntoView({behavior: "smooth"});
+  // moveToContainer.current.scrollIntoView({behavior: "smooth"});
 }
 
   return (
@@ -177,7 +177,7 @@ const navigateToLists=(e)=>{
 
  {/*MedicalServiceParen  */}
 { list=== "medical" ? (
-       <div ref={moveToContainer} id="medical" className={styles.MedicalServiceParent}>
+       <div  id="medical" className={styles.MedicalServiceParent}>
        <h1 className={styles.mainHeader}> Free Medical Organizations List in Berlin </h1>
  <div className={styles.medicalService}>
 
@@ -279,7 +279,7 @@ const navigateToLists=(e)=>{
 
  
 list ==="food" ? (
-    <div className={styles.freeFoodServiceParent}  ref={moveToContainer}>
+    <div className={styles.freeFoodServiceParent} >
     <h1 className={styles.mainHeader}> Free/cheap Food Provider List in Berlin
 </h1>
    
@@ -377,7 +377,7 @@ list ==="food" ? (
 
 
 list==="cloth"? (
-   <div className={styles.freeFoodServiceParent}  ref={moveToContainer}>
+   <div className={styles.freeFoodServiceParent} >
     <h1 className={styles.mainHeader}> Free/cheap Cloths Provider List in Berlin
 </h1>
 
@@ -469,7 +469,7 @@ list==="cloth"? (
 
 
 list==="intrgration" ? (
-<div className={styles.intergrationCourseParent}  ref={moveToContainer}>
+<div className={styles.intergrationCourseParent}  >
     <h1 className={styles.mainHeader}>Language Courses List in Berlin
 </h1>
 
@@ -561,7 +561,7 @@ list==="intrgration" ? (
 
 
 list ==="social" ? (
-<div className={styles.socialServiceParent}  ref={moveToContainer}>
+<div className={styles.socialServiceParent} >
     <h1 className={styles.mainHeader}>Social Services List in Berlin</h1>
     <div className={styles.socialService}>
 
@@ -622,7 +622,7 @@ list ==="social" ? (
 
 
 list ==="drivingSchools" ? (
-  <div className={styles.drivingSchools}  ref={moveToContainer}>
+  <div className={styles.drivingSchools}  >
       <h1 className={styles.mainHeader}>Social Services List in Berlin</h1>
       <div className={styles.socialService}>
   
@@ -684,7 +684,7 @@ list ==="drivingSchools" ? (
 
 
   list ==="Sport" ? (
-    <div className={styles.drivingSchools}  ref={moveToContainer}>
+    <div className={styles.drivingSchools} >
         <h1 className={styles.mainHeader}>Best place to do Sport in Berlin</h1>
         <div className={styles.socialService}>
     
