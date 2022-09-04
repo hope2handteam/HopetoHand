@@ -130,13 +130,15 @@ img{
 }
 .accommodationMainContainer{
   background-color: #fdf4dd;
+  border: 2px solid rgba(255, 0, 0, 0);
 
   margin: 60px auto;
   width: 50%;
   padding-bottom: 30px;
   
 }
-.accommodationContainer{
+.accommodationContainer,
+.helperContainer{
   background-color: #ead49c;
   margin-bottom: 30px;
   width: 90%;
@@ -162,6 +164,7 @@ img{
   justify-content: space-evenly;
   flex-wrap: wrap;
   width: 100%;
+  padding-top: 15px;
 }
 .contactPersonDetails{
   font-size: 13px;
@@ -189,5 +192,20 @@ img{
   text-align: center;
   color: #494849;
 }
+.detailsContainer p{
+  font-size: 15px;
+  font-weight: 500;
+}
+.detailsContainer p span{
+  font-size: 14px;
+  font-weight: 400;
+}
 
+.title{
+  margin-top: 3%;
+}
+.subMenu,
+.title{
+  font-family: Montserrat;
+}
 

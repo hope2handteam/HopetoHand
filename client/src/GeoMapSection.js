@@ -56,112 +56,82 @@ const navigateToLists=(e)=>{
 }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><GiMedicalThermometer/></Card.Title>
-        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button onClick={navigateToLists} variant="primary" value="medical" >  Free Medical service</Button>
+
+        <Button  className={styles.cardBtn} onClick={navigateToLists} variant="primary" value="medical" >  Free Medical service</Button>
       </Card.Body>
     </Card>
 
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${FoodImage})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${FoodImage})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><GiFoodTruck/></Card.Title>
-        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button onClick={navigateToLists} variant="primary" value="food" >  Free/cheap Food service</Button>
+  
+        <Button  className={styles.cardBtn} onClick={navigateToLists} variant="primary" value="food" >  Free/cheap Food service</Button>
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${IntergrationCourse})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${IntergrationCourse})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><FaSchool/></Card.Title>
-        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button onClick={navigateToLists} variant="primary" value="intrgration" > Integration Courses</Button>
+
+        <Button  className={styles.cardBtn} onClick={navigateToLists} variant="primary" value="intrgration" > Integration Courses</Button>
       </Card.Body>
     </Card>
 
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${CheapCloths})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${CheapCloths})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><GiClothes/></Card.Title>
-        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button onClick={navigateToLists} variant="primary" value="cloth" > Free/cheap Cloths</Button>
+
+        <Button  className={styles.cardBtn} onClick={navigateToLists} variant="primary" value="cloth" > Free/cheap Cloths</Button>
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${SocialService})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${SocialService})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><FaPeopleCarry/></Card.Title>
-        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button onClick={navigateToLists} variant="primary" value="social" > Social Services</Button>
+
+        <Button className={styles.cardBtn} onClick={navigateToLists} variant="primary" value="social" > Social Services</Button>
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${DrivingSchools})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${DrivingSchools})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><MdOutlineDriveEta/></Card.Title>
-        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button onClick={navigateToLists} variant="primary" value="drivingSchools" >Driving Schools</Button>
+
+        <Button  className={styles.cardBtn} onClick={navigateToLists} variant="primary" value="drivingSchools" >Driving Schools</Button>
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${Law})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${Law})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><GoLaw/></Card.Title>
-        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button onClick={navigateToLists} variant="primary" value="lawService" >Free Law Service</Button>
+
+        <Button  className={styles.cardBtn} onClick={navigateToLists} variant="primary" value="lawService" >Free Law Service</Button>
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${Sport})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${Sport})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><TbOlympics/></Card.Title>
-        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button onClick={navigateToLists} variant="primary" value="sport" >Best place to sport</Button>
+
+        <Button  className={styles.cardBtn} onClick={navigateToLists} variant="primary" value="sport" >Best place to sport</Button>
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${Park})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${Park})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative'}}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><TbOlympics/></Card.Title>
-        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button onClick={navigateToLists} variant="primary" value="park" >Parks</Button>
+
+        <Button  className={styles.cardBtn} onClick={navigateToLists} variant="primary" value="park" >Parks</Button>
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${corona})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${corona})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><TbOlympics/></Card.Title>
-        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button onClick={navigateToLists} variant="primary" value="park" >Corona test centers</Button>
+
+        <Button  className={styles.cardBtn} onClick={navigateToLists} variant="primary" value="park" >Corona test centers</Button>
       </Card.Body>
     </Card>
 

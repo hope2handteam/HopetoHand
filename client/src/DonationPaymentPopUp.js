@@ -4,11 +4,14 @@ import { useNavigate } from "react-router-dom";
 import styles from "./css/DonationPaymentPopUp.module.css";
 
 const DonationPaymentPopUp = ({ onClose }) => {
-  const navigate = useNavigate();
+  const myNavigate = useNavigate();
 
-  const onLogoContainerClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
+  // const onLogoContainerClick = useCallback(() => {
+  //   navigate("/");
+  // }, [navigate]);
+  const onLHomeContainerClick = useCallback(() => {
+    myNavigate("/");
+  }, [myNavigate]);
 
   useEffect(() => {
     const scrollAnimElements = document.querySelectorAll(
@@ -145,9 +148,9 @@ const DonationPaymentPopUp = ({ onClose }) => {
           <img className={styles.lineIcon} alt="" src="../line-81.svg" />
           <img className={styles.lineIcon1} alt="" src="../line-91.svg" />
         </button>
-        <article className={styles.logoArticle} onClick={onLogoContainerClick}>
+        <article className={styles.logoArticle} onClick={onLHomeContainerClick}>
           <b className={styles.logoTitleB}>HOPE2HAND</b>
-          <img className={styles.logoMainIcon} alt="" src="../logomain2.svg" />
+          <img className={styles.logoMainIcon} alt="" src="../logomain.svg" />
         </article>
       </div>
     </div>

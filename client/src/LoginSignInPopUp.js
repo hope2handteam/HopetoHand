@@ -119,7 +119,7 @@ export const LoginSignInPopUp = ({ onClose }) => {
             </button>
           </div>
           <button className={styles.closeButton} onClick={onClose}>
-            <img className={styles.ellipseIcon} alt="" src="ellipse-2252.svg" />
+            <img className={styles.ellipseIcon} alt="" src="ellipse-2251.svg" />
             <img className={styles.lineIcon} alt="" src="line-82.svg" />
             <img className={styles.lineIcon1} alt="" src="line-92.svg" />
           </button>
