@@ -2,8 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import styles from "./css/ProfileSection.module.css";
 
-
-const GetUserPostHelp = () => {
+const GetUserPostJob = () => {
 
     const [request, setRequest] = useState();
     const [details, setDetails] = useState();
@@ -25,7 +24,7 @@ const GetUserPostHelp = () => {
    
     const getRequestHandler = async () => {
         console.log("Clicked!")
-        const response = await API.get("/getuserhelp");
+        const response = await API.get("/getuserjob");
         console.log(response.data);
         setDetails(response.data);
        setRequest("GET");
@@ -36,11 +35,11 @@ useEffect( () => {
 },[]);
       
 
-      const removeHelp = async (id) => {
+      const removeJob = async (id) => {
         try {
          
 
-const response = await API.delete(`/deleteuserhelp/${id}`);
+const response = await API.delete(`/deleteuserjob/${id}`);
           console.log(response);
           getRequestHandler();
         } catch (error) {
@@ -57,46 +56,40 @@ const response = await API.delete(`/deleteuserhelp/${id}`);
         
         {/* <PostStatus/> */}
         <div className={styles.accommodationMainContainer}>
-          <h4 className={styles.title}>Help</h4>         
+          <h4 className={styles.title}>Job Offer</h4>         
           {request 
             ? details.map((value) => {
                 return (
-                  <div className={styles.helperContainer} key={value._id}>
-                   <div  className={styles.detailsContainer}> 
+                    <div className={styles.helperContainer}  key={value._id}>
+                    <div  className={styles.detailsContainer}>
                     <div className={styles.accommodationDetails}>
-                      <p>Cooperation type: <span>{value.helpType}</span>  </p>
-                      <p>Cooperation City: <span> {value.cityHelp} </span></p>
-                      <p>Organization: <span>{value.orgHelp}</span></p>
-                      </div> 
-                      <div className={styles.accommodationDetails}>
-                      <p>Language: <span> {value.TypeOfLanguageHelp}</span></p>
-                      <p>contact Person:<span> {value.contactPersonHelp}</span></p>
-                      <p>Phone Number: <span>{value.contactNumberHelp}</span></p>
-                      </div>
-                      <div className={styles.accommodationAvailable}>
-                      <p>Email: <span>{value.contactEmailHelp}</span></p>
-                      <p> Valid From: <span> {value.startDateHelp}</span> </p>
-                      <p> to: <span>{value.endDateHelp} </span> </p>
-                      </div>
-                      </div>
+                    <p>Job Title: <span>{value.jobList}</span>  </p>
+                    <p>Language: <span> {value.TypeOfLanguageJob}</span></p>
+                    <p>Job Location: <span> {value.cityJob} </span></p>
+                    <p>Job Provider: <span>{value.jobProvider}</span></p>
+                    </div>
+                    <div className={styles.accommodationDetails}>
+                    <p>Job Type:<span> {value.jobType}</span></p>
+                    <p>salary Basis: <span>{value.salaryBasisJob}</span></p>
+                    <p>Start Date: <span> {value.startDateJob}</span></p>
+                    <p>End Date: <span> {value.endDateJob}</span></p>
+                    </div>
+                    <div className={styles.accommodationAvailable}>
+                    <p>Contact Person: <span>{value.contactPersonJob}</span></p>
+                    <p>Contact Number: <span>{value.contactNumberJob}</span></p>
+                    <p> Email: <span> {value.contactEmailJob}</span> </p>
+                    </div>
+                  </div>
+               
                   
-                    <div style={{ display: "inline" }}>
-                    <button onClick={() => removeHelp(value._id)} className={styles.submitBtnButton}>
+                  <div style={{ display: "inline" }}>
+                    <button onClick={() => removeJob(value._id)} className={styles.submitBtnButton}>
 <div className={styles.submitButtonDiv} />
 <div className={styles.submitDiv}>Delete</div>
 </button>
                       
                     </div>
-                    
                   </div>
-
-
-
-
-
-
-
-                  
                 );
               })
             : ""}
@@ -106,4 +99,4 @@ const response = await API.delete(`/deleteuserhelp/${id}`);
         </>
       );
     };
-export default GetUserPostHelp
+export default GetUserPostJob

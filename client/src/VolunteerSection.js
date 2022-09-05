@@ -10,7 +10,7 @@ import {
 import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import styles from "./css/VolunteerSection.module.css";
-
+import GetUserPostJob from "./GetUserPostJob";
 
 import axios from "axios";
 import GetUserPost from "./GetUserPost";
@@ -298,7 +298,7 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                     <option>Hotels</option>
                     <option>House</option>
                     <option>Apartment</option>
-                    <option>Guest house</option>
+                    <option>Guest House</option>
                     <option>Hoste</option>
                     <option>Chalets</option>
                     <option>Garage</option>
@@ -323,18 +323,18 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                   <div className={styles.accommodationTitles}> available from</div>
                   <div className={styles.accommodationTitles}> to</div>
                   <input
-                    placeholder="dd.mm.yyyy"
+                    
                     onChange={(e) => setStartDate(e.target.value)}
                     className={styles.accommodationStreetDate}
-                    type="string"
+                    type="date"
                     name="date"
                     id="date"
                   />
                   <input
-                    placeholder="dd.mm.yyyy"
+                    
                     onChange={(e) => setEndDate(e.target.value)}
                     className={styles.accommodationStreetEnd}
-                    type="string"
+                    type="date"
                     name="date"
                     id="date"
                   />
@@ -443,7 +443,7 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                   <select 
                      onChange={(e) => setJobList(e.target.value)}
                   className={styles.jobPersonsNumber}>
-                    <option>Store Greeter</option>
+                    <option>Store </option>
                     <option>Housekeeper</option>
                     <option>Security Guard</option>
                     <option>Housekeeping Technician</option>
@@ -467,7 +467,7 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                    className={styles.jobPersonsNumber}>
                     <option>Monthly</option>
                     <option>Weekly</option>
-                    <option>Daley</option>
+                    <option>Daily</option>
                     <option>Hourly</option>
                   </select>
                 </div>
@@ -562,19 +562,21 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                     <div className={styles.helpTitles}> Cooperation Finish Date:</div>
                     <input
                     
-                    placeholder="dd.mm.yyyy"
+                  
                     onChange={(e) => setStartDateHelp(e.target.value)}
                     className={styles.accommodationStreetDate}
-                    type="string"
+                    type="date"
                     name="date"
+                    id="date"
                     
                   />
                   <input
-                    placeholder="dd.mm.yyyy"
+                   
                     onChange={(e) => setEndDateHelp(e.target.value)}
                     className={styles.accommodationStreetEnd}
-                    type="string"
+                    type="date"
                     name="date"
+                    id="date"
                     
                   />
                   </div>
@@ -620,6 +622,7 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
         
         <GetUserPost />
         <GetUserPostHelp />
+        <GetUserPostJob />
         
       </section>
       
