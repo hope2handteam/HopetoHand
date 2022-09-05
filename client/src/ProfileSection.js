@@ -158,7 +158,7 @@ export const ProfileSection = () => {
 
             {request
               ? detailsHelp?.map((value) => {
-                return (                 
+                return (
                     <div className={styles.helperContainer}  key={value._id}>
                       <div  className={styles.detailsContainer}> 
 
@@ -176,8 +176,8 @@ export const ProfileSection = () => {
                       <p>Email: <span>{value.contactEmailHelp}</span></p>
                       <p> Valid From: <span> {value.startDateHelp}</span> </p>
                       <p> to: <span>{value.endDateHelp} </span> </p>
-                      </div>  
-                    </div>         
+                      </div>
+                    </div>
                   </div>
 
 
@@ -188,24 +188,21 @@ export const ProfileSection = () => {
 
         </div>
       ) : menu === "Job" ? (
-        <div  >
+<div  >
         <div className={styles.accommodationMainContainer} >
           <h2  className={styles.title} >Jobs</h2>
-
           {request
             ? detailsJob?.map((value) => {
-              return (                 
+              return (
                   <div className={styles.helperContainer}  key={value._id}>
-                    <div  className={styles.detailsContainer}> 
-
+                    <div  className={styles.detailsContainer}>
                     <div className={styles.accommodationDetails}>
                     <p>Job Title: <span>{value.jobList}</span>  </p>
                     <p>Language: <span> {value.TypeOfLanguageJob}</span></p>
                     <p>Job Location: <span> {value.cityJob} </span></p>
                     <p>Job Provider: <span>{value.jobProvider}</span></p>
-                    </div> 
+                    </div>
                     <div className={styles.accommodationDetails}>
-                    
                     <p>Job Type:<span> {value.jobType}</span></p>
                     <p>salary Basis: <span>{value.salaryBasisJob}</span></p>
                     <p>Start Date: <span> {value.startDateJob}</span></p>
@@ -215,17 +212,15 @@ export const ProfileSection = () => {
                     <p>Contact Person: <span>{value.contactPersonJob}</span></p>
                     <p>Contact Number: <span>{value.contactNumberJob}</span></p>
                     <p> Email: <span> {value.contactEmailJob}</span> </p>
-                    </div>  
-                  </div>         
+                    </div>
+                  </div>
                 </div>
-
-
               );
             })
             : ""}
         </div>
-
       </div>
+
       ) : (
         menu == null
       )}
