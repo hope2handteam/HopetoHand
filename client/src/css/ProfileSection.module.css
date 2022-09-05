@@ -208,4 +208,63 @@ img{
 .title{
   font-family: Montserrat;
 }
-
+.submitButtonDiv {
+  position: absolute;
+  top: 8px;
+  left: 50px;
+  border-radius: 30px;
+  background-color: #908db9;
+  width: 120px;
+  height: 40px;
+}
+.submitDiv {
+  position: absolute;
+  top: calc(50% - 12px);
+  left: calc(50% - 32px);
+  font-size: 16px;
+  font-weight: 600;
+  font-family: Montserrat;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  width: 64px;
+  height: 24px;
+}
+.submitBtnButton {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  width: 220px;
+  height: 60px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.logoMainButton:hover,
+.submitBtnButton:hover {
+  animation: 1s ease 0s 1 normal none wobble-hor-bottom;
+  opacity: 1;
+}
+@keyframes wobble-hor-bottom {
+  0%,
+  to {
+    transform: translateX(0);
+    transform-origin: 50% 50%;
+  }
+  15% {
+    transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
+}

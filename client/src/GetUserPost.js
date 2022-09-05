@@ -59,7 +59,7 @@ const response = await API.delete(`/deleteuseraccommodation/${id}`);
 
        
           <div className={styles.accommodationMainContainer}>
-            <h2 className={styles.title}> Accommodation List:</h2>
+            <h4 className={styles.title}> Accommodation List:</h4>
 
 
             {request
@@ -101,9 +101,13 @@ const response = await API.delete(`/deleteuseraccommodation/${id}`);
 
 
                       }
-                        <div style={{ display: "inline" }}>
-          <small onClick={() => removeAccomodation(value._id)}>Delete</small>
-         </div>
+           <div style={{ display: "inline" }}>
+                    <button onClick={() => removeAccomodation(value._id)} className={styles.submitBtnButton}>
+<div className={styles.submitButtonDiv} />
+<div className={styles.submitDiv}>Delete</div>
+</button>
+                      
+                    </div>
 
 
                     </div>
