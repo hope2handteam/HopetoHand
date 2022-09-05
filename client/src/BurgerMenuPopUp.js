@@ -20,6 +20,9 @@ export const BurgerMenuPopUp = ({ onClose }) => {
   const onContactUsButtonClick = useCallback(() => {
     navigate("/aboutuspage");
   }, [navigate]);
+  const donationUsButtonClick = useCallback(() => {
+    navigate("/donationpage");
+  }, [navigate]);
 
   return (
     <div className={styles.burgerMenuPopUpDiv}>
@@ -52,6 +55,13 @@ export const BurgerMenuPopUp = ({ onClose }) => {
           onClick={onContactUsButtonClick}
         >
           Contact Us
+        </button>
+        <button
+       onClick={donationUsButtonClick}
+          className={styles.contactUsButton}
+      
+        >
+          Donation
         </button>
       </a>
     </div>

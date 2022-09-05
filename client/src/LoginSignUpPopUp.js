@@ -106,44 +106,44 @@ export const LoginSignUpPopUp = ({ onClose }) => {
               </div>
             </button>
             {message ? (
-          <div>
-         <h3 style={{ marginLeft:"30px"}}>You have successfully Signup</h3>
-            <large style={{ color: "#908db9", marginLeft:"50px" ,fontWeight:"bold", cursor:"pointer", }} onClick={openSignInPopUp}>
-         Please Log in
-        </large>
-        </div>
-        ) : (
-          ""
-        )}
-          </div>
-         
-          <button className={styles.frameButton1}>
-            <button className={styles.frameButton2}>
-              <div className={styles.groupDiv}>
-                <img
-                  className={styles.image2Icon}
-                  alt=""
-                  src="image-2@2x.png"
-                />
-                <p className={styles.signUpWithGoogle}>Sign up with Google</p>
-              </div>
-            </button>
-          </button>
-        </div>
-        <div className={styles.haveAccountLinkDiv}>
+
           
-         
-        </div>
-      </div>
-      {isSignInPopUpOpen && (
-        <PortalPopup
-          overlayColor="rgba(144, 141, 185, 0.5)"
-          placement="Centered"
-          onOutsideClick={closeSignInPopUp}
-        >
-          <LoginSignInPopUp onClose={closeSignInPopUp} />
-        </PortalPopup>
-      )}
-    </>
-  );
-};
+          <div>
+          <h5 className={styles.titleMsg}>You have successfully Signup</h5>
+             <large style={{ color: "#908DB9", marginLeft:"0px" ,fontWeight:"bold", cursor:"pointer", }} onClick={openSignInPopUp}>
+          Please Log in
+         </large>
+         </div>
+         ) : (
+           ""
+         )}
+           </div>
+           <button className={styles.frameButton1}>
+             <button className={styles.frameButton2}>
+               <div className={styles.groupDiv}>
+                 <img
+                   className={styles.image2Icon}
+                   alt=""
+                   src="image-2@2x.png"
+                 />
+                 <p className={styles.signUpWithGoogle}>Sign up with Google</p>
+               </div>
+             </button>
+           </button>
+         </div>
+         <div className={styles.haveAccountLinkDiv}>
+         </div>
+       </div>
+       {isSignInPopUpOpen && (
+         <PortalPopup
+           overlayColor="rgba(144, 141, 185, 0.5)"
+           placement="Centered"
+           onOutsideClick={closeSignInPopUp}
+         >
+           <LoginSignInPopUp onClose={closeSignInPopUp} />
+         </PortalPopup>
+       )}
+     </>
+   );
+ };
+

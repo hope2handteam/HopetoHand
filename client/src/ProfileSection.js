@@ -74,7 +74,7 @@ export const ProfileSection = () => {
                   label="Select Here"
                 >
                   <MenuItem className={styles.subMenu} onClick={getRequestHandler} value="accommodation">Accommodation</MenuItem>
-                  <MenuItem className={styles.subMenu} onClick={getRequestHandlerJob} value="Jobs">Jobs</MenuItem>
+                  <MenuItem className={styles.subMenu} onClick={getRequestHandlerJob} value="Job">Jobs</MenuItem>
                   <MenuItem className={styles.subMenu} onClick={getRequestHandlerHelp} value="Helpers">Helpers</MenuItem>
 
                 </Select>
