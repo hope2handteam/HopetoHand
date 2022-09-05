@@ -36,48 +36,40 @@ export const BlogSection = () => {
      </div>
      
     <div className={styles.content}>
-      <h4>Choose the right institution to help you</h4>
+      <h4>Choose the right institution to help you!</h4>
  
         <p>Center for Migration and Integration
       <br /> 
-      Add: <span>Stettiner Str. 12, 13357 Berlin
+      Address: <span>Stettiner Str. 12, 13357 Berlin
 </span>
-      <br /> Contact: <span>0306664390</span> <br />
-        website: <span>www.awoberlin.de</span>
+      <br /> Contact: <span>+49 306664390</span> <br />
+        website: <span>https://www.awoberlin.de/</span>
         </p>
          
-        <p>Center for Migration and Integration
+        <p>Integrationsfachdienst IFD Mitte
       <br /> 
-      Add: <span>Stettiner Str. 12, 13357 Berlin
+      Address: <span>Schwiebusser Str. 18, 10965 Berlin
 </span>
-      <br /> Contact: <span>0306664390</span> <br />
-        website: <span>www.awoberlin.de</span>
+      <br /> Contact: <span>+49 304991880</span> <br />
+        website: <span>https://www.ifdmitte.berlin/</span>
         </p>
          
-        <p>Center for Migration and Integration
+        <p>Beauftragte des Senats von Berlin für Integration und Migration
       <br /> 
-      Add: <span>Stettiner Str. 12, 13357 Berlin
+      Address: <span>Potsdamer Str. 65, 10785 Berlin
 </span>
-      <br /> Contact: <span>0306664390</span> <br />
-        website: <span>www.awoberlin.de</span>
+      <br /> Contact: <span>+49 30901723163</span> <br />
+        website: <span>https://www.integrationsbeauftragte.berlin.de/</span>
         </p>
          
-        <p>Center for Migration and Integration
+        <p>Gesellschaftliche Integration von Menschen mit Beh GIB e.V.
       <br /> 
-      Add: <span>Stettiner Str. 12, 13357 Berlin
+      Address: <span>Tuchmacherweg 8, 13158 Berlin
 </span>
-      <br /> Contact: <span>0306664390</span> <br />
-        website: <span>www.awoberlin.de</span>
+      <br /> Contact: <span>03091207560</span> <br />
+        website: <span>https://www.gib-ev.de/</span>
         </p>
          
-        <p>Center for Migration and Integration
-      <br /> 
-      Add: <span>Stettiner Str. 12, 13357 Berlin
-</span>
-      <br /> Contact: <span>0306664390</span> <br />
-        website: <span>www.awoberlin.de</span>
-        </p>
-        
     </div>
 </div>
 <div className={styles.box}>
@@ -87,37 +79,31 @@ export const BlogSection = () => {
 
     <div className={styles.content}>
       <h4>Best Place to do Sport in Berlin</h4>
-      <p>Fitness Center
-      <br /> Add: <span>Mühlenstraße 62-65/Haus 5, 13187 Berlin</span>
-      <br /> Contact: <span>03064442342</span> <br />
-        website: <span>http://www.argo-athletics.de/</span></p>
 
-      <p>Fitness Center
-      <br /> Add: <span>Mühlenstraße 62-65/Haus 5, 13187 Berlin</span>
-      <br /> Contact: <span>03064442342</span> <br />
-        website: <span>http://www.argo-athletics.de/</span></p>
+      <p>Outdoor Free Fitness Parc
+      <br /> Address: <span>Viktoriapark, 12163 Berlin</span>
+      <br /> Contact: <span>Open 24h/24</span></p>
 
-        <p>Fitness Center
-      <br /> Add: <span>Mühlenstraße 62-65/Haus 5, 13187 Berlin</span>
-      <br /> Contact: <span>03064442342</span> <br />
-        website: <span>http://www.argo-athletics.de/</span></p>
+      <p>Berlin Rent a Bike - Free Tours
+      <br /> Address: <span>Rathausstraße 4, 10178 Berlin</span>
+      <br /> Contact: <span>+49 1635120124</span> <br />
+        website: <span>https://www.iloveberlintours.com/</span></p>
 
-        <p>Fitness Center
-      <br /> Add: <span>Mühlenstraße 62-65/Haus 5, 13187 Berlin</span>
-      <br /> Contact: <span>03064442342</span> <br />
-        website: <span>http://www.argo-athletics.de/</span></p>
+        <p>Freeletics Fitness Area - Outdoor Calisthenic
+      <br /> Address: <span>Monbijoustraße 3B, 10117 Berlin</span>
+      <br /> Contact: <span>Open 24h/24</span></p>
 
-        <p>Fitness Center
-      <br /> Add: <span>Mühlenstraße 62-65/Haus 5, 13187 Berlin</span>
-      <br /> Contact: <span>03064442342</span> <br />
-        website: <span>http://www.argo-athletics.de/</span></p>
-        
+        <p>Adidas Open Playground - Outdoor Parc
+      <br /> Address: <span>Brandenburgische Str. 51, 10707 Berlin</span>
+      <br /> Contact: <span>+49 17631568519</span></p>
+
+        <p>Calisthenics Park Gleisdreieck - Athletic Parc
+      <br /> Address: <span>10963 Berlin</span>
+     <br />website: <span>https://www.calisthenics-parks.co/</span>
+     <br /> Contact: <span>Open 24h/24</span></p>
         
     </div>
-
-    
-
-    
+   
 </div>
 <div className={styles.box}>
       <div className={styles.imgBox}>
@@ -128,82 +114,39 @@ export const BlogSection = () => {
 
       <p>Bike & Tour Rental
       <br /> 
-      Add: <span>Poststraße 11, 10178 Berlin
+      Address: <span>Poststraße 11, 10178 Berlin
 </span>
       <br /> Contact: <span>03028704492</span> <br />
         website: <span>www.fahrradtouren-berlin.com</span></p>
 
-        <p>Bike & Tour Rental
+        <p>Free Tours by Foot - Visit Agency
       <br /> 
-      Add: <span>Poststraße 11, 10178 Berlin
+      Address: <span> Berlin
 </span>
-      <br /> Contact: <span>03028704492</span> <br />
-        website: <span>www.fahrradtouren-berlin.com</span></p>
-        <p>Bike & Tour Rental
-      <br /> 
-      Add: <span>Poststraße 11, 10178 Berlin
-</span>
-      <br /> Contact: <span>03028704492</span> <br />
-        website: <span>www.fahrradtouren-berlin.com</span></p>
-        <p>Bike & Tour Rental
-      <br /> 
-      Add: <span>Poststraße 11, 10178 Berlin
-</span>
-      <br /> Contact: <span>03028704492</span> <br />
-        website: <span>www.fahrradtouren-berlin.com</span></p>
-        <p>Bike & Tour Rental
-      <br /> 
-      Add: <span>Poststraße 11, 10178 Berlin
-</span>
-      <br /> Contact: <span>03028704492</span> <br />
-        website: <span>www.fahrradtouren-berlin.com</span></p>
+      <br /> Contact: <span>+49 1747803618</span> <br />
+        website: <span>https://freetoursbyfoot.com/</span></p>
 
 
+        <p>BSANDEMANs - Free Walking Tour
+      <br /> 
+      Address: <span> Berlin
+</span>
+      <br /> Contact: <span>+49 3051050030</span> <br />
+        website: <span>https://www.neweuropetours.eu/berlin-walking-tours</span></p>
+
+        <p>Original Berlin Tours
+      <br /> 
+      Address: <span>Alexanderpl. 7, 10178 Berlin
+</span>
+      <br /> Contact: <span>+49 15783893416</span> <br />
+        website: <span>https://www.originalberlintours.com/</span></p>
     </div>
 </div>
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       {/* <main className={styles.cardsMain}>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
+       
         <article className={styles.rightArticle}>
           <img
             className={styles.rightimageIcon}

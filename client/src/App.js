@@ -99,8 +99,8 @@ function App() {
       <Route path="/aboutuspage" element={<AboutUsPage />} />
 
       <Route path="/findsupportpage" element={<FindSupportPage />} />
-      <Route path="/getaccomodations" element={<GetAccomodations />} />
 
+      <Route path="/getaccomodations" element={<GetAccomodations />} />
       
       <Route path="/donationpage" element={<DonationPage />} />
     </Routes>

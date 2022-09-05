@@ -142,10 +142,12 @@
 }
 .image2Icon {
   position: absolute;
-  top: -7px;
-  left: -15px;
-  width: 23px;
-  height: 23px;
+
+  top: -6px;
+  left: -20px;
+  width: 16px;
+  height: 16px;
+
   object-fit: cover;
   /* border: 2px solid red; */
 }

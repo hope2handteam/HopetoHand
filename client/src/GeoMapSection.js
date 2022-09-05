@@ -41,14 +41,14 @@ const navigateToLists=(e)=>{
 
 <div className={styles.geoMapSectionContainer}>
 <h1 style={{marginTop:'5%', textAlign:'center',fontFamily: 'Montserrat'
-}}> to view the complete list, please press the bellow Bottoms</h1> 
+}}> Please select the top left button on the map, and check the boxes in order to view our partners locations!</h1> 
       <section className={styles.geoMapSection}>
       <div  id="geoMap" className={styles.mapSectionDiv1}>
         <iframe className={styles.freeServiceMap} src="https://www.google.com/maps/d/u/0/embed?mid=1JK_78DbC8mjmwDwqA7maE32YHtg33LQ&ehbc=2E312F" width="640" height="480"></iframe>
        
       </div>
       <h1 style={{marginTop:'5%', textAlign:'center',fontFamily: 'Montserrat'
-}}> to view the complete list, please press the bellow Bottoms</h1> 
+}}> Check our partners locations!</h1> 
 <div className={styles.listSelect}>
 
 
@@ -57,7 +57,10 @@ const navigateToLists=(e)=>{
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><GiMedicalThermometer/></Card.Title>
 
-        <Button  className={styles.cardBtn} onClick={navigateToLists} variant="primary" value="medical" >  Free Medical service</Button>
+        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '30px' }}>
+          Get some help with finding any free and all kind of medical services and insurances!
+        </Card.Text>
+        <Button onClick={navigateToLists} variant="primary" value="medical" >  Free Medical service</Button>
       </Card.Body>
     </Card>
 
@@ -65,8 +68,11 @@ const navigateToLists=(e)=>{
     <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${FoodImage})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><GiFoodTruck/></Card.Title>
-  
-        <Button  className={styles.cardBtn} onClick={navigateToLists} variant="primary" value="food" >  Free/cheap Food service</Button>
+
+        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
+          Find organic and free food daily in your locality!
+        </Card.Text>
+        <Button onClick={navigateToLists} variant="primary" value="food" >  Free&Cheap Food Donations</Button>
       </Card.Body>
     </Card>
 
@@ -74,16 +80,21 @@ const navigateToLists=(e)=>{
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><FaSchool/></Card.Title>
 
-        <Button  className={styles.cardBtn} onClick={navigateToLists} variant="primary" value="intrgration" > Integration Courses</Button>
+        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
+        Get some help with Integration Courses today on!
+        </Card.Text>
+        <Button onClick={navigateToLists} variant="primary" value="intrgration" > Integration Courses</Button>
       </Card.Body>
     </Card>
 
 
     <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${CheapCloths})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
-        <Card.Title style={{ color: 'white', fontSize:'30px'}}><GiClothes/></Card.Title>
-
-        <Button  className={styles.cardBtn} onClick={navigateToLists} variant="primary" value="cloth" > Free/cheap Cloths</Button>
+        <Card.Title style={{ color: 'white', fontSize:'30px'}}><GiClothes/></Card.Title> 
+        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
+          Find cheap clothes around the corner! 
+        </Card.Text>
+        <Button onClick={navigateToLists} variant="primary" value="cloth" > Free Clothes</Button>
       </Card.Body>
     </Card>
 
@@ -91,7 +102,10 @@ const navigateToLists=(e)=>{
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><FaPeopleCarry/></Card.Title>
 
-        <Button className={styles.cardBtn} onClick={navigateToLists} variant="primary" value="social" > Social Services</Button>
+        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
+          Find all kind of social service helper!
+        </Card.Text>
+        <Button onClick={navigateToLists} variant="primary" value="social" > Social Services</Button>
       </Card.Body>
     </Card>
 
@@ -99,7 +113,10 @@ const navigateToLists=(e)=>{
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><MdOutlineDriveEta/></Card.Title>
 
-        <Button  className={styles.cardBtn} onClick={navigateToLists} variant="primary" value="drivingSchools" >Driving Schools</Button>
+        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
+          Here our most cheapest local driving school!
+        </Card.Text>
+        <Button onClick={navigateToLists} variant="primary" value="drivingSchools" >Driving Schools</Button>
       </Card.Body>
     </Card>
 
@@ -107,7 +124,10 @@ const navigateToLists=(e)=>{
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><GoLaw/></Card.Title>
 
-        <Button  className={styles.cardBtn} onClick={navigateToLists} variant="primary" value="lawService" >Free Law Service</Button>
+        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
+          Some Lawyers and Attorney at your service monthly!
+        </Card.Text>
+        <Button onClick={navigateToLists} variant="primary" value="lawService" >Free Law Services</Button>
       </Card.Body>
     </Card>
 
@@ -115,7 +135,10 @@ const navigateToLists=(e)=>{
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><TbOlympics/></Card.Title>
 
-        <Button  className={styles.cardBtn} onClick={navigateToLists} variant="primary" value="sport" >Best place to sport</Button>
+        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
+          Free open Air courts & Free group sessions by clubs and associations.
+        </Card.Text>
+        <Button onClick={navigateToLists} variant="primary" value="sport" >Best place to do sports</Button>
       </Card.Body>
     </Card>
 
@@ -123,7 +146,10 @@ const navigateToLists=(e)=>{
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><TbOlympics/></Card.Title>
 
-        <Button  className={styles.cardBtn} onClick={navigateToLists} variant="primary" value="park" >Parks</Button>
+        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
+          The best parks to chill and relax in the City!
+        </Card.Text>
+        <Button onClick={navigateToLists} variant="primary" value="park" >Parks</Button>
       </Card.Body>
     </Card>
 
@@ -131,7 +157,10 @@ const navigateToLists=(e)=>{
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><TbOlympics/></Card.Title>
 
-        <Button  className={styles.cardBtn} onClick={navigateToLists} variant="primary" value="park" >Corona test centers</Button>
+        <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
+          Free vaccination services and test centers open today.
+        </Card.Text>
+        <Button onClick={navigateToLists} variant="primary" value="park" >Free Covid Test Centers</Button>
       </Card.Body>
     </Card>
 

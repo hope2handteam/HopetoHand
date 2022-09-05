@@ -129,7 +129,7 @@ export const ProfileSection = () => {
                             value.image.map((img) =>
 
 
-                              <img className={styles.accommodationImg} src={img} alt="" />
+                              <img className={styles.accommodationImg} src={img} alt="Accommodation Image" />
 
                             )
                           ) : "No image"
@@ -180,7 +180,7 @@ export const ProfileSection = () => {
                     </div>         
                   </div>
 
-
+                
                 );
               })
               : ""}
@@ -188,6 +188,7 @@ export const ProfileSection = () => {
 
         </div>
       ) : menu === "Job" ? (
+
         <div  >
         <div className={styles.accommodationMainContainer} >
           <h2  className={styles.title} >Jobs</h2>
@@ -223,6 +224,7 @@ export const ProfileSection = () => {
         </div>
 
       </div>
+
       ) : (
         menu == null
       )}
