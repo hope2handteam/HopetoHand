@@ -106,6 +106,7 @@ export const LoginSignUpPopUp = ({ onClose }) => {
               </div>
             </button>
             {message ? (
+
           
           <div>
           <h5 className={styles.titleMsg}>You have successfully Signup</h5>
@@ -145,3 +146,4 @@ export const LoginSignUpPopUp = ({ onClose }) => {
      </>
    );
  };
+
