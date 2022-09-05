@@ -51,12 +51,12 @@ export const WelcomeSection = () => {
         <article className={styles.getHelpFrameArticle}>
           <div className={styles.frameDiv}>
             <div className={styles.descriptionDiv}>
-              You want to stay or get help with private volunteers persons in
-              Berlin?
+            Do you need any kind of  at a private volunteer's place in Berlin
+              or other kind of help?
             </div>
             <div className={styles.descriptionDiv1}>
               <p className={styles.welcomeP}>
-                Register now and we will try to find a suitable accommodation
+               We will try to find a suitable Help
                 for you quickly.
               </p>
             </div>
