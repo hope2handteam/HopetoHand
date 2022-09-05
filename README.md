@@ -40,6 +40,7 @@ This local Assistance App. is here for you in the most needed time.
 - Beautiful and Fully Responsive Design for Desktop & Tablet Minimal Design made with cutting edge tools like Locofy
 - Material UI & Bootstrap Library
 - Google Authentification 
+- Special Contact Form, Forms & Login Users Secure Data Collection: Our user data goes to our Backend Database.
 - Clear Navigation & Call To Action for the User
 - Geolocalisation Map Plan Page
 - API to get User infos and Picture in our Frontend Forms to our  Backend Database
