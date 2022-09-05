@@ -53,9 +53,13 @@ This local Assistance App. is here for you in the most needed time.
 
 #### OTHERS
 - FIGMA
+- ADOBE ILLUSTRATOR
 - LOCOFY.AI PLUGIN
 - GITHUB PROJECTS
 - SLACK
+- VS CODE
+- TRELLO
+
 
 #### DEPENDENCIES 
 - FRONTEND: {
