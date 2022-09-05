@@ -27,7 +27,6 @@ export const MainHeader2 = () => {
   const onContactUsButtonClick = useCallback(() => {
     navigate("/aboutuspage");
   }, [navigate]);
-  
   const donationUsButtonClick = useCallback(() => {
     navigate("/donationpage");
   }, [navigate]);

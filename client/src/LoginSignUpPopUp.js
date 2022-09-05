@@ -15,7 +15,7 @@ export const LoginSignUpPopUp = ({ onClose }) => {
     const [message, setMessage] = useState(false);
 
   // const onFrameButtonClick = useCallback(() => {
-  //   // Please sync "LoggedInOptionPopUp" to the project   ????
+  //   // Please sync "LoggedInOptionPopUp" to the project
   // }, []);
     const openSignInPopUp = useCallback(() => {
     setSignInPopUpOpen(true);
@@ -122,7 +122,7 @@ export const LoginSignUpPopUp = ({ onClose }) => {
               <div className={styles.groupDiv}>
                 <img
                   className={styles.image2Icon}
-                  alt="Google Logo"
+                  alt=""
                   src="image-2@2x.png"
                 />
                 <p className={styles.signUpWithGoogle}>Sign up with Google</p>

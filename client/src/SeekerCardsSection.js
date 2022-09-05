@@ -17,7 +17,7 @@ export const SeekerCardsSection = () => {
               src="profilesymbol4.svg"
             />
             <div className={styles.frameDiv}>
-              <h4 className={styles.seekerOneH4}>Seeker Two</h4>
+              <h4 className={styles.seekerOneH4}>Seeker One</h4>
               <p className={styles.messageThemP}>Message Them!</p>
             </div>
           </article>
@@ -28,7 +28,7 @@ export const SeekerCardsSection = () => {
               src="profilesymbol5.svg"
             />
             <div className={styles.frameDiv}>
-              <h4 className={styles.seekerOneH4}>Seeker Three</h4>
+              <h4 className={styles.seekerOneH4}>Seeker One</h4>
               <p className={styles.messageThemP}>Message Them!</p>
             </div>
           </article>
@@ -41,7 +41,7 @@ export const SeekerCardsSection = () => {
               src="profilesymbol6.svg"
             />
             <div className={styles.frameDiv}>
-              <h4 className={styles.seekerOneH4}>Seeker Four</h4>
+              <h4 className={styles.seekerOneH4}>Seeker One</h4>
               <p className={styles.messageThemP}>Message Them!</p>
             </div>
           </article>
