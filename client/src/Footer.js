@@ -1,6 +1,10 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./css/Footer.module.css";
+import {BsFacebook} from "react-icons/bs"
+import {AiFillInstagram} from "react-icons/ai"
+import {AiFillTwitterCircle} from "react-icons/ai"
+import {AiFillLinkedin} from "react-icons/ai"
 
 export const Footer = () => {
   const navigate = useNavigate();
@@ -42,26 +46,24 @@ export const Footer = () => {
                 Email: contact@hope2hand.io
               </p>
               <p className={styles.emailContacthope2handio}>
-                Location: Smartrasse, Berlin, DE
+                Location: Smartstrasse, Berlin, DE
               </p>
             </div>
             <article className={styles.socialMediaLinks} id="social links">
-              <img
-                className={styles.instaIcon}
-                alt=""
-                src="../insta-icon.svg"
-              />
-              <img className={styles.fbIcon} alt="" src="../fb-icon.svg" />
-              <img
-                className={styles.twitterIcon}
-                alt=""
-                src="../twitter-icon.svg"
-              />
-              <img
-                className={styles.linkedinIcoonIcon}
-                alt=""
-                src="../linkedin-icoon.svg"
-              />
+             <h2 className={styles.socialIcons}>
+              <BsFacebook/>
+            </h2> 
+            
+            <h2 className={styles.socialIcons}>
+              <AiFillInstagram/>
+            </h2> 
+            <h2 className={styles.socialIcons}>
+              <AiFillTwitterCircle/>
+            </h2> 
+            <h2 className={styles.socialIcons}>
+              <AiFillLinkedin/>
+            </h2> 
+
             </article>
           </div>
           <div className={styles.rectangleDiv} />
