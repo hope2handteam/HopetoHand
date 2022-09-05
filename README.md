@@ -35,6 +35,18 @@ This local Assistance App. is here for you in the most needed time.
 
 ## Tech Stack used for this project
 
+### Main Features and Functionalities
+
+- Beautiful and Fully Responsive Design for Desktop & Tablet Minimal Design made with cutting edge tools like Locofy
+- Material UI & Bootstrap Library
+- Google Authentification 
+- Clear Navigation & Call To Action for the User
+- Geolocalisation Map Plan Page
+- API to get User infos and Picture in our Frontend Forms to our  Backend Database
+- Responsivesness & Accessibility 
+- SEO & Metadata
+
+
 ![Screenshot 2022-08-17 at 10 57 38](https://user-images.githubusercontent.com/90310689/188270175-e22f884b-3dd3-42d0-ba2e-754380bd573a.png)
 
 #### FRONTEND
@@ -50,7 +62,10 @@ This local Assistance App. is here for you in the most needed time.
 - NODE.JS
 - EXPRESS.JS
 - POSTMAN
+- AXIOS
 - MONGO DB
+- MONGOOSE
+- MONGO ATLAS
 
 #### OTHERS
 - FIGMA
@@ -60,6 +75,7 @@ This local Assistance App. is here for you in the most needed time.
 - SLACK
 - VS CODE
 - TRELLO
+- LOOM  Video Recording
 
 
 #### DEPENDENCIES 
@@ -131,3 +147,5 @@ Thanks to all the Locofy.ai team for the precious help!
 - It is a local application but we could promote it to global use and establish node app. hubs in every cities we can!
 
 - Make a in house feature Free Map with Geolicalisation API 
+
+## Thanks for you Support!
