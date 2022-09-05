@@ -44,6 +44,7 @@ This local Assistance App. is here for you in the most needed time.
 - REACT.JS
 - BOOTSTRAP
 - MATERIAL UI
+- LOCOFY BUILDER
 
 #### BACKEND
 - NODE.JS
