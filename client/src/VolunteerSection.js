@@ -58,6 +58,19 @@ export const VolunteerSection = () => {
   const [endDateHelp, setEndDateHelp] = useState("");
   const[helpType, setHelpType] = useState("Interpretation");
 
+
+  const [ contactNumberJob, setContactNumberJob] = useState("");
+  const [contactEmailJob, setContactEmailJob] = useState("");
+  const [addressJob, setAddressJob] = useState("");
+  const [contactPersonJob, setContactPersonJob] = useState("");
+  const [cityJob, setCityJob] = useState("Berlin");
+  const [TypeOfLanguageJob, setTypeOfLanguageJob] = useState("German");
+  const [jobProvider, setJobProvider] = useState("");
+  const [startDateJob, setStartDateJob] = useState("");
+  const [endDateJob, setEndDateJob] = useState("");
+  const[jobList, setJobList] = useState("Store Greeter");
+  const[ salaryBasisJob, seSalaryBasisJob] = useState("Monthly");
+
   const createAccomodation = async () => {
     const data = { image,address, contactPerson, contactNumber, contactEmail, accomodationType, numberOfPersons, city, startDate, endDate };
 
@@ -121,6 +134,39 @@ export const VolunteerSection = () => {
   };
 
 
+  const createJob = async () => {
+    const data = {contactNumberJob, contactEmailJob, addressJob, contactPersonJob, cityJob, TypeOfLanguageJob, jobProvider, startDateJob,endDateJob, jobList, salaryBasisJob };
+    
+
+    const API = axios.create({ baseURL: "http://localhost:5000"});
+
+    API.interceptors.request.use((req) => {
+      if (localStorage.getItem("profile")) {
+        req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem("profile")).token 
+          }`;
+      }
+      return req;
+    });
+
+
+    await API.post("/volunteerformspage/posthelp", data);
+
+    setContactNumberJob("");
+    setContactEmailJob("");
+    setAddressJob("");
+    setContactPersonJob("");
+    // setImage("");
+    setCityJob("");
+    setTypeOfLanguageJob("");
+    setJobProvider("");
+    setStartDateJob("");
+    setEndDateJob("");
+    setJobList("");
+    seSalaryBasisJob("");
+  };
+
+
+
 
 
   const user = JSON.parse(localStorage.getItem("profile"));
@@ -178,14 +224,8 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                 >
                   <MenuItem value="accommodation">Accommodation</MenuItem>
                   <MenuItem value="Help">Help</MenuItem>
-                  {/* <MenuItem value="Translation">Translation</MenuItem> */}
                   <MenuItem value="Job">Job</MenuItem>
-                  {/* <MenuItem value="Social_Services">
-                  Social Services
-                  </MenuItem>
-                  <MenuItem value="Medical_Services">
-                  Medical Services
-                  </MenuItem> */}
+
                 </Select>
 
 
@@ -322,18 +362,21 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
 
 
             )
-              : volenForm === "Job" ? (<form className={styles.jobForm} method="post">
+              : volenForm === "Job" ? (<form className={styles.jobForm}>
                 <input
+                onChange={(e) =>  setContactPersonJob(e.target.value)}
                   className={styles.contactPersonName}
                   type="text"
                   placeholder="Contact Person Name"
                 />
                 <input
+                 onChange={(e) =>  setContactNumberJob(e.target.value)}
                   className={styles.contactPersonNumber}
                   type="number"
                   placeholder="Contact Person Number"
                 />
                 <input
+                 onChange={(e) =>   setContactEmailJob(e.target.value)}
                   className={styles.contactPersonEmail}
                   type="email"
                   placeholder="Contact Person Email"
@@ -349,6 +392,7 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                     <option className={styles.optionBox}>Brandenburg</option>
                   </select>
                   <input
+                  onChange={(e) =>   setJobProvider(e.target.value)}
                     className={styles.jobStreet}
                     type="text"
                     placeholder="Person/Company/Organization Name"
@@ -357,14 +401,18 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                 <div className={styles.jobSelectDiv}>
                   <div className={styles.jobTitles}>Language</div>
                   <div className={styles.jobTitles}>Job List</div>
-                  <select className={styles.jobDetails}>
+                  <select
+                  onChange={(e) =>  setTypeOfLanguageJob(e.target.value)}
+                   className={styles.jobDetails}>
                     <option>Germany</option>
                     <option>English</option>
                     <option>Arabic</option>
                     <option>Russian</option>
                     <option>Persian</option>
                   </select>
-                  <select className={styles.jobPersonsNumber}>
+                  <select 
+                     onChange={(e) => setJobList(e.target.value)}
+                  className={styles.jobPersonsNumber}>
                     <option>Store Greeter</option>
                     <option>Housekeeper</option>
                     <option>Security Guard</option>
@@ -382,7 +430,9 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                     <option>Full time</option>
                     <option>Part Time</option>
                   </select>
-                  <select className={styles.jobPersonsNumber}>
+                  <select
+                   onChange={(e) =>   seSalaryBasisJob(e.target.value)}
+                   className={styles.jobPersonsNumber}>
                     <option>Monthly</option>
                     <option>Weekly</option>
                     <option>Daley</option>
@@ -393,34 +443,21 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                   <div className={styles.jobTitles}> Contract Start Date:</div>
                   <div className={styles.jobTitles}> Contract Finish Date:</div>
                   <input
+                  onChange={(e) =>  setStartDateJob(e.target.value)}
                     className={styles.jobStartDate}
                     type="date"
                     name="date"
                     id="date"
                   />
                   <input
+                   onChange={(e) =>  setEndDateJob(e.target.value)}
                     className={styles.jobEndDate}
                     type="date"
                     name="date"
                     id="date"
                   />
                 </div>
-                <div className={styles.jobSelectDiv}>
-                  <div className={styles.jobTitles}>Contact Person Availability from</div>
-                  <div className={styles.jobTitles}> to</div>
-                  <input
-                    className={styles.jobStartDate}
-                    type="time"
-                    name="time"
-                    id="time"
-                  />
-                  <input
-                    className={styles.ContactPersonAvailable}
-                    type="time"
-                    name="time"
-                    id="time"
-                  />
-                </div>
+
                 <div className={styles.accommodationSelectDiv}>
                   <input className={styles.checkBoxBox} type="checkbox" />{" "}
                   <p className={styles.termsOfUse}>
@@ -428,7 +465,7 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                   </p>
                 </div>
                 <div className={styles.jobSelectDiv}>
-                  <button className={styles.formButton}> submit</button>
+                  <button onClick={createJob} className={styles.formButton}> submit</button>
                 </div>
               </form>)
                 : volenForm === "Help" ? (<form className={styles.helpForm} >
@@ -509,9 +546,9 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                     
                   />
                   </div>
-                  <div className={styles.helpSelectDiv}>
-                    <div className={styles.helpTitles}>Contact Person Availability from</div>
-                    <div className={styles.helpTitles}> to</div>
+               
+                   
+                  
                     {/* <input
                       className={styles.jobStartDate}
                       type="time"
@@ -524,7 +561,7 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                       name="time"
                       id="time"
                     /> */}
-                  </div>
+                
                   <div className={styles.accommodationSelectDiv}>
                     <input className={styles.checkBoxBox} type="checkbox" />
                     <p className={styles.termsOfUse}>

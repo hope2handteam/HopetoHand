@@ -56,6 +56,7 @@ const navigateToLists=(e)=>{
 }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><GiMedicalThermometer/></Card.Title>
+
         <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '30px' }}>
           Get some help with finding any free and all kind of medical services and insurances!
         </Card.Text>
@@ -64,9 +65,10 @@ const navigateToLists=(e)=>{
     </Card>
 
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${FoodImage})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${FoodImage})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><GiFoodTruck/></Card.Title>
+
         <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
           Find organic and free food daily in your locality!
         </Card.Text>
@@ -74,9 +76,10 @@ const navigateToLists=(e)=>{
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${IntergrationCourse})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${IntergrationCourse})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><FaSchool/></Card.Title>
+
         <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
         Get some help with Integration Courses today on!
         </Card.Text>
@@ -85,9 +88,9 @@ const navigateToLists=(e)=>{
     </Card>
 
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${CheapCloths})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${CheapCloths})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
-        <Card.Title style={{ color: 'white', fontSize:'30px'}}><GiClothes/></Card.Title>
+        <Card.Title style={{ color: 'white', fontSize:'30px'}}><GiClothes/></Card.Title> 
         <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
           Find cheap clothes around the corner! 
         </Card.Text>
@@ -95,9 +98,10 @@ const navigateToLists=(e)=>{
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${SocialService})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${SocialService})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><FaPeopleCarry/></Card.Title>
+
         <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
           Find all kind of social service helper!
         </Card.Text>
@@ -105,9 +109,10 @@ const navigateToLists=(e)=>{
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${DrivingSchools})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${DrivingSchools})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><MdOutlineDriveEta/></Card.Title>
+
         <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
           Here our most cheapest local driving school!
         </Card.Text>
@@ -115,9 +120,10 @@ const navigateToLists=(e)=>{
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${Law})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${Law})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><GoLaw/></Card.Title>
+
         <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
           Some Lawyers and Attorney at your service monthly!
         </Card.Text>
@@ -125,9 +131,10 @@ const navigateToLists=(e)=>{
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${Sport})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${Sport})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><TbOlympics/></Card.Title>
+
         <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
           Free open Air courts & Free group sessions by clubs and associations.
         </Card.Text>
@@ -135,9 +142,10 @@ const navigateToLists=(e)=>{
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${Park})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${Park})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative'}}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><TbOlympics/></Card.Title>
+
         <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
           The best parks to chill and relax in the City!
         </Card.Text>
@@ -145,9 +153,10 @@ const navigateToLists=(e)=>{
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${corona})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px' }}>
+    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${corona})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><TbOlympics/></Card.Title>
+
         <Card.Text style={{ color: 'white', fontSize:'15px', marginTop: '40px' }}>
           Free vaccination services and test centers open today.
         </Card.Text>

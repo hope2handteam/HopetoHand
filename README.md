@@ -42,6 +42,8 @@ This local Assistance App. is here for you in the most needed time.
 - CSS MODULES
 - JAVASCRIPT
 - REACT.JS
+- BOOTSTRAP
+- MATERIAL UI
 
 #### BACKEND
 - NODE.JS
@@ -51,9 +53,13 @@ This local Assistance App. is here for you in the most needed time.
 
 #### OTHERS
 - FIGMA
+- ADOBE ILLUSTRATOR
 - LOCOFY.AI PLUGIN
 - GITHUB PROJECTS
 - SLACK
+- VS CODE
+- TRELLO
+
 
 #### DEPENDENCIES 
 - FRONTEND: {
@@ -123,4 +129,4 @@ Thanks to all the Locofy.ai team for the precious help!
 
 - It is a local application but we could promote it to global use and establish node app. hubs in every cities we can!
 
-- Make a collaboration with Google API so they sponsor our project.
+- Make a in house feature Free Map with Geolicalisation API 

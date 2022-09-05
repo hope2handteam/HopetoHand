@@ -38,6 +38,7 @@
   height: 40px;
   flex-shrink: 0;
   overflow: hidden;
+  padding-left: 10px;
 }
 .usernameFillDiv {
   display: flex;
@@ -141,11 +142,14 @@
 }
 .image2Icon {
   position: absolute;
+
   top: -6px;
   left: -20px;
   width: 16px;
   height: 16px;
+
   object-fit: cover;
+  /* border: 2px solid red; */
 }
 .continueWithGoogle {
   margin: 0;
@@ -192,23 +196,23 @@
 }
 .ellipseIcon {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 41.99px;
-  height: 41.99px;
+  top: -3px;
+  right: -3px;
+  width: 40px;
+  height: 40;
 }
 .closeButton,
 .lineIcon,
 .lineIcon1 {
   position: absolute;
-  top: 13.56px;
-  right: 13.55px;
+  top: 11px;
+  right: 10px;
   width: 14.17px;
   height: 14.17px;
 }
 .closeButton,
 .lineIcon1 {
-  right: 14.26px;
+  right: 11px;
 }
 .closeButton {
   cursor: pointer;

@@ -197,6 +197,9 @@
   text-decoration: none;
   color: #484848;
 }
+.mapLink:hover{
+  color: #908DB9;
+}
 @media screen and (max-width: 1200px) {
   .frameDiv {
     width: 100%;

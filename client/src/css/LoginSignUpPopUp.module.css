@@ -56,6 +56,7 @@
   width: 335px;
   height: 40px;
   flex-shrink: 0;
+  padding-left: 15px;
 }
 .frameDiv2 {
   display: flex;
@@ -130,10 +131,12 @@
 }
 .image2Icon {
   position: absolute;
+
   top: -6px;
   left: -20px;
   width: 16px;
   height: 16px;
+
   object-fit: cover;
 }
 .signUpWithGoogle {
@@ -231,3 +234,4 @@
   color: #706b5d;
   font-family: Montserrat;
 }
+
