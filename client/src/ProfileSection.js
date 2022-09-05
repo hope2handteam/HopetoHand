@@ -158,7 +158,7 @@ export const ProfileSection = () => {
 
             {request
               ? detailsHelp?.map((value) => {
-                return (                 
+                return (
                     <div className={styles.helperContainer}  key={value._id}>
                       <div  className={styles.detailsContainer}> 
 
@@ -176,8 +176,8 @@ export const ProfileSection = () => {
                       <p>Email: <span>{value.contactEmailHelp}</span></p>
                       <p> Valid From: <span> {value.startDateHelp}</span> </p>
                       <p> to: <span>{value.endDateHelp} </span> </p>
-                      </div>  
-                    </div>         
+                      </div>
+                    </div>
                   </div>
 
 
@@ -188,7 +188,7 @@ export const ProfileSection = () => {
 
         </div>
       ) : menu === "Job" ? (
-        <div  >
+<div  >
         <div className={styles.accommodationMainContainer} >
           <h2  className={styles.title} >Jobs</h2>
           {request
@@ -220,6 +220,7 @@ export const ProfileSection = () => {
             : ""}
         </div>
       </div>
+
       ) : (
         menu == null
       )}

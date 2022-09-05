@@ -6,34 +6,41 @@ import mongoose from "mongoose";
 
 export const postJob = async (req, res) => {
 
+    //console.log("Jobs:", req.body);
 
-    const {  salaryBasis,address, city, jobType, jobList,jobProvider,contactPerson,contactNumber,contactEmail, startDate, endDate } = req.body;
+    const {
+        contactEmailJob,
+        contactPersonJob,
+        contactNumberJob,
+        TypeOfLanguageJob,
+        jobType,
+        cityJob,
+        jobList,
+        jobProvider,
+        salaryBasisJob,
+        startDateJob,
+        endDateJob} = req.body;
     try {
         const user = await usersModel.findById(req.user.id);
         if (!user) {
             return res.status(404).json({ msg: "User not found" });
         }
      
-        const job = new jobFormModel({
-            
-            contactPerson,
-            contactNumber,
-            contactEmail,
-            address,
-            city,
-            
-            jobType,  
-            jobList,
-            jobProvider,
-            salaryBasis,
+        const job = new jobFormModel(
+        {contactEmailJob,
+        contactPersonJob,
+        contactNumberJob,
+        TypeOfLanguageJob,
+        jobType,
+        cityJob,
+        jobList,
+        jobProvider,
+        salaryBasisJob,
+        startDateJob,
+        endDateJob});
 
-            startDate,
-            endDate,
-           
-            // creator: req.user.id
-
-        });
 console.log("job:", job);
+
         await job.save();
         user.job.push(job._id);
         await user.save();
@@ -106,4 +113,5 @@ export const getAllJob = async (req, res) => {
     } catch (error) {
       console.log(error.message);
     }
+ 
   };

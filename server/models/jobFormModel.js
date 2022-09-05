@@ -1,68 +1,59 @@
 import mongoose from "mongoose";
 
 
-
-
 const jobFormSchema = new mongoose.Schema({
-    address: {
+  
+    contactEmailJob: {
         type: String,
-        required: true
+       // required: true
 
-    }
-    ,
-    contactEmail: {
+    },
+    contactPersonJob: {
         type: String,
-        required: true
+      //  required: true
 
-    }
-    ,
-    contactNumber: {
+    },
+    contactNumberJob: {
         type: String,
-        required: true
+     //   required: true
 
-    }
-    ,
-
-    city: {
+    },
+    TypeOfLanguageJob: {
         type: String,
-        required: true,
+    //    required: true
+
+    },
+    cityJob: {
+        type: String,
+     //   required: true,
         // minlength: 6
     },
     jobType: {
         type: String,
-        required: true,
+    //    required: true,
         // minlength: 6
     },
     jobList: {
         type: String,
-        required: true,
+    //    required: true,
         // minlength: 6
     },
     jobProvider: {
         type: String,
-        required: true,
+    //    required: true,
         // minlength: 6
     },
-    salaryBasis: {
+    salaryBasisJob: {
         type: String,
-        required: true,
+   //     required: true,
         // minlength: 6
     },
-
-    startDate: {
-        type: Date,
-        
+    startDateJob: {
+        type: String,
     } ,
-    endDate: {
-        type: Date,
-       
+    endDateJob: {
+        type: String,
     } ,
-
-
- 
-
-
-
 });
 
 const jobFormModel = mongoose.model("job", jobFormSchema);
