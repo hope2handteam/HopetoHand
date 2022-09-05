@@ -137,7 +137,7 @@ export const ProfileSection = () => {
                             value.image.map((img) =>
 
 
-                              <img className={styles.accommodationImg} src={img} alt="" />
+                              <img className={styles.accommodationImg} src={img} alt="Accommodation Image" />
 
                             )
                           ) : "No image"
@@ -182,7 +182,7 @@ export const ProfileSection = () => {
                     </div>          
                   </div>
 
-
+                
                 );
               })
               : ""}
@@ -191,6 +191,8 @@ export const ProfileSection = () => {
         </div>
       ) : menu === "Job" ? (
         <div> helpers</div>
+        
+
       ) : menu === "Translation Service" ? (
         <div> Translation Service</div>
       ) : (

@@ -36,13 +36,13 @@ export const Footer = () => {
             <h4 className={styles.cONTACTINFOH4}>CONTACT INFO</h4>
             <div className={styles.contactItemsDiv}>
               <p className={styles.emailContacthope2handio}>
-                Phone: +49 3360033400
+                Phone: +49 33700334
               </p>
               <p className={styles.emailContacthope2handio}>
                 Email: contact@hope2hand.io
               </p>
               <p className={styles.emailContacthope2handio}>
-                Location: Smartrasse, Berlin, DE
+                Location: Smartstrasse, Berlin, DE
               </p>
             </div>
             <article className={styles.socialMediaLinks} id="social links">
@@ -75,7 +75,7 @@ export const Footer = () => {
         <p className={styles.createdWithLoveByTheThird}>
           <span>{`Created `}</span>
           <span className={styles.withSpan}>with</span>
-          <span> love by The Third Team</span>
+          <span> Love by The Third Team</span>
         </p>
       </address>
     </footer>

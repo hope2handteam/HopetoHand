@@ -83,6 +83,7 @@ export const LoginSignInPopUp = ({ onClose }) => {
                     type="checkbox"
                     defaultChecked={true}
                   />
+                  {/*//TODO padding Remember me }*/}
                   <p className={styles.rememberMeP}>Remember me</p>
                   <a className={styles.forgotPassword} target="_blank">
                     Forgot password?

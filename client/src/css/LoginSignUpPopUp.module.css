@@ -130,8 +130,8 @@
 }
 .image2Icon {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -6px;
+  left: -20px;
   width: 16px;
   height: 16px;
   object-fit: cover;
