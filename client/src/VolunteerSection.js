@@ -46,7 +46,7 @@ export const VolunteerSection = () => {
   const [image, setImage] = useState([]);
 
 
-
+//Helps
   const [contactNumberHelp, setContactNumberHelp] = useState("");
   const [contactEmailHelp, setContactEmailHelp] = useState("");
   const [addressHelp, setAddressHelp] = useState("");
@@ -59,9 +59,10 @@ export const VolunteerSection = () => {
   const[helpType, setHelpType] = useState("Interpretation");
 
 
+
+  //Jobs
   const [ contactNumberJob, setContactNumberJob] = useState("");
   const [contactEmailJob, setContactEmailJob] = useState("");
-  const [addressJob, setAddressJob] = useState("");
   const [contactPersonJob, setContactPersonJob] = useState("");
   const [cityJob, setCityJob] = useState("Berlin");
   const [TypeOfLanguageJob, setTypeOfLanguageJob] = useState("German");
@@ -69,7 +70,8 @@ export const VolunteerSection = () => {
   const [startDateJob, setStartDateJob] = useState("");
   const [endDateJob, setEndDateJob] = useState("");
   const[jobList, setJobList] = useState("Store Greeter");
-  const[ salaryBasisJob, seSalaryBasisJob] = useState("Monthly");
+  const[ salaryBasisJob, setSalaryBasisJob] = useState("Monthly");
+  const[ jobType, setJobType] = useState("");
 
   const createAccomodation = async () => {
     const data = { image,address, contactPerson, contactNumber, contactEmail, accomodationType, numberOfPersons, city, startDate, endDate };
@@ -135,7 +137,18 @@ export const VolunteerSection = () => {
 
 
   const createJob = async () => {
-    const data = {contactNumberJob, contactEmailJob, addressJob, contactPersonJob, cityJob, TypeOfLanguageJob, jobProvider, startDateJob,endDateJob, jobList, salaryBasisJob };
+    const data = {
+      contactEmailJob,
+      contactPersonJob,
+      contactNumberJob,
+      TypeOfLanguageJob,
+      jobType,
+      cityJob,
+      jobList,
+      jobProvider,
+      salaryBasisJob,
+      startDateJob,
+      endDateJob};
     
 
     const API = axios.create({ baseURL: "http://localhost:5000"});
@@ -149,11 +162,11 @@ export const VolunteerSection = () => {
     });
 
 
-    await API.post("/volunteerformspage/posthelp", data);
+    await API.post("/volunteerformspage/postjob", data);
 
     setContactNumberJob("");
     setContactEmailJob("");
-    setAddressJob("");
+    
     setContactPersonJob("");
     // setImage("");
     setCityJob("");
@@ -162,7 +175,8 @@ export const VolunteerSection = () => {
     setStartDateJob("");
     setEndDateJob("");
     setJobList("");
-    seSalaryBasisJob("");
+    setSalaryBasisJob("");
+    setJobType("");
   };
 
 
@@ -361,6 +375,16 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
               </form>
 
 
+
+
+
+
+
+
+
+
+
+
             )
               : volenForm === "Job" ? (<form className={styles.jobForm}>
                 <input
@@ -381,11 +405,17 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                   type="email"
                   placeholder="Contact Person Email"
                 />
+                
+
+
                 <div className={styles.jobSelectDiv}>
-                  <div className={styles.jobTitles}>Job location</div>
+                  <div className={styles.jobTitles}>Job Provider</div>
                   <div className={styles.jobTitles}>
                     Job Provider</div>
+
+
                   <select
+                    onChange={(e) => setCityJob(e.target.value)}
                     className={styles.jobSelect}
                   >
                     <option className={styles.optionBox}>Berlin</option>
@@ -426,12 +456,14 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                 <div className={styles.jobSelectDiv}>
                   <div className={styles.jobTitles}>Job Type</div>
                   <div className={styles.jobTitles}>Salary Basis</div>
-                  <select className={styles.jobDetails}>
+                  <select
+                  onChange={(e) => setJobType(e.target.value)}                  
+                  className={styles.jobDetails}>
                     <option>Full time</option>
                     <option>Part Time</option>
                   </select>
                   <select
-                   onChange={(e) =>   seSalaryBasisJob(e.target.value)}
+                   onChange={(e) =>   setSalaryBasisJob(e.target.value)}
                    className={styles.jobPersonsNumber}>
                     <option>Monthly</option>
                     <option>Weekly</option>

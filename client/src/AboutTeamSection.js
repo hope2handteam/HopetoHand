@@ -60,7 +60,8 @@ const AboutTeamSection = () => {
       </div>
       <div className={styles.infoDiv}>
         <p className={styles.visitOurTeamOrganizationAt}>
-          Visit Our Team Organization at https://github.com/hope2handteam
+          Visit Our Team Organization at <a href="https://github.com/hope2handteam">https://github.com/hope2handteam</a>
+          
         </p>
         <img className={styles.qRh2hIcon} alt="" src="../QRh2h@2x.png" />
       </div>
