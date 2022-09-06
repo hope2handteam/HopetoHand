@@ -53,6 +53,8 @@ const response = await API.delete(`/deleteuserjob/${id}`);
      };
       return (
         <>
+        <div className={styles.accommodationMainContainer}>
+                  <h4 className={styles.title}> Job:</h4>
         
         {/* <PostStatus/> */}
        
@@ -96,6 +98,7 @@ const response = await API.delete(`/deleteuserjob/${id}`);
                 );
               })
             : ""}
+            </div>
       
         
         
