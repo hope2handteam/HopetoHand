@@ -328,6 +328,8 @@
   /* height: 25%; */
 margin: 1%;
 background-color: #F5EACD ;
+box-shadow: #EAD49C 0px 0px 10px 1px;
+
 }
 .CardContainer2{
   box-sizing: border-box;
@@ -337,6 +339,7 @@ background-color: #F5EACD ;
 margin: 1%;
   background-color: #ead49c;
   padding-bottom: 15px;
+  box-shadow: #EAD49C 0px 0px 10px 1px;
 
 }
 
@@ -423,6 +426,8 @@ padding: 0px;
 margin: 3% auto;
  display: flex;
  flex-wrap: wrap;
+ justify-content: center;
+ 
 
   /* padding: 10px; */
 }
@@ -432,6 +437,9 @@ margin: 3% auto;
   position: absolute;
   bottom: 15px;
   font-weight: 500;
+ border: none;
+ box-shadow: white 0px 0px 5px 1px;
+
 }
 .cardBtn:hover{
   background-color:#EAD49C ;

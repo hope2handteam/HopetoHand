@@ -295,12 +295,12 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                     onChange={(e) => setAccomodationType(e.target.value)}
 
                     className={styles.accommodationDetails}>
-                    <option>Hotels</option>
+                    <option>Hotel</option>
                     <option>House</option>
                     <option>Apartment</option>
                     <option>Guest House</option>
-                    <option>Hoste</option>
-                    <option>Chalets</option>
+                    <option>Hostel</option>
+                    <option>Chalet</option>
                     <option>Garage</option>
                     <option>Cottages</option>
                   </select>
@@ -320,7 +320,7 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                   </select>
                 </div>
                 <div className={styles.accommodationSelectDiv}>
-                  <div className={styles.accommodationTitles}> available from</div>
+                  <div className={styles.accommodationTitles}> Available from</div>
                   <div className={styles.accommodationTitles}> to</div>
                   <input
                     
@@ -356,22 +356,29 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                  />
                </div>  */}
                 <div className={styles.accommodationSelectDiv}>
+                  <div>
+                    <h6 style={{fontWeight:600}}>Accommodation Photos</h6> 
                 <FileBase64
+                
         multiple={true}
         onDone={(files ) => {
           setImage(files.map((file) => file.base64));
         }}
       />
+      </div>
                 </div>
-                <div className={styles.accommodationSelectDiv}>
-                  <input className={styles.checkBoxBox} type="checkbox" />{" "}
-                  
-                    I am agree with terms of use
+                
+                <div  style={{marginLeft:"70%",marginTop:"50px"}} className={styles.accommodationSelectDiv}>
+                  <input  className={styles.checkBoxBox} type="checkbox" />{" "}
+                  <p  style={{fontSize:"13px",}} className={styles.termsOfUse}>
+                      I am agree with terms of use
+                    </p>
                  
                 </div>
                 <div className={styles.accommodationSelectDiv}>
-                  <button onClick={createAccomodation} className={styles.formButton}> submit the info</button>
+                  <button onClick={createAccomodation} className={styles.formButton}> Submit </button>
                 </div>
+               
               </form>
 
 
@@ -396,7 +403,7 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                 <input
                  onChange={(e) =>  setContactNumberJob(e.target.value)}
                   className={styles.contactPersonNumber}
-                  type="number"
+                  type="string"
                   placeholder="Contact Person Number"
                 />
                 <input
@@ -447,9 +454,9 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                     <option>Housekeeper</option>
                     <option>Security Guard</option>
                     <option>Housekeeping Technician</option>
-                    <option>Packaging Laborer</option>
-                    <option>Student Worker</option>
-                    <option>Stocker</option>
+                    <option>Gartner</option>
+                    <option>Student Work</option>
+                    <option>Cleaning</option>
                     <option>Other</option>
                   </select>
                 </div>
@@ -490,9 +497,9 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                   />
                 </div>
 
-                <div className={styles.accommodationSelectDiv}>
-                  <input className={styles.checkBoxBox} type="checkbox" />{" "}
-                  <p className={styles.termsOfUse}>
+                <div style={{marginLeft:"70%",marginTop:"50px", }} className={styles.accommodationSelectDiv}>
+                  <input style={{ marginTop: "2px"}}className={styles.checkBoxBox} type="checkbox" />{" "}
+                  <p style={{fontSize:"13px"}} className={styles.termsOfUse}>
                     I am agree with terms of use
                   </p>
                 </div>
@@ -510,7 +517,7 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                   <input
                   onChange={(e) => setContactNumberHelp(e.target.value)}
                     className={styles.contactPersonNumber}
-                    type="number"
+                    type="string"
                     placeholder="Contact Person Number"
                   />
                   <input
@@ -596,9 +603,9 @@ const userName =  JSON.parse(localStorage.getItem("profile")).userName;
                       id="time"
                     /> */}
                 
-                  <div className={styles.accommodationSelectDiv}>
-                    <input className={styles.checkBoxBox} type="checkbox" />
-                    <p className={styles.termsOfUse}>
+                  <div style={{marginLeft:"70%",marginTop:"50px", }} className={styles.accommodationSelectDiv}>
+                    <input style={{ marginTop: "2px"}} className={styles.checkBoxBox} type="checkbox" />
+                    <p  style={{fontSize:"13px",}} className={styles.termsOfUse}>
                       I am agree with terms of use
                     </p>
                   </div>
