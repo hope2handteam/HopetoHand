@@ -109,7 +109,7 @@ export const VolunteerSection = () => {
     const data = {contactEmailHelp, addressHelp, contactPersonHelp, cityHelp, TypeOfLanguageHelp, orgHelp, startDateHelp, endDateHelp, helpType, contactNumberHelp };
     
 
-    const API = axios.create({ baseURL: "http://localhost:5000"});
+    const API = axios.create({ baseURL: "https://hopetohands-wais.herokuapp.com"});
 
     API.interceptors.request.use((req) => {
       if (localStorage.getItem("profile")) {
@@ -151,7 +151,7 @@ export const VolunteerSection = () => {
       endDateJob};
     
 
-    const API = axios.create({ baseURL: "http://localhost:5000"});
+    const API = axios.create({ baseURL: "https://hopetohands-wais.herokuapp.com"});
 
     API.interceptors.request.use((req) => {
       if (localStorage.getItem("profile")) {
