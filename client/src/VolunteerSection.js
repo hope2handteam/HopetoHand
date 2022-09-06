@@ -76,7 +76,7 @@ export const VolunteerSection = () => {
   const createAccomodation = async () => {
     const data = { image,address, contactPerson, contactNumber, contactEmail, accomodationType, numberOfPersons, city, startDate, endDate };
 
-    const API = axios.create({ baseURL: "http://localhost:5000" });
+    const API = axios.create({ baseURL: "https://hopetohands-wais.herokuapp.com" });
 
     API.interceptors.request.use((req) => {
       if (localStorage.getItem("profile")) {

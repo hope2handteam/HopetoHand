@@ -30,7 +30,7 @@ export const LoginSignUpPopUp = ({ onClose }) => {
    
    
     const response = await axios.post(
-      "http://localhost:5000/signup",
+      "https://hopetohands-wais.herokuapp.com/signup",
       data,
     );
     console.log(data);

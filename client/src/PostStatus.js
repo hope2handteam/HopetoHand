@@ -18,7 +18,7 @@
 // //   };
   
 // //   axios.post( 
-// //     'http://localhost:5000/poststatus/token',
+// //     'https://hopetohands-wais.herokuapp.com/poststatus/token',
 // //     bodyParameters,
 // //     config
 // //   ).then(console.log).catch(console.log);
@@ -32,7 +32,7 @@
 //   // };
   
 //   // Axios.post( 
-//   //   'http://localhost:5000/poststatus',
+//   //   'https://hopetohands-wais.herokuapp.com/poststatus',
 //   //   bodyParameters,
 //   //   config
 //   // ).then(console.log).catch(console.log);
@@ -40,7 +40,7 @@
 //     const postRequestHandler = async (id) => {
 //       const data = { lastActive, numbers };
 //       const response = await axios.post(
-//         `http://localhost:5000/poststatus/${id}` ,
+//         `https://hopetohands-wais.herokuapp.com/poststatus/${id}` ,
 //         data,
 //       );
 //       console.log(response.data.data, id);
@@ -52,7 +52,7 @@
   
 // //     // const removeStatus = async (id) => {
 // //     //   try {
-// //     //     await axios.delete(`http://localhost:5000/deletestatus/${id}`);
+// //     //     await axios.delete(`https://hopetohands-wais.herokuapp.com/deletestatus/${id}`);
 // //     //     console.log("USer deleted! ", id);
 // //     //     postRequestHandler();
 // //     //   } catch (error) {
