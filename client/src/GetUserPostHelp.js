@@ -9,7 +9,7 @@ const GetUserPostHelp = () => {
     const [details, setDetails] = useState();
 
     
-    const API = axios.create({ baseURL: "http://localhost:5000" });
+    const API = axios.create({ baseURL: "https://hopetohands-wais.herokuapp.com" });
 
     API.interceptors.request.use((req) => {
       if (localStorage.getItem("profile")) {
@@ -56,11 +56,12 @@ const response = await API.delete(`/deleteuserhelp/${id}`);
         <>
         
         {/* <PostStatus/> */}
-        <div className={styles.accommodationMainContainer}>
-          <h4 className={styles.title}>Help</h4>         
+      
           {request 
             ? details.map((value) => {
                 return (
+                  <div className={styles.accommodationMainContainer}>
+                  <h4 className={styles.title}>Help</h4>     
                   <div className={styles.helperContainer} key={value._id}>
                    <div  className={styles.detailsContainer}> 
                     <div className={styles.accommodationDetails}>
@@ -80,7 +81,7 @@ const response = await API.delete(`/deleteuserhelp/${id}`);
                       </div>
                       </div>
                   
-                    <div style={{ display: "inline" }}>
+                    <div className={styles.bottomDelete}>
                     <button onClick={() => removeHelp(value._id)} className={styles.submitBtnButton}>
 <div className={styles.submitButtonDiv} />
 <div className={styles.submitDiv}>Delete</div>
@@ -93,14 +94,14 @@ const response = await API.delete(`/deleteuserhelp/${id}`);
 
 
 
-
+ </div>
 
 
                   
                 );
               })
             : ""}
-        </div>
+       
         
         
         </>

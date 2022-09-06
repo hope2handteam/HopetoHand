@@ -240,6 +240,9 @@ img{
   height: 60px;
   flex-shrink: 0;
   overflow: hidden;
+  position: absolute;
+  /* border: 2px solid red; */
+  right:0;
 }
 .logoMainButton:hover,
 .submitBtnButton:hover {
@@ -267,4 +270,15 @@ img{
   75% {
     transform: translateX(-6px) rotate(-1.2deg);
   }
+}
+.bottomDelete{
+  position: relative;
+  /* border: 2px solid green; */
+
+}
+.submitDiv{
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  /* border: 2px solid red; */
 }

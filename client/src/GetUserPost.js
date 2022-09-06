@@ -10,7 +10,7 @@ const GetUserPost = () => {
     const [details, setDetails] = useState();
 
     
-    const API = axios.create({ baseURL: "http://localhost:5000" });
+    const API = axios.create({ baseURL: "https://hopetohands-wais.herokuapp.com" });
 
     API.interceptors.request.use((req) => {
       if (localStorage.getItem("profile")) {
@@ -55,16 +55,14 @@ const response = await API.delete(`/deleteuseraccommodation/${id}`);
      };
       return (
         
-        <>
-
+      
+<div className={styles.accommodationMainContainer}>
+                  <h4 className={styles.title}> Accommodation List:</h4>
        
-          <div className={styles.accommodationMainContainer}>
-            <h4 className={styles.title}> Accommodation List:</h4>
-
-
+  
             {request
               ? details.map((value) => {
-                return (
+                return (        
                   //  <div className="img_card" >
                   //     <div className="main_container" key={value._id}>
                   //       <div className="img_acc" >   
@@ -115,10 +113,10 @@ const response = await API.delete(`/deleteuseraccommodation/${id}`);
 
 
                 );
-              })
+             })
               : ""}
-          </div>
-        </>
+         
+         </div> 
         
      
     );

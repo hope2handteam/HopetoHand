@@ -13,7 +13,7 @@ const GetAccomodations = () => {
 
 
   const getRequestHandler = async () => {
-    const response = await axios.get("http://localhost:5000/getaccomodations");
+    const response = await axios.get("https://hopetohands-wais.herokuapp.com/getaccomodations");
     console.log(response.data.data);
     setDetails(response.data.data);
     setRequest("GET");
@@ -21,7 +21,7 @@ const GetAccomodations = () => {
 
   // const removeAccomodation = async (id) => {
   //   try {
-  //     await axios.delete(`http://localhost:5000/deleteaccomodations/${id}`);
+  //     await axios.delete(`https://hopetohands-wais.herokuapp.com/deleteaccomodations/${id}`);
   //     console.log("USer deleted! ", id);
   //     getRequestHandler();
   //   } catch (error) {
@@ -33,12 +33,13 @@ const GetAccomodations = () => {
     <>
 
       {/* <PostStatus/> */}
-      <div className="main_acc">
-        <h1>Click the button to get all users</h1>
-        <button onClick={getRequestHandler}>GET</button>
+    
         {request
           ? details.map((value) => {
             return (
+              <div className="main_acc">
+              <h1>Click the button to get all users</h1>
+              <button onClick={getRequestHandler}>GET</button>
              <div className="img_card" >
                 <div className="main_container" key={value._id}>
                   <div className="img_acc" >
@@ -64,11 +65,11 @@ const GetAccomodations = () => {
                   </div> */}
                   </div>
                 
-                  </div>
+                  </div>      </div>
             );
           })
           : ""}
-      </div>
+
 
     </>
   );
