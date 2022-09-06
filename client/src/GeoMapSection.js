@@ -52,7 +52,7 @@ const navigateToLists=(e)=>{
 <div className={styles.listSelect}>
 
 
-<Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${MedicalImage})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px',  alignSelf: 'stretch'
+<Card style={{ boxShadow: "#908DB9 0px 2px 2px 1px", width: '19rem', height:'14rem', backgroundImage:`url(${MedicalImage})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px',  alignSelf: 'stretch'
 }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><GiMedicalThermometer/></Card.Title>
@@ -62,7 +62,7 @@ const navigateToLists=(e)=>{
     </Card>
 
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${FoodImage})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
+    <Card style={{  boxShadow: "#908DB9 0px 2px 2px 1px",width: '19rem', height:'14rem', backgroundImage:`url(${FoodImage})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><GiFoodTruck/></Card.Title>
   
@@ -70,7 +70,7 @@ const navigateToLists=(e)=>{
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${IntergrationCourse})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
+    <Card style={{ width: '19rem', height:'14rem',boxShadow: "#908DB9 0px 2px 2px 1px", backgroundImage:`url(${IntergrationCourse})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><FaSchool/></Card.Title>
 
@@ -79,7 +79,7 @@ const navigateToLists=(e)=>{
     </Card>
 
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${CheapCloths})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
+    <Card style={{boxShadow: "#908DB9 0px 2px 2px 1px", width: '19rem', height:'14rem', backgroundImage:`url(${CheapCloths})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><GiClothes/></Card.Title>
 
@@ -87,7 +87,7 @@ const navigateToLists=(e)=>{
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${SocialService})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
+    <Card style={{boxShadow: "#908DB9 0px 2px 2px 1px", width: '19rem', height:'14rem', backgroundImage:`url(${SocialService})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><FaPeopleCarry/></Card.Title>
 
@@ -95,7 +95,7 @@ const navigateToLists=(e)=>{
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${DrivingSchools})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
+    <Card style={{boxShadow: "#908DB9 0px 2px 2px 1px", width: '19rem', height:'14rem', backgroundImage:`url(${DrivingSchools})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><MdOutlineDriveEta/></Card.Title>
 
@@ -103,7 +103,7 @@ const navigateToLists=(e)=>{
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${Law})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
+    <Card style={{boxShadow: "#908DB9 0px 2px 2px 1px", width: '19rem', height:'14rem', backgroundImage:`url(${Law})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><GoLaw/></Card.Title>
 
@@ -111,7 +111,7 @@ const navigateToLists=(e)=>{
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${Sport})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
+    <Card style={{ boxShadow: "#908DB9 0px 2px 2px 1px",width: '19rem', height:'14rem', backgroundImage:`url(${Sport})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><TbOlympics/></Card.Title>
 
@@ -119,7 +119,7 @@ const navigateToLists=(e)=>{
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${Park})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative'}}>
+    <Card style={{ boxShadow: "#908DB9 0px 2px 2px 1px",width: '19rem', height:'14rem', backgroundImage:`url(${Park})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative'}}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><TbOlympics/></Card.Title>
 
@@ -127,7 +127,7 @@ const navigateToLists=(e)=>{
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '19rem', height:'14rem', backgroundImage:`url(${corona})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
+    <Card style={{ boxShadow: "#908DB9 0px 2px 2px 1px",width: '19rem', height:'14rem', backgroundImage:`url(${corona})`, backgroundPosition:'center', backgroundSize:"cover", fontFamily:'Montserrat', margin: '3px', position: 'relative' }}>
       <Card.Body>
         <Card.Title style={{ color: 'white', fontSize:'30px'}}><TbOlympics/></Card.Title>
 
