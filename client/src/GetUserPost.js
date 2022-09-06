@@ -71,7 +71,7 @@ const response = await API.delete(`/deleteuseraccommodation/${id}`);
                   <div className={styles.accommodationContainer} key={value._id}>
                     <div className={styles.detailsContainer}>
                       <div className={styles.contactPersonDetails}>
-                        <p>contact Person: {value.contactPerson}</p>
+                        <p>Contact Person: {value.contactPerson}</p>
                         <p>Phone Number: {value.contactNumber}</p>
                         <p>Email: {value.contactEmail}</p>
                       </div>
@@ -81,9 +81,10 @@ const response = await API.delete(`/deleteuseraccommodation/${id}`);
                         <p>Address: {value.address}, {value.city} </p>
                       </div>
                       <div className={styles.accommodationAvailable}>
-                        <p>Available from: {value.startDate} </p>
-                        <p>to: {value.endDate} </p>
-                        <p>Status: <span> Available</span>  </p>
+                     
+                        <p> from: {value.startDate} <p className="enddate">to: {value.endDate} </p></p>
+                        
+                       
                       </div>
                     </div>
                     <div className={styles.accommodationImgContainer}>
@@ -101,16 +102,21 @@ const response = await API.delete(`/deleteuseraccommodation/${id}`);
 
 
                       }
-           <div style={{ display: "inline" }}>
+                       
+           <div className="conteiner_img" style={{ display: "inline" }}>
                     <button onClick={() => removeAccomodation(value._id)} className={styles.submitBtnButton}>
 <div className={styles.submitButtonDiv} />
 <div className={styles.submitDiv}>Delete</div>
 </button>
+
                       
                     </div>
-
+                    
 
                     </div>
+                    <div style={{marginLeft:"80%"}}>
+                        <p>Status: <span style={{color:"green"}}> Available</span>  </p>
+                        </div>
                   </div>
 
 
