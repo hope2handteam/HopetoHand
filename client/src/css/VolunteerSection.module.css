@@ -1012,15 +1012,17 @@
 padding: 20px;
 padding-top: 70px;
 padding-bottom: 70px;
-  width: 90%;
+  width: 70%;
   justify-content: center;
   display: flex;
   flex-direction: column;
   background-color: white;
   margin:  auto;
   border-radius: 10px;
+
   box-shadow: 4px 0px 10px 1px rgba(0, 0, 0, 0.277);
   /* border: 2px solid red; */
+
 }
 .contactPersonName,
 .contactPersonNumber,
@@ -1034,21 +1036,22 @@ padding-bottom: 70px;
   margin: 0px auto;
   margin-top: 8px;
  align-content: center;
- font-size: 18px;
+ font-size: 10px;
  border-radius: 4px;
  border: none;
- border-bottom: 2px solid black;
+
+
 }
 .contactPersonName,
 .contactPersonNumber,
 .contactPersonEmail{
   width: 84%;
   padding: 18px;
-  font-size: 18px;
+  font-size: 13px;
   border-radius: 4px;
   margin-top: 20px;
   border: none;background-color: #f3efef;
-  border: 1px solid black;
+ box-shadow: #342e37 0px 0px 2px 0px;
 }
 .accommodationSelect,
 .jobSelect,
@@ -1073,10 +1076,14 @@ padding-bottom: 70px;
   padding: 18px;
    align-content: center;
  border-radius: 4px;
- font-size: 18px;
+ font-size: 13px;
  border: none;background-color: #f3efef;
  border: none;
- border: 1px solid black;
+ 
+}
+.accommodationSelect,.accommodationStreet,.accommodationDetails,.accommodationPersonsNumber,.accommodationStreetEnd, .accommodationStreetDate{
+  box-shadow: #342e37 0px 0px 2px 0px;
+
 }
 .accommodationSelectDiv,
 .jobSelectDiv,
@@ -1090,23 +1097,26 @@ padding-bottom: 70px;
 }
 .checkBoxBox{
   width: 20px;
+  
 }
 .formButton
 {
   color: white;
-  margin-top: 50px;
-  padding: 18px;
-  width: 200px;
-  font-size: 20px;
+  margin-top: 0px;
+  padding: 10px;
+  width: 100px;
+  font-size: 13px;
   border-radius: 30px;
   border: none;
  cursor: pointer;
  background-color:  #908DB9;
+ margin-left: 90%;
 }
 .accommodationTitles,
 .jobTitles,
 .helpTitles{
   font-size: 16px;
+  font-weight: 600;
   padding: 0px;
   border: none;
   border: none;background-color: transparent;
