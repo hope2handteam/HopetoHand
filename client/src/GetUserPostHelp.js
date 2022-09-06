@@ -54,6 +54,8 @@ const response = await API.delete(`/deleteuserhelp/${id}`);
      };
       return (
         <>
+        <div className={styles.accommodationMainContainer}>
+                  <h4 className={styles.title}> Help:</h4>
         
         {/* <PostStatus/> */}
       
@@ -101,7 +103,7 @@ const response = await API.delete(`/deleteuserhelp/${id}`);
                 );
               })
             : ""}
-       
+       </div>
         
         
         </>
