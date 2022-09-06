@@ -14,6 +14,7 @@ dotenv.config(); // it makes the possibility to connect the .env file data to se
 const app = express();
 app.use(bodyParser.json());
 app.use(cors(), express.json());
+
 app.use(express.json({ limit: "100mb", extended: true }));
 app.use(express.urlencoded({limit: "100mb" ,extended: true }));
 const PORT = process.env.PORT;
