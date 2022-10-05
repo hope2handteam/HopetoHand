@@ -149,4 +149,4 @@ Thanks to all the Locofy.ai team for the precious help!
 
 - Make a in house feature Free Map with Geolicalisation API 
 
-## Thanks for you Support!
+## Thanks for your Support!
