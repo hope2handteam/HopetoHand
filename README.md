@@ -4,6 +4,8 @@
 
 # This is our Hope2Hand Desktop and Tablet Fully Responsive Website
 
+Our first version is deployed here : https://hope2hand.netlify.app/
+
 ## Description of the project
 
 This local Assistance App. is here for you in the most needed time.  
